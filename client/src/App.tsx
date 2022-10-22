@@ -1,10 +1,10 @@
 import React from 'react';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
     <div>
-      <h1> Welcome to Bunkmate !</h1>
-    
+      <HomePage/>
     </div>
   );
 }
