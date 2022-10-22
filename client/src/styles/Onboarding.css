@@ -1,0 +1,10 @@
+:root {
+    --white: #fff;
+    --orange: #FAA986;
+
+}
+
+.onboarding {
+    color: var(--orange);
+    font-size: 40px;
+}

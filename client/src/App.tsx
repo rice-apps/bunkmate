@@ -1,11 +1,9 @@
 import React from 'react';
+import Onboarding from './pages/Onboarding';
 
 function App() {
   return (
-    <div>
-      <h1> Welcome to Bunkmate !</h1>
-    
-    </div>
+    <Onboarding/>
   );
 }
 
