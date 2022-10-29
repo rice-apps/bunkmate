@@ -1,8 +1,9 @@
 :root {
     --white: #fff;
     --black: #000;
-    --orange: #FAA986;
-
+    --blue: #25335D;
+    --pink: #FFEBE5;
+    --gray: #25335D;
 }
 
 * {
@@ -12,17 +13,28 @@
     font-family: "Roboto Flex";
 }
 
-
-.svg-active {
+body {
+    background-color: var(--pink);
+    color: var(--gray);
+}
+.link-active {
     font-weight: bold;
 }
 
-.svg-inactive circle{
+h1 {
+    font-size: 2.6em;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+.svg-inactive{
     fill: var(--white);
 }
 
 .nav {
-    margin-top: 6vh;
+    margin-top: 4vh;
     display: flex;
     position: relative;
     justify-content: space-around;
@@ -35,7 +47,6 @@
     font-size: 1em;
     z-index: 1;
     color: var(--black);
-    cursor: pointer;
 }
 
 .nav::before {
@@ -44,6 +55,52 @@
     height: 5px;
     top: 12px;
     z-index: 0;
-    background-color: #FAA986;
+    background-color: var(--blue);
     position: absolute;
 }
+
+.nav-link p {
+    margin-top: 3vh;
+}
+
+.onboarding-form {
+    margin-top: 6vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+form {
+    padding: 4vh 6vw;
+    margin-top: 4vh;
+    background: var(--white);
+    border-radius: 20px 20px 0px 0px;
+    width: 75%;
+}
+.input-field {
+    margin-top: 2vh;
+}
+input {
+    border: 2px solid #25335D;
+    width: 100%;
+    padding: 3px;
+    border-radius: 6px;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+}
+
+.option-btn {
+    border: 2px solid #25335D;
+    border-radius: 13px;
+    width: 131px;
+    height: 32px;
+    background-color: var(--white);
+}
+
