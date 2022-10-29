@@ -9,12 +9,7 @@ interface UserProps {
 const UserCard = ({id, name, pref_temp, bedtime, gender_pref}: UserProps) => {
     
     return (
-        <ul>
-            <li><h2>{name}</h2></li>
-            <li>{pref_temp}</li>
-            <li>{bedtime}</li>
-            <li>{gender_pref}</li>
-        </ul>
+        <div className="card-heading"></div>
     )
 }
 /*
