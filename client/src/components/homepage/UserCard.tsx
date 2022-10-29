@@ -1,12 +1,6 @@
-interface UserProps {
-    id: number;
-    name: string;
-    pref_temp: string;
-    bedtime: string;
-    gender_pref: string;
-}
+import UserData from "../../types/UserData";
 
-const UserCard = ({id, name, pref_temp, bedtime, gender_pref}: UserProps) => {
+const UserCard = ({id, name, pref_temp, bedtime, gender_pref}: UserData) => {
     
     return (
         <ul>
