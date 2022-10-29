@@ -6,7 +6,6 @@ import Onboarding from './pages/Onboarding';
 function App() {
   return (
     <div>
-      <Onboarding/>
       <HomePage/>
     </div>
     

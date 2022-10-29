@@ -1,0 +1,10 @@
+.feed {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: auto;
+    width: 100vh;
+    height: 100vh;
+}
+

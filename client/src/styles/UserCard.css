@@ -1,0 +1,61 @@
+.user-card {
+    border: solid;
+    border-radius: 20px;
+    width: 400px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-heading {
+    height: auto;
+}
+
+.card-heading img {
+    width: 80px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+.card-icon {
+    font-size: 25px;
+    margin-right: 10px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.user-attr {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 0px 0px 0px;
+}
+
+.card-heading {
+    display: flex;
+    flex-direction: row;
+}
+
+.roommate-pfps {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    right: 0px;
+}
+
+.card-footer {
+    position: relative;
+    height: 30px;
+}
+
+.roommate-pfp {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
