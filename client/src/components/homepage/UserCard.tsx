@@ -14,13 +14,19 @@ interface UserProps {
     pfp_src: string;
 }
 
+let pfps = new Map();
+
+pfps.set("Ben Liu", benPfp);
+pfps.set("Huzaifa Ali", defaultPfp);
+pfps.set("Sofia Lakhani", defaultPfp);
+
 const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pfp_src}: UserProps) => {
     return (
         <div className="user-card-refresh-animation">
             <div className="user-card">
                 <div className="card-content">
                     <div className="card-heading">
-                        <img className="user-pfp" src={benPfp}/>
+                        <img className="user-pfp" src={pfps.get(name)}/>
                         <h1>{name} '{grad_year}</h1>
                     </div>
                     <div className="card-body">
