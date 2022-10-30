@@ -5,9 +5,18 @@ import '../styles/HomePage.css';
 
 const HomePage = () => {
     return (
-        <div className="feed">
-            {users.map(user => {return (<UserCard id={user.id} name={user.name} pref_temp={user.pref_temp} bedtime={user.bedtime} pref_gender={user.pref_gender}/>)})}
+        <div className="homepage">
+            <svg className="heading-background">
+                <ellipse cx="50%" cy="0px" rx="75%" ry="100%"></ellipse>
+            </svg>
+            <div className="page-header">
+                <h1 className="page-title">We found these bunkmates for you!</h1>
+            </div>
+            <div className="user-card-feed">
+                {users.map(user => {return (<UserCard id={user.id} name={user.name} pref_temp={user.pref_temp} bedtime={user.bedtime} pref_gender={user.pref_gender} grad_year={user.grad_year} pfp_src={user.pfp_src}/>)})}
+            </div>
         </div>
+
     )
 }
 

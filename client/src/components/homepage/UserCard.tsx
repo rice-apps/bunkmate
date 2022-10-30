@@ -2,6 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTemperatureHalf, faBed, faVenusMars } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/UserCard.css'
 import benPfp from '../../media/ben-liu-pfp-400x400.png';
+import defaultPfp from '../../media/empty-pfp-400x400.png';
 
 interface UserProps {
     id: number;
@@ -9,36 +10,40 @@ interface UserProps {
     pref_temp: string;
     bedtime: string;
     pref_gender: string;
+    grad_year: string;
+    pfp_src: string;
 }
 
-const UserCard = ({id, name, pref_temp, bedtime, pref_gender}: UserProps) => {
-    
+const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pfp_src}: UserProps) => {
     return (
-        
-        <div className="user-card">
-            <div className="card-heading">
-                <img src={ benPfp }/>
-                <h1>Ben Liu '26</h1>
-            </div>
-            <div className="card-body">
-                <div className="user-attr" id="pref-temp">
-                    <FontAwesomeIcon className='card-icon' icon={faTemperatureHalf}/>
-                    <p>70℉</p>
-                </div>
-                <div className="user-attr" id="bedtime">
-                    <FontAwesomeIcon className='card-icon' icon={faBed}/>
-                    <p>9 PM</p>
-                </div>
-                <div className="user-attr" id="pref-gender">
-                    <FontAwesomeIcon className='card-icon' icon={faVenusMars}/>
-                    <p>Male roommate preferred</p>
-                </div>
-            </div>
-            <div className="card-footer">
-                <div className="roommate-pfps">
-                    <img className="roommate-pfp" src={ benPfp }></img>
-                    <img className="roommate-pfp" src={ benPfp }></img>
-                    <img className="roommate-pfp" src={ benPfp }></img>
+        <div className="user-card-refresh-animation">
+            <div className="user-card">
+                <div className="card-content">
+                    <div className="card-heading">
+                        <img className="user-pfp" src={benPfp}/>
+                        <h1>{name} '{grad_year}</h1>
+                    </div>
+                    <div className="card-body">
+                        <div className="user-attr" id="pref-temp">
+                            <FontAwesomeIcon className='card-icon' icon={faTemperatureHalf}/>
+                            <p>{pref_temp}℉</p>
+                        </div>
+                        <div className="user-attr" id="bedtime">
+                            <FontAwesomeIcon className='card-icon' icon={faBed}/>
+                            <p>{bedtime}</p>
+                        </div>
+                        <div className="user-attr" id="pref-gender">
+                            <FontAwesomeIcon className='card-icon' icon={faVenusMars}/>
+                            <p>{pref_gender} roommate preferred</p>
+                        </div>
+                    </div>
+                    <div className="card-footer">
+                        <div className="roommate-pfps">
+                            <img className="roommate-pfp" src={defaultPfp}></img>
+                            <img className="roommate-pfp" src={benPfp}></img>
+                            <img className="roommate-pfp" src={benPfp}></img>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

@@ -1,19 +1,64 @@
+.card-content {
+    margin: 12px;
+}
+
 .user-card {
     border: solid;
     border-radius: 20px;
+    border-width: 4px;
+    border-color: rgba(0,0,0,0.7);
+    background-color: white;
     width: 400px;
-    height: 220px;
+    height: 200px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin: 0px 0px 15px 0px;
+}
+
+.user-card-refresh-animation {
+    animation-name: slide;
+    animation-timing-function: ease;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+    position: relative;
+}
+
+@keyframes slide {
+    0% {
+        left: -1000px;
+    }
+    100% {
+        left: 0px;
+    }
+
+}
+
+
+.user-card:hover {
+    animation-name: expand;
+    animation-timing-function: ease;
+    animation-duration: 0.45s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes expand {
+    100% {
+        transform: scale(1.03);
+    }
 }
 
 .card-heading {
-    height: auto;
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 15px;
 }
 
-.card-heading img {
-    width: 80px;
+.user-pfp {
+    width: 60px;
+    height: 60px;
     margin-right: 20px;
     border-radius: 50%;
 }
@@ -21,12 +66,16 @@
 .card-icon {
     font-size: 25px;
     margin-right: 10px;
+    width: 20px;
+    height: 20px;
 }
 
 .card-body {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    position: relative;
+    top: 10px;
 }
 
 .user-attr {
@@ -47,6 +96,8 @@
     position: absolute;
     flex-direction: row;
     right: 0px;
+    width: 96px;
+    justify-content: space-between;
 }
 
 .card-footer {
