@@ -28,20 +28,20 @@ const users = [
         },    
         {
             "id": 3,
-            "name": "Sofia Lakhani",
-            "pref_temp": "65",
-            "bedtime": "11 PM",
-            "pref_gender": "Female",
-            "grad_year": "25",
+            "name": "Jonathan Jang",
+            "pref_temp": "68",
+            "bedtime": "1 AM",
+            "pref_gender": "Male",
+            "grad_year": "26",
             "pfp_src": "media/empty-pfp-400x400.png"
         },
         {
             "id": 4,
-            "name": "Sofia Lakhani",
-            "pref_temp": "65",
-            "bedtime": "11 PM",
+            "name": "Isabel Wang",
+            "pref_temp": "70",
+            "bedtime": "2 AM",
             "pref_gender": "Female",
-            "grad_year": "25",
+            "grad_year": "26",
             "pfp_src": "media/empty-pfp-400x400.png"
         }
 ]
