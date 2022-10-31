@@ -24,7 +24,7 @@ pfps.set("Isabel Wang", defaultPfp);
 
 const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pfp_src}: UserProps) => {
     return (
-        <div className="user-card-refresh-animation">
+        <div className="user-card-wrapper">
             <div className="user-card">
                 <div className="card-content">
                     <div className="card-heading">

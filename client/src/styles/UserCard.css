@@ -1,4 +1,4 @@
-.user-card-refresh-animation {
+.user-card-wrapper {
     animation-name: slide;
     animation-timing-function: ease;
     animation-duration: 1.5s;
