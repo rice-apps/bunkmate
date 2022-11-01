@@ -3,7 +3,9 @@
     animation-timing-function: ease;
     animation-duration: 1.5s;
     animation-iteration-count: 1;
+    animation-fill-mode: forwards;
     position: relative;
+    left: -1000px;
 }
 
 @keyframes slide {

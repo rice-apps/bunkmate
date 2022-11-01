@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTemperatureHalf, faBed, faVenusMars } from '@fortawesome/free-solid-svg-icons';
-import '../../styles/UserCard.css'
+import '../../styles/UserCard.css';
+import '../../styles/UserCard.scss';
 import benPfp from '../../media/ben-liu-pfp-400x400.png';
 import defaultPfp from '../../media/empty-pfp-400x400.png';
 
