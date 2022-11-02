@@ -26,35 +26,37 @@ pfps.set("Isabel Wang", defaultPfp);
 const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pfp_src}: UserProps) => {
     return (
         <div className="user-card-wrapper">
-            <div className="user-card">
-                <div className="card-content">
-                    <div className="card-heading">
-                        <img className="user-pfp" src={pfps.get(name)} alt={name}/>
-                        <h1>{name} '{grad_year}</h1>
-                    </div>
-                    <div className="card-body">
-                        <div className="user-attr" id="pref-temp">
-                            <FontAwesomeIcon className='card-icon' icon={faTemperatureHalf}/>
-                            <p>{pref_temp}℉</p>
+            <a href="">
+                <div className="user-card">
+                    <div className="card-content">
+                        <div className="card-heading">
+                            <img className="user-pfp" src={pfps.get(name)} alt={name}/>
+                            <h1>{name} '{grad_year}</h1>
                         </div>
-                        <div className="user-attr" id="bedtime">
-                            <FontAwesomeIcon className='card-icon' icon={faBed}/>
-                            <p>{bedtime}</p>
+                        <div className="card-body">
+                            <div className="user-attr" id="pref-temp">
+                                <FontAwesomeIcon className='card-icon' icon={faTemperatureHalf}/>
+                                <p>{pref_temp}℉</p>
+                            </div>
+                            <div className="user-attr" id="bedtime">
+                                <FontAwesomeIcon className='card-icon' icon={faBed}/>
+                                <p>{bedtime}</p>
+                            </div>
+                            <div className="user-attr" id="pref-gender">
+                                <FontAwesomeIcon className='card-icon' icon={faVenusMars}/>
+                                <p>{pref_gender} roommate preferred</p>
+                            </div>
                         </div>
-                        <div className="user-attr" id="pref-gender">
-                            <FontAwesomeIcon className='card-icon' icon={faVenusMars}/>
-                            <p>{pref_gender} roommate preferred</p>
-                        </div>
-                    </div>
-                    <div className="card-footer">
-                        <div className="roommate-pfps">
-                            <img className="roommate-pfp" src={defaultPfp} alt=""></img>
-                            <img className="roommate-pfp" src={benPfp} alt=""></img>
-                            <img className="roommate-pfp" src={benPfp} alt=""></img>
+                        <div className="card-footer">
+                            <div className="roommate-pfps">
+                                <img className="roommate-pfp" src={defaultPfp} alt=""></img>
+                                <img className="roommate-pfp" src={benPfp} alt=""></img>
+                                <img className="roommate-pfp" src={benPfp} alt=""></img>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
     )
 }
