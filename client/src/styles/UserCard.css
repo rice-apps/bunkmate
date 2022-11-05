@@ -5,16 +5,16 @@
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     position: relative;
-    left: -1000px;
+    left: -70vw;
 }
 
 @keyframes slide {
     0% {
-        left: -1000px;
+        left: -70vw;
     }
 
     100% {
-        left: 0px;
+        left: 0vw;
     }
 
 }
@@ -26,9 +26,9 @@
 
 .user-card {
     border: solid;
-    border-radius: 20px;
+    border-radius: 24px;
     border-width: 4px;
-    border-color: rgba(0,0,0,0.7);
+    /* border-color: rgba(0,0,0,0.7); */
     background-color: white;
     margin-bottom: 15px;
     transform: scale(1);
@@ -45,33 +45,88 @@
     flex-direction: column;
     justify-content: space-between;
     width: 30vw;
-    height: 22vh;
+    height: 25vh;
 }
 
 .card-heading {
-    height: 60px;
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
     align-items: center;
     font-size: 15px;
 }
 
 .user-pfp {
-    width: 60px;
-    height: 60px;
-    margin-right: 20px;
+    width: 80px;
+    height: 80px;
+    margin-right: 1vw;
     border-radius: 50%;
+}
+
+.user-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;  
+    height: 11vh;
+    gap: 0.75vh;
+}
+
+.user-title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    text-align: center;
+    height: 6vh;
+    margin-top: -8px;
+}
+
+.user-title h1 {
+    margin-right: 0.5vw;
+}
+
+.tag-content{
+    margin: -2px 8px -2px 13px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.user-tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: .5vw;
+}
+
+.user-tag {
+    background-color: #F3F4F8;
+    border-radius: 15px;
+    color:  #25335D;
+    font-size: 14px;
+}
+
+.tag-icon {
+    font-size: 17px;
+}
+
+.user-tag p {
+    margin: 8px;
 }
 
 .card-body {
     display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+    flex-direction: row;
+    justify-content: space-around;
     position: relative;
     top: 10px;
 }
 
-.card-icon {
+.attr-col {
+    width: 10vw;
+}
+
+.attr-icon {
     font-size: 25px;
     margin-right: 10px;
     width: 20px;
