@@ -1,29 +1,25 @@
-"use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = __importDefault(require("express"));
+const express = require("express");
 const mongoose = require("mongoose");
-const authRouter = require('./routes/auth');
-const cors = require('cors');
+const { ApolloServer } = require('apollo-server');
+const typeDefs = require('./graphql/typeDefs');
+const resolvers = require('./graphql/resolvers');
 const PORT = process.env.PORT || 3000;
-const app = (0, express_1.default)();
-app.use(cors());
-app.use(express_1.default.json());
-app.use('/api', authRouter);
-// app.use('/api/', authRouter);
+const server = new ApolloServer({
+    typeDefs,
+    resolvers,
+    // add request and response to graphQL context
+    // context: ({ req, res }) => ({ req, res }),
+});
+// const app = express();
+//put in env eventually
 const url = "mongodb+srv://tigerking:wphPpplcHRwNdv29@riceapps2020-21-ppsrv.gcp.mongodb.net/bunkmate_dev?retryWrites=true&w=majority";
-mongoose.connect(url);
-mongoose.connection.on("connected", function () {
+mongoose.connect(url, { useNewUrlParser: true })
+    .then(() => {
     console.log("Mongoose connected");
-    // console.log("Mongoose connected to " + url);
+    return server.listen({ port: PORT });
+})
+    .then((res) => {
+    console.log(`🛸 Server ready at ${res.url}`); //${ server.graphqlPath }
 });
-app.get('/', (req, res) => {
-    res.send('Bunkmate Server!');
-});
-app.listen(PORT, () => {
-    return console.log(`Express is listening at http://localhost:${PORT}`);
-});
-module.exports = app;
+// module.exports = app;
 //# sourceMappingURL=index.js.map
