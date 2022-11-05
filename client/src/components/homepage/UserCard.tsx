@@ -12,7 +12,6 @@ interface UserProps {
     bedtime: string;
     pref_gender: string;
     grad_year: string;
-    pfp_src: string;
 }
 
 let pfps = new Map();
@@ -23,7 +22,8 @@ pfps.set("Sofia Lakhani", defaultPfp);
 pfps.set("Jonathan Jang", defaultPfp);
 pfps.set("Isabel Wang", defaultPfp);
 
-const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pfp_src}: UserProps) => {
+
+const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year}: UserProps) => {
     return (
         <div className="user-card-wrapper">
             <a href="">

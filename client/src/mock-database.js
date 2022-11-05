@@ -6,7 +6,6 @@ const users = [
             "bedtime": "11:30 PM",
             "pref_gender": "Male",
             "grad_year": "23",
-            "pfp_src": "media/empty-pfp-400x400.png"
         },
         {
             "id": 1,
@@ -15,7 +14,6 @@ const users = [
             "bedtime": "12 AM",
             "pref_gender": "Male",
             "grad_year": "26",
-            "pfp_src": "media/ben-liu-pfp-400x400.png"
         },
         {
             "id": 2,
@@ -24,7 +22,6 @@ const users = [
             "bedtime": "11 PM",
             "pref_gender": "Female",
             "grad_year": "25",
-            "pfp_src": "media/empty-pfp-400x400.png"
         },    
         {
             "id": 3,
@@ -33,7 +30,6 @@ const users = [
             "bedtime": "1 AM",
             "pref_gender": "Male",
             "grad_year": "26",
-            "pfp_src": "media/empty-pfp-400x400.png"
         },
         {
             "id": 4,
@@ -42,7 +38,6 @@ const users = [
             "bedtime": "2 AM",
             "pref_gender": "Female",
             "grad_year": "26",
-            "pfp_src": "media/empty-pfp-400x400.png"
         }
 ]
 
