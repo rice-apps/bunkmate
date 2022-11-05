@@ -13,67 +13,59 @@ module.exports = gql`
         OFFCAMPUS
     }
 
-    enum ResCollege {
-        BAKER
-        WILLRICE
-        HANSZEN
-        WIESS
-        JONES
-        BROWN
-        LOVETT
-        SIDRICH
-        MARTEL
-        MCMURTRY
-        DUNCAN
-    }
-
-    # 3 survey instances: common, oncampus, offcampus
-    type Survey {
-        surveyPages: [SurveyPage!]!
-    }
-
     type SurveyPage {
-        category: String!
+        category: Category!
         questions: [Question!]!
     }
 
-    type Question {
-        id: ID!
-        questionText: String!
-        questionType: QuestionType!
-        options: [String!]
-        attr: String!
+    enum Category {
+        GETTINGSTARTED
+        ROOM
+        LIFESTYLE
+        PREFERENCES
     }
 
     type User {
         id: ID!
-        miscInfo: MiscInfo!
-        onCampusInfo: OnCampusInfo!
-        offCampusInfo: OffCampusInfo!
+        attributes: [Attribute!]!
     }
 
-    type MiscInfo {
-        email: String!
-        firstName: String!
-        lastName: String!
-        gender: String!
-        isOnCampus: Boolean!
-        phoneNumber: String!
-        year: String!
-        major: String
-        college: ResCollege!
-        additionalInfo: String
+    type Attribute {
+        name: AttributeName! # firstName
+        value: String! # Anthony
     }
+
+    enum AttributeName {
+        FIRSTNAME
+        LASTNAME
+        .
+        .
+        .
+    }
+
+    type Question {
+        id: ID!
+        attributeName: AttributeName!
+        text: String! # "What is your name?"
+        options: [String!]
+        onCampus: Boolean!
+        offCampus: Boolean!
+        type: QuestionType!
+    }
+
+    # type PersonalInfo {
+    #     email: String!
+    #     firstName: String!
+    #     lastName: String!
+    #     gender: String!
+    #     isOnCampus: Boolean!
+    #     phoneNumber: String!
+    #     year: String!
+    #     major: String
+    #     college: ResCollege!
+    #     additionalInfo: String
+    # }
     
-    type OnCampusInfo {
-        temperature: String!
-        timeSleep: String!
-        timeWakeup: String!
-    }
-
-    type OffCampusInfo {
-        pricePrefs: Number
-    }
 
     type Token {
         jwt: ID!
