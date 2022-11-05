@@ -14,7 +14,7 @@ module.exports = gql `
   }
   
   type Mutation {
-    authGoogle(input: String!): AuthResponse
+    authGoogle(email: String!): AuthResponse
   }
 `;
 //# sourceMappingURL=typedefs.js.map

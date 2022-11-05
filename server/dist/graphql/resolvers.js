@@ -16,7 +16,7 @@ module.exports = {
         hello: () => 'world'
     },
     Mutation: {
-        authGoogle: (_, { input: { email } }) => __awaiter(void 0, void 0, void 0, function* () {
+        authGoogle: (_, { email }) => __awaiter(void 0, void 0, void 0, function* () {
             // console.log('req')
             // console.log(req)
             // console.log('res')
@@ -33,6 +33,8 @@ module.exports = {
                 // console.log('data')
                 // console.log(stuff)
                 if (email) {
+                    console.log('upset user');
+                    console.log(email);
                     const user = yield User.upsertGoogleUser(email); //upsert: update or insert
                     if (user) {
                         return ({

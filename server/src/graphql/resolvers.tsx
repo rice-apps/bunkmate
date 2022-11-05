@@ -10,7 +10,7 @@ module.exports = {
         hello: () => 'world'
     },
     Mutation: {
-        authGoogle: async (_, {input: { email } }) => { //change to access token later maybe
+        authGoogle: async (_, { email } ) => { //change to access token later maybe
             // console.log('req')
             // console.log(req)
             // console.log('res')
@@ -29,6 +29,8 @@ module.exports = {
                 // console.log(stuff)
 
                 if (email) {
+                    console.log('upset user')
+                    console.log(email)
                     const user = await User.upsertGoogleUser(email); //upsert: update or insert
 
                     if (user) {
