@@ -1,7 +1,7 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import InputField from "./InputField";
 
-interface input {
+interface field {
     id: number;
     label: string;
     type: string;
@@ -10,26 +10,32 @@ interface input {
   }
 
 interface FormProps {
+    id: number;
     welcome: string;
     header: string;
-    inputs: input[];
+    fields: field[];
+    onChange: Function;
+    setActiveSection: Function,
+    show: boolean
   }
 
 
 
-const Form = ({welcome, header, inputs}: FormProps) => {
+const Form = ({welcome, header, fields, onChange, setActiveSection, show}: FormProps) => {
 
-    useEffect(()=>{
-        console.log(inputs)
-    },[])
+
     return (
-        <div className="onboarding-form">
+        <div className={show?"onboarding-form active": "onboarding-form"}>
             <h1>
                 {welcome}
             </h1>
             <form>
                 <h2>{header}</h2>
-                {inputs.map(input=><InputField key={input["id"]} id={input.id} placeholder={input.placeholder} options={input.options} label={input["label"]} type={input.type}/>)}
+                {fields.map(field=><InputField onChange={onChange} key={field["id"]} id={field.id} placeholder={field.placeholder} options={field.options} label={field["label"]} type={field.type}/>)}
+                <div className="submit-div">
+                    <button onClick={(e)=>{e.preventDefault();setActiveSection((prevState:number)=>prevState+1)}} className="submit-btn">Next</button>
+                </div>
+                
             </form>
         </div>
     )

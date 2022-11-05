@@ -3,19 +3,19 @@
     --black: #000;
     --blue: #25335D;
     --pink: #FFEBE5;
-    --gray: #25335D;
+    --btn-blue: #4168F6;    
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Roboto Flex";
+    font-family: 'Roboto Flex', sans-serif;
 }
 
 body {
     background-color: var(--pink);
-    color: var(--gray);
+    color: var(--blue);
 }
 .link-active {
     font-weight: bold;
@@ -65,10 +65,13 @@ h2 {
 
 .onboarding-form {
     margin-top: 6vh;
-    display: flex;
+    display: none;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+.active {
+    display: flex;
 }
 form {
     padding: 4vh 6vw;
@@ -85,22 +88,37 @@ input {
     width: 100%;
     padding: 3px;
     border-radius: 6px;
+    margin-top: 1vh;
 }
 
 label {
     font-size: 1.2em;
 }
 
-.options {
-    display: flex;
-    justify-content: space-between;
-}
-
-.option-btn {
-    border: 2px solid #25335D;
+.options *{
+    margin-right: 3vw;
+    border: 2px solid var(--blue);
     border-radius: 13px;
+    cursor: pointer;
     width: 131px;
     height: 32px;
     background-color: var(--white);
 }
 
+.selected-btn {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.submit-div {
+    text-align: center;
+}
+.submit-btn {
+    margin-top: 5vh;
+    background-color: var(--btn-blue);
+    color: var(--white);
+    border-radius: 13px;
+    border: 1px solid var(--white);
+    width: 115px;
+    height: 31px;
+}
