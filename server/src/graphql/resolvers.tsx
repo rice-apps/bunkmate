@@ -1,6 +1,6 @@
 // const mongoosee = require('mongoose');
 // const { authenticateGoogle2 } = require('../config/passport');
-import authenticateGoogle from "../config/passport"
+// import authenticateGoogle from "../config/passport"
 
 // import { User } from "../models/User";
 const { User } = require("../models/User");
