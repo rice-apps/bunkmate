@@ -3,23 +3,57 @@ const users = [
             "id": 0,
             "name": "Huzaifa Ali",
             "pref_temp": "70",
-            "bedtime": "9 PM",
-            "gender_pref": "Male"
+            "bedtime": "11:30 PM",
+            "pref_gender": "Male",
+            "grad_year": "24",
+            "pronouns": "he/him",
+            "res_college": "Brown",
+            "cleaning_freq": "Daily",
         },
         {
             "id": 1,
             "name": "Ben Liu",
             "pref_temp": "68",
-            "bedtime": "11 PM",
-            "gender_pref": "Male"
+            "bedtime": "12 AM",
+            "pref_gender": "Male",
+            "grad_year": "26",
+            "pronouns": "he/him",
+            "res_college": "McMurtry",
+            "cleaning_freq": "Bi-weekly",
         },
         {
             "id": 2,
             "name": "Sofia Lakhani",
             "pref_temp": "65",
             "bedtime": "11 PM",
-            "gender_pref": "Female"
-        }    
+            "pref_gender": "Female",
+            "grad_year": "25",
+            "pronouns": "she/her",
+            "res_college": "Brown",
+            "cleaning_freq": "Weekly",
+        },    
+        {
+            "id": 3,
+            "name": "Jonathan Jang",
+            "pref_temp": "68",
+            "bedtime": "1 AM",
+            "pref_gender": "Male",
+            "grad_year": "26",
+            "pronouns": "he/him",
+            "res_college": "McMurtry",
+            "cleaning_freq": "Monthly",
+        },
+        {
+            "id": 4,
+            "name": "Isabel Wang",
+            "pref_temp": "70",
+            "bedtime": "2 AM",
+            "pref_gender": "Female",
+            "grad_year": "26",
+            "pronouns": "she/her",
+            "res_college": "Duncan",
+            "cleaning_freq": "Weekly",
+        }
 ]
 
 export default users;

@@ -1,34 +1,32 @@
 import React, { useState } from 'react';
-
 import UserCard from '../components/homepage/UserCard';
 import users from '../mock-database';
 import UserDataAuth from "../types/UserDataAuth"
 import { googleLogout } from '@react-oauth/google';
+import '../styles/HomePage.css';
 
 
 
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
-    console.log('on home page')
-    console.log(props.userData)
-
+    
     const handleLogout = () => {
         googleLogout()
         props.logout()
     }
+
     return (
-        <div>
-            Home page!!
-            Logged in
-            <h3>{props.userData.name}</h3>
-            <h3>{props.userData.email}</h3>
+        <div className="homepage">
             <button onClick={handleLogout}>logout</button>
-            
-            {/* <h3>{props.userData.name}</h3> */}
-            
-            {/* {userData.map(item => {return {item}})} */}
-            {/* {users.map(user => {return (<UserCard id={user.id} name={user.name} pref_temp={user.pref_temp} bedtime={user.bedtime} gender_pref={user.gender_pref}/>)})} */}
+            <svg className="heading-background">
+                <ellipse cx="50%" cy="0px" rx="75%" ry="100%"></ellipse>
+            </svg>
+            <div className="page-header">
+                <h1 className="page-title"></h1>
+            </div>
+            <div className="user-card-feed">
+                {users.map(user => {return (<UserCard id={user.id} name={user.name} pref_temp={user.pref_temp} bedtime={user.bedtime} pref_gender={user.pref_gender} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq}/>)})}
+            </div>
         </div>
-    )
-}
+    )}
 
 export default HomePage;
