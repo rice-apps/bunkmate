@@ -33,8 +33,6 @@ const UPSERT_AUTH_USER = gql`
 `
 
 function App() {
-      {/* <Onboarding/>
-      <HomePage/> */}
       const [loggedIn, setLoggedIn] = useState(false)
       const [userInfo, setUserInfo] = useState<UserDataAuth>({
         email: "",

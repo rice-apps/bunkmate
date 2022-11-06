@@ -9,6 +9,7 @@ import '../styles/HomePage.css';
 
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     
+    //add this button to your logout button's onclick!
     const handleLogout = () => {
         googleLogout()
         props.logout()
@@ -16,7 +17,6 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
 
     return (
         <div className="homepage">
-            <button onClick={handleLogout}>logout</button>
             <svg className="heading-background">
                 <ellipse cx="50%" cy="0px" rx="75%" ry="100%"></ellipse>
             </svg>
