@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
 import UserCard from '../components/homepage/UserCard';
 import users from '../mock-database';
+import UserDataAuth from "../types/UserDataAuth"
+import { googleLogout } from '@react-oauth/google';
 import '../styles/HomePage.css';
 
-const HomePage = () => {
+
+
+const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
+    
+    //add this button to your logout button's onclick!
+    const handleLogout = () => {
+        googleLogout()
+        props.logout()
+    }
+
     return (
         <div className="homepage">
             <svg className="heading-background">
@@ -16,8 +27,6 @@ const HomePage = () => {
                 {users.map(user => {return (<UserCard id={user.id} name={user.name} pref_temp={user.pref_temp} bedtime={user.bedtime} pref_gender={user.pref_gender} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq}/>)})}
             </div>
         </div>
-
-    )
-}
+    )}
 
 export default HomePage;
