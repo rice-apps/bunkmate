@@ -73,10 +73,13 @@ function App() {
       //   </Routes>
       //   {/* </div> */}
       // </Router>
+      /*
       <div>
         {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
 
       </div>
+      */
+      <HomePage userData={userInfo} logout={logout}/>
     );
 }
 

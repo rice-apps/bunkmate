@@ -51,7 +51,7 @@ const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronoun
                                     <div className="user-tag" id="grad-year">
                                         <div className="tag-content">
                                             <FontAwesomeIcon className="tag-icon" icon={faGraduationCap}></FontAwesomeIcon>
-                                            <p>{grad_year}</p>
+                                            <p>'{grad_year}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -66,21 +66,33 @@ const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronoun
                             <div className="attr-col">
                                 <div className="user-attr" id="pref-gender">
                                     <FontAwesomeIcon className="attr-icon" icon={faVenusMars}/>
-                                    <p>{pref_gender} roommate preferred</p>
+                                    <div className="attr-info">
+                                        <p className="attr-value">{pref_gender}</p>
+                                        <p className="attr-desc">roommate preferred</p>
+                                    </div>
                                 </div>
                                 <div className="user-attr" id="bedtime">
                                     <FontAwesomeIcon className="attr-icon" icon={faBed}/>
-                                    <p>{bedtime}</p>
+                                    <div className="attr-info">
+                                        <p className="attr-value">{bedtime}</p>
+                                        <p className="attr-desc">Bedtime</p>
+                                    </div>
                                 </div>
                             </div>
                             <div className="attr-col">
                                 <div className="user-attr" id="pref-temp">
                                     <FontAwesomeIcon className="attr-icon" icon={faTemperatureHalf}/>
-                                    <p>{pref_temp}℉</p>
+                                    <div className="attr-info">
+                                        <p className="attr-value">{pref_temp}℉</p>
+                                        <p className="attr-desc">Room temperature</p>
+                                    </div>
                                 </div>
                                 <div className="user-attr" id="cleaning-freq">
                                     <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
-                                    <p>{cleaning_freq}</p>
+                                    <div className="attr-info">
+                                        <p className="attr-value">{cleaning_freq}</p>
+                                        <p className="attr-desc">Cleaning frequency</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
