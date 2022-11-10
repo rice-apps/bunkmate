@@ -54,6 +54,11 @@ const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronoun
                                     </div>
                                 </div>
                             </div>
+                            <div className="roommate-pfps">
+                                <img className="roommate-pfp" src={defaultPfp} alt=""></img>
+                                <img className="roommate-pfp" src={benPfp} alt=""></img>
+                                <img className="roommate-pfp" src={benPfp} alt=""></img>
+                            </div>
                         </div>
                         <div className="card-body">
                             <div className="attr-col">
@@ -75,13 +80,6 @@ const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronoun
                                     <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
                                     <p>{cleaning_freq}</p>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="card-footer">
-                            <div className="roommate-pfps">
-                                <img className="roommate-pfp" src={defaultPfp} alt=""></img>
-                                <img className="roommate-pfp" src={benPfp} alt=""></img>
-                                <img className="roommate-pfp" src={benPfp} alt=""></img>
                             </div>
                         </div>
                     </div>
