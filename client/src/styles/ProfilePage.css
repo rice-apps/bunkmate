@@ -1,0 +1,21 @@
+.profilepage {
+    width: 100vw;
+    height: 200vh;
+    font-family: 'Roboto Flex', sans-serif;
+    background-color: #25335D;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    margin: auto;
+    top: 15vh;
+}
+
+/* .profile-user-card{
+    
+} */

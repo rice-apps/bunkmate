@@ -9,6 +9,13 @@ const users = [
             "pronouns": "he/him",
             "res_college": "Brown",
             "cleaning_freq": "Daily",
+            "major": "Computer Science",
+            "minor": "Business",
+            "overnight_guests": "Yes",
+            "drinking": "Never",
+            "smoking": "Never",
+            "dynamic": "Besties",
+            "internal_clock": "morning person",
         },
         {
             "id": 1,
@@ -20,7 +27,15 @@ const users = [
             "pronouns": "he/him",
             "res_college": "McMurtry",
             "cleaning_freq": "Bi-weekly",
+            "major": "Computer Science",
+            "minor": "Math",
+            "overnight_guests": "No",
+            "drinking": "Occasionally",
+            "smoking": "Never",
+            "dynamic": "Acquaintances",
+            "internal_clock": "morning person",
         },
+
         {
             "id": 2,
             "name": "Sofia Lakhani",
@@ -31,6 +46,13 @@ const users = [
             "pronouns": "she/her",
             "res_college": "Brown",
             "cleaning_freq": "Weekly",
+            "major": "Computer Science",
+            "minor": "Data Science",
+            "overnight_guests": "No",
+            "drinking": "Never",
+            "smoking": "Never",
+            "dynamic": "Friendly",
+            "internal_clock": "morning person",
         },    
         {
             "id": 3,
@@ -42,7 +64,15 @@ const users = [
             "pronouns": "he/him",
             "res_college": "McMurtry",
             "cleaning_freq": "Monthly",
+            "major": "Biosciences",
+            "minor": "Neuroscience",
+            "overnight_guests": "Yes",
+            "drinking": "Often",
+            "smoking": "Never",
+            "dynamic": "Besties",
+            "internal_clock": "night owl",
         },
+
         {
             "id": 4,
             "name": "Isabel Wang",
@@ -53,6 +83,13 @@ const users = [
             "pronouns": "she/her",
             "res_college": "Duncan",
             "cleaning_freq": "Weekly",
+            "major": "Chemistry",
+            "minor": "None",
+            "overnight_guests": "No",
+            "drinking": "Occasionally",
+            "smoking": "Never",
+            "dynamic": "Besties",
+            "internal_clock": "night owl",
         }
 ]
 

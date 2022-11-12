@@ -1,9 +1,11 @@
+// Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTemperatureHalf, faBed, faVenusMars, faLocationDot, faGraduationCap, faBroom} from '@fortawesome/free-solid-svg-icons';
-import '../../styles/UserCard.css';
-import '../../styles/UserCard.scss';
-import benPfp from '../../media/ben-liu-pfp-400x400.png';
-import defaultPfp from '../../media/empty-pfp-400x400.png';
+
+// CSS
+import '../../styles/ProfileRoomCard.css';
+
+// Google Auth
 import UserData from "../../types/UserData";
 
 interface UserProps {
@@ -16,31 +18,28 @@ interface UserProps {
     pronouns: string;
     res_college: string;
     cleaning_freq: string;
+    major: string;
+    minor: string;
+    overnight_guests: string;
+    drinking: string;
+    smoking: string;
+    dynamic: string;
 }
 
-let pfps = new Map();
-
-pfps.set("Ben Liu", benPfp);
-pfps.set("Huzaifa Ali", defaultPfp);
-pfps.set("Sofia Lakhani", defaultPfp);
-pfps.set("Jonathan Jang", defaultPfp);
-pfps.set("Isabel Wang", defaultPfp);
-
-
-const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq}: UserProps) => {
+const ProfileRoomCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, major, minor, overnight_guests, drinking, smoking, dynamic}: UserProps) => {
     return (
         <div className="user-card-wrapper">
             <a href="">
                 <div className="user-card">
                     <div className="card-content">
                         <div className="card-heading">
-                            <img className="user-pfp" src={pfps.get(name)} alt={name}/>
+                        
                             <div className="user-header">
                                 <div className="user-title">
                                     <h1>{name}</h1>
                                     <p className="user-pronouns">{pronouns}</p>
                                 </div>
-                                <div className="user-tags">
+                                {/* <div className="user-tags">
                                     <div className="user-tag" id="residential-college">
                                         <div className="tag-content">
                                             <FontAwesomeIcon className="tag-icon" icon={faLocationDot}></FontAwesomeIcon>
@@ -52,9 +51,9 @@ const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronoun
                                             <FontAwesomeIcon className="tag-icon" icon={faGraduationCap}></FontAwesomeIcon>
                                             <p>'{grad_year}</p>
                                         </div>
-                                    </div>
-                                </div>
-                            </div>
+                                    </div> 
+                                </div> */}
+                            </div> 
                         </div>
                         <div className="card-body">
                             <div className="attr-col">
@@ -94,24 +93,5 @@ const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronoun
                 </div>
             </a>
         </div>
-    )
-}
-/*
-const tags = (props: tags) => {
-    const tag1 = props.tag1;
-    const tag2 = props.tag2;
-    const tag3 = props.tag3;    
-    const tag4 = props.tag4;
-
-    return (
-        <div className="allTags">
-            <p>{tag1}</p>
-            <p>{tag2}</p>
-            <p>{tag3}</p>
-            <p>{tag4}</p>
-        </div>
-    )
-}
-*/
-export default UserCard;
-
+    )}
+export default ProfileRoomCard;
