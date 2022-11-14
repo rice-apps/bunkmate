@@ -80,7 +80,7 @@ function App() {
 
       </div>
       */
-      <ProfilePage userData={userInfo} logout={logout}/>
+      <HomePage userData={userInfo} logout={logout}/>
     );
 }
 

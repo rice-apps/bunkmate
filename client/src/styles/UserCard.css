@@ -134,7 +134,7 @@
 }
 
 .attr-col {
-    width: 11vw;
+    width: 220px;
     display: flex;
     flex-direction: column;
     gap: 14px;
