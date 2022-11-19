@@ -1,3 +1,5 @@
+import { userInfo } from "os";
+
 const jwt = require('jsonwebtoken');
 
 var mongoose = require("mongoose"),
@@ -62,7 +64,7 @@ var UserSchema = new Schema({
                     id: this._id,
                     exp: expirationDate.getTime() / 1000,
                 }, 'secret');
-            },
+            }
         },
         statics: {
             async upsertGoogleUser(email) {
@@ -89,6 +91,10 @@ var UserSchema = new Schema({
                     return newUser;
                 }
                 return user;
+            },
+            async updateUser(filter, update) {
+                let doc = await User.findOneAndUpdate(filter, update);
+                return doc;
             }
         }
     }

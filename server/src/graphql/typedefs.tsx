@@ -25,7 +25,7 @@ module.exports = gql`
     neatness: String,
     presence: String,
     additionalPrefInfo: String,
-    personality: [String], //is this right?
+    personality: [String],
     isMorningPerson: Boolean,
     personalSpace: [String],
     outingFrequency: String,
