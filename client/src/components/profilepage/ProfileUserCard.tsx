@@ -1,6 +1,6 @@
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTemperatureHalf, faBed, faVenusMars, faLocationDot, faGraduationCap, faBroom} from '@fortawesome/free-solid-svg-icons';
+import { faTemperatureHalf, faBed, faVenusMars, faLocationDot, faGraduationCap, faBroom, faBookOpen } from '@fortawesome/free-solid-svg-icons';
 
 // CSS
 import '../../styles/ProfileUserCard.css';
@@ -13,7 +13,6 @@ import defaultPfp from '../../media/empty-pfp-400x400.png';
 import UserData from "../../types/UserData";
 
 interface UserProps {
-    id: number;
     name: string;
     pref_temp: string;
     bedtime: string;
@@ -39,7 +38,7 @@ pfps.set("Jonathan Jang", defaultPfp);
 pfps.set("Isabel Wang", defaultPfp);
 
 
-const ProfileUserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, major, minor, overnight_guests, drinking, smoking, dynamic}: UserProps) => {
+const ProfileUserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, major, minor, overnight_guests, drinking, smoking, dynamic}: UserProps) => {
     return (
         <div className="card-wrapper">
             <div className="card-content">
@@ -51,35 +50,35 @@ const ProfileUserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, 
                     </div>
                 </div>
                 <div className="card-body">
-                    <div className="attr-col">
+                    <div className="attr-col" id="left-attr-col">
                         <div className="user-attr" id="pref-gender">
-                            <FontAwesomeIcon className="attr-icon" icon={faLocationDot}/>
+                            <FontAwesomeIcon className="attr-icon" icon={faVenusMars}/>
+                            <div className="attr-info">
+                                <p className="attr-value">{pref_gender}</p>
+                                <p className="attr-desc">Looking for</p>
+                            </div>
+                        </div>
+                        <div className="user-attr" id="cleaning-freq">
+                        <FontAwesomeIcon className="attr-icon" icon={faLocationDot}/>
                             <div className="attr-info">
                                 <p className="attr-value">{res_college}</p>
                                 <p className="attr-desc">College</p>
                             </div>
                         </div>
+                    </div>
+                    <div className="attr-col" id="right-attr-col">
                         <div className="user-attr" id="bedtime">
-                            <FontAwesomeIcon className="attr-icon" icon={faBed}/>
+                            <FontAwesomeIcon className="attr-icon" icon={faBookOpen}/>
                             <div className="attr-info">
-                                <p className="attr-value">{bedtime}</p>
+                                <p className="attr-value">{major}</p>
                                 <p className="attr-desc">Major</p>
                             </div>
                         </div>
-                    </div>
-                    <div className="attr-col">
                         <div className="user-attr" id="pref-temp">
-                            <FontAwesomeIcon className="attr-icon" icon={faTemperatureHalf}/>
+                            <FontAwesomeIcon className="attr-icon" icon={faGraduationCap}/>
                             <div className="attr-info">
-                                <p className="attr-value">{pref_temp}℉</p>
-                                <p className="attr-desc">room temperature</p>
-                            </div>
-                        </div>
-                        <div className="user-attr" id="cleaning-freq">
-                            <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
-                            <div className="attr-info">
-                                <p className="attr-value">{cleaning_freq}</p>
-                                <p className="attr-desc">cleaning frequency</p>
+                                <p className="attr-value">{grad_year}</p>
+                                <p className="attr-desc">Class of</p>
                             </div>
                         </div>
                     </div>

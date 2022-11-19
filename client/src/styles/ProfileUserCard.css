@@ -28,12 +28,12 @@
 }
 
 .card-content {
-    padding: 16px;
+    padding: 18px 18px 18px 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 500px;
-    height: 250px;
+    width: 700px;
+    height: 220px;
     
 }
 
@@ -48,7 +48,7 @@
 .user-pfp {
     width: 100px;
     height: 100px;
-    margin-right: 1vw;
+    margin-right: 14px;
     border-radius: 50%;
 }
 
@@ -71,7 +71,7 @@
 }
 
 .user-title h1 {
-    margin-right: 0.5vw;
+    margin-right: 8px;
     
 }
 
@@ -113,16 +113,26 @@
 .card-body {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 15px;
     position: relative;
     top: -20px;
 }
 
 .attr-col {
-    width: 11vw;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
+}
+
+#left-attr-col {
+    width: 40%;
+    /* background-color: rgba(255,0,0,0.5);     */
+}
+
+#right-attr-col {
+    width: 45%;
+    /* background-color: rgba(0,0,255,0.5); */
 }
 
 .attr-icon {

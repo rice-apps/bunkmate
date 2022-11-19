@@ -9,7 +9,6 @@ import '../../styles/ProfilePrefsCard.css';
 import UserData from "../../types/UserData";
 
 interface UserProps {
-    id: number;
     name: string;
     pref_temp: string;
     bedtime: string;
@@ -26,7 +25,7 @@ interface UserProps {
     dynamic: string;
 }
 
-const ProfilePrefsCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, major, minor, overnight_guests, drinking, smoking, dynamic}: UserProps) => {
+const ProfilePrefsCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, major, minor, overnight_guests, drinking, smoking, dynamic}: UserProps) => {
     return (
         <div className="user-card-wrapper">
             <a href="">
