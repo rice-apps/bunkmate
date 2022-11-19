@@ -1,10 +1,9 @@
 const { gql } = require('apollo-server');
 module.exports = gql `
   type AuthResponse {
-    token: String
-    name: String
     email: String
-    newUser: Boolean
+    token: String
+    exists: Boolean
   }
   input AuthInput {
     accessToken: String!

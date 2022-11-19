@@ -29,20 +29,24 @@ module.exports = {
                 // console.log(stuff)
 
                 if (email) {
-                    console.log('upset user')
+                    console.log('find user')
                     console.log(email)
-                    const user = await User.upsertGoogleUser(email); //upsert: update or insert
+                    const res = await User.checkUser(email); //upsert: update or insert
 
-                    if (user) {
+                    if (res[1]) { //if user already in database, generate a jwt for them
                         return ({ //can return more!
-                            name: user.name,
-                            email: user.email,
-                            token: user.generateJWT(),
-                            newUser: user.newUser
+                            email: res[0].email,
+                            token: res[0].generateJWT(),
+                            exists: res[1]
                         });
                     }
                     else {
-                        console.log("user couldn't be created")
+                        console.log("user needs to be created")
+                        return ({ //can return more!
+                            email: email,
+                            token: "",
+                            exists: res[1]
+                        });
                     }
                 }
 

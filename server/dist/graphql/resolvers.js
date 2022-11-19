@@ -33,19 +33,23 @@ module.exports = {
                 // console.log('data')
                 // console.log(stuff)
                 if (email) {
-                    console.log('upset user');
+                    console.log('find user');
                     console.log(email);
-                    const user = yield User.upsertGoogleUser(email); //upsert: update or insert
-                    if (user) {
+                    const res = yield User.checkUser(email); //upsert: update or insert
+                    if (res[1]) { //if user already in database, generate a jwt for them
                         return ({
-                            name: user.name,
-                            email: user.email,
-                            token: user.generateJWT(),
-                            newUser: user.newUser
+                            email: res[0].email,
+                            token: res[0].generateJWT(),
+                            exists: res[1]
                         });
                     }
                     else {
-                        console.log("user couldn't be created");
+                        console.log("user needs to be created");
+                        return ({
+                            email: email,
+                            token: "",
+                            exists: res[1]
+                        });
                     }
                 }
                 // if (info) {

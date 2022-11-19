@@ -40,28 +40,11 @@ var UserSchema = new Schema({
         },
     },
     statics: {
-        upsertGoogleUser(email) {
+        checkUser(email) {
             return __awaiter(this, void 0, void 0, function* () {
                 const User = this;
-                //might need mongoose.model("User") ??
                 const user = yield User.findOne({ 'email': email });
-                // no user was found, lets create a new one
-                if (!user) {
-                    console.log('no user found');
-                    console.log(email);
-                    const newUser = yield User.create({
-                        name: "defaultName",
-                        email: email,
-                        newUser: true,
-                        // 'auth.google': {
-                        // id: profile.id,
-                        // token: accessToken,
-                        // },
-                    });
-                    // newUser.save() maybe
-                    return newUser;
-                }
-                return user;
+                return user ? [user, true] : [user, false];
             });
         }
     }
@@ -76,43 +59,5 @@ UserSchema.methods.generateJWT = function () {
         exp: expirationDate.getTime() / 1000,
     }, 'secret');
 };
-// UserSchema.statics.upsertGoogleUser = async function ({ email }) {
-//     const User = this;
-//     const user = await User.findOne({ 'email': email });
-//     // no user was found, lets create a new one
-//     if (!user) {
-//         console.log('no user found')
-//         console.log(email)
-//         const newUser = await User.create({
-//             name: "defaultName", //profile.name
-//             email: email, //profile.emails[0].value,
-//             newUser: true,
-//             // 'auth.google': {
-//                 // id: profile.id,
-//                 // token: accessToken,
-//             // },
-//         });
-//         // newUser.save() maybe
-//         return newUser;
-//     }
-//     return user;
-// };
-// UserSchema.statics.upsertGoogleUser = async function ({ accessToken, refreshToken, profile }) {
-//     const User = this;
-//     const user = await User.findOne({ 'auth.google.id': profile.id });
-//     // no user was found, lets create a new one
-//     if (!user) {
-//         const newUser = await User.create({
-//             name: profile.displayName || "defaultName", //profile.name
-//             email: "superofficialbunkmate@rice.edu", //profile.emails[0].value,
-//             'auth.google': {
-//                 id: profile.id,
-//                 token: accessToken,
-//             },
-//         });
-//         return newUser;
-//     }
-//     return user;
-// };
 exports.User = mongoose.model("User", UserSchema);
 //# sourceMappingURL=User.js.map
