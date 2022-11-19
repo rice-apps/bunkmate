@@ -93,6 +93,9 @@ var UserSchema = new Schema({
                 return user;
             },
             async updateUser(filter, update) {
+                // filter = {email: "go15@rice.edu"}
+                // update = {resCollege: "Sid Richardson", smoker: True}
+                // update = {newUser: False}
                 let doc = await User.findOneAndUpdate(filter, update);
                 return doc;
             }
