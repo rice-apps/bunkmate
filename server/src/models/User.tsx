@@ -23,7 +23,7 @@ var UserSchema = new Schema({
     accommodation: String,
     onCampus: Boolean,
     roomType: String,
-    numRoommates: Number,
+    numRoommates: 'Number',
     additionalRoomInfo: String,
     genderPref: String,
     overnightGuests: Boolean,

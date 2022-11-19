@@ -15,7 +15,7 @@ module.exports = gql`
     accommodation: String,
     onCampus: Boolean,
     roomType: String,
-    numRoommates: Number,
+    numRoommates: Int,
     additionalRoomInfo: String,
     genderPref: String,
     overnightGuests: Boolean,
