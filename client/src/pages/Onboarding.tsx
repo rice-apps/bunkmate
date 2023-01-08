@@ -1,9 +1,9 @@
 import { useState } from "react"
 import "../styles/Onboarding.css"
-import circle from "../media/Circle.svg" 
 import Navlink from "../components/onboarding/NavLink"
 import mock from "../mock"
 import Form from "../components/onboarding/Form"
+import React from "react"
 
 const Onboarding = () => {
 
@@ -20,7 +20,7 @@ const Onboarding = () => {
 
     return (
         <div className="onboarding">
-            <div className="nav">
+             <div className="nav">
                 {mock.mockSections.map(mockSection=><Navlink activeSection={activeSection} id={mockSection.id} name = {mockSection.name}/>)}
             </div>
             {mock.mockForms.map(form=><Form show={activeSection===form.id} setActiveSection={setActiveSection} onChange={onChange} key={form.id} id={form.id} welcome={form.welcome} header={form.header} fields={form.fields}/>)}
