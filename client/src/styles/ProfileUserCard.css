@@ -1,17 +1,5 @@
-/* @keyframes slide {
-    0% {
-        left: -70vw;
-    }
-
-    100% {
-        left: 0vw;
-    }
-
-} */
-
-.card-wrapper {
+.profile-user-card-wrapper {
     color: black;
-    text-decoration: none;
     border: solid;
     border-radius: 24px;
     border-width: 0px;
@@ -23,10 +11,6 @@
     color: #25335D;
 }
 
-.user-card:hover {
-    transform: scale(1.04);
-}
-
 .card-content {
     padding: 18px 18px 18px 18px;
     display: flex;
@@ -36,6 +20,10 @@
     height: 220px;
     
 }
+
+/* .prefs-card-wrapper .card-content {
+
+} */
 
 .card-heading {
     display: flex;

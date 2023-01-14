@@ -30,7 +30,7 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
                 <h1 className="page-title">fellow bunkmates!</h1>
             </div>
             <div className="user-card-feed">
-                {users.map(user => {return (<UserCard  name={user.name} pref_temp={user.pref_temp} bedtime={user.bedTime} pref_gender={user.pref_gender} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq}/>)})}
+                {users.map(user => {return (<UserCard  name={user.name} pref_temp={user.pref_temp} bedtime={user.bedtime} pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq}/>)})}
             </div>
         </div>
     )}

@@ -30,7 +30,6 @@ interface UserProps {
     // dynamic: string;
     room: string;
     num_search: string;
-    location: string;
 }
 
 let pfps = new Map();
@@ -38,11 +37,10 @@ let pfps = new Map();
 pfps.set("Ben Liu", benPfp);
 pfps.set("Huzaifa Ali", defaultPfp);
 pfps.set("Sofia Lakhani", defaultPfp);
-pfps.set("Jonathan Jang", defaultPfp);
-pfps.set("Isabel Wang", defaultPfp);
 
 
-const ProfileRoomCard = ({room, num_search, location}: UserProps) => {
+
+const ProfileRoomCard = ({room, num_search}: UserProps) => {
     return (
         <div className="room-card-wrapper">
             <div className="room-card-content">

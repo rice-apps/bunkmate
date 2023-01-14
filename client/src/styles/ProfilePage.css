@@ -1,4 +1,4 @@
-.profilepage {
+.profile-page {
     width: 100vw;
     height: 200vh;
     font-family: 'Roboto Flex', sans-serif;
@@ -6,6 +6,28 @@
 }
 
 .profile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    margin: auto;
+    top: 15vh;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    margin: auto;
+    top: 15vh;
+}
+
+.profile-prefs-card {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;

@@ -74,12 +74,11 @@ function App() {
       //   </Routes>
       //   {/* </div> */}
       // </Router>
-      /*
-      <div>
-        {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
+      
+      // <div>
+      //   {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
 
-      </div>
-      */
+      // // </div>
       <ProfilePage userData={userInfo} logout={logout}/>
     );
 }
