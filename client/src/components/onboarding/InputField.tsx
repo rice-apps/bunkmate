@@ -4,13 +4,14 @@ import { useState } from "react";
 interface InputProps {
     id: number;
     label: string;
+    attribute: string;
     type: string;
     options: string[];
     placeholder: string;
     onChange: Function
   }
 
-const InputField = ({label, type, options, placeholder, onChange}: InputProps) => {
+const InputField = ({label, type, attribute, options, placeholder, onChange}: InputProps) => {
 
     const [selected, setSelected] = useState("")
 
@@ -19,21 +20,21 @@ const InputField = ({label, type, options, placeholder, onChange}: InputProps) =
             
             <label htmlFor=""> {label}</label>
             { type==="text" &&
-                <input onChange={(e)=>onChange(e)} id={label} type="text" placeholder={placeholder}/>
+                <input onChange={(e)=>onChange(e, attribute)} id={label} type="text" placeholder={placeholder}/>
             }
             { type==="select" &&
             <div className="options">
-            {options.map(option=><button className={selected===option?"selected-btn":""} id={label} onClick={e=>{onChange(e);setSelected(option)}} >{option}</button>)}
+            {options.map(option=><button className={selected===option?"selected-btn":""} id={label} onClick={e=>{onChange(e, attribute);setSelected(option)}} >{option}</button>)}
             </div>
             }
             {type==="dropdown" &&
-            <select id={label} onChange={(e)=>onChange(e)}  className="">
+            <select id={label} onChange={(e)=>onChange(e, attribute)}  className="">
                 <option selected disabled>  </option>
                 {options.map(opt=><option value={opt}>{opt}</option>)} 
             </select>
             }
             { type==="textarea" &&
-                <textarea rows={5} onChange={(e)=>onChange(e)} id={label} placeholder={placeholder}>
+                <textarea rows={5} onChange={(e)=>onChange(e, attribute)} id={label} placeholder={placeholder}>
 
                 </textarea>
             }

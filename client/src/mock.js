@@ -29,6 +29,7 @@ const mock = {
 
         fields: [{
             id : 1,
+            attribute: "fullN",
             label: "Full Name",
             type: "text",
             options: [],
@@ -36,6 +37,7 @@ const mock = {
         },
         {
             id : 2,
+            attribute: "",
             label: "Email",
             type: "text",
             options: [],
@@ -43,6 +45,7 @@ const mock = {
         },              
         {
             id : 3,
+            attribute: "",
             label: "Phone",
             type: "text",
             options: [],
@@ -50,6 +53,7 @@ const mock = {
         },
         {
             id : 4,
+            attribute: "",
             label: "Class",
             type: "select",
             options: ["2026", "2025", "2024", "2023", "Graduate"],
@@ -57,6 +61,7 @@ const mock = {
         },
         {
             id: 5,
+            attribute: "",
             label:"Residential College",
             type: "dropdown",
             options: ["Baker", "Will Rice", "Hanszen", "Weiss", "Jones", "Brown", "Lovett", "Sid Richardson", "Martel", "McMurtry", "Duncan"],
@@ -65,6 +70,7 @@ const mock = {
         },
         {
             id : 6,
+            attribute: "",
             label: "Major(s)",
             type: "text",
             options: [],
@@ -72,6 +78,7 @@ const mock = {
         },
         {
             id : 7,
+            attribute: "",
             label: "Minor(s)",
             type: "text",
             options: [],
@@ -79,6 +86,7 @@ const mock = {
         },
         {
             id : 8, 
+            attribute: "",
             label: "Pronouns",
             type: "select",
             options: ["He/Him", "She/Her", "They/Them", "Other"],
@@ -86,6 +94,7 @@ const mock = {
         },
         {
             id : 9,
+            attribute: "",
             label: "Sex",
             type: "select",
             options: ["Male", "Female", "Other",],
@@ -93,6 +102,7 @@ const mock = {
         },
         {
             id: 10,
+            attribute: "",
             label: "Accomodations / Accessibility",
             type: "textarea",
             options: [],
@@ -108,6 +118,7 @@ const mock = {
     
             fields: [{
                 id: 0,
+                attribute: "",
                 label: "What type of room are you looking for?",
                 type: "text",
                 options: [],
@@ -115,6 +126,7 @@ const mock = {
             },
             {
                 id: 1,
+                attribute: "",
                 label: "I already have __ roommate(s)",
                 type: "select",
                 options: ["0", "1", "2", "3", ">3"],
@@ -122,6 +134,7 @@ const mock = {
             },
             {
                 id: 2,
+                attribute: "",
                 label: "Additional info?",
                 type: "textarea",
                 options: [],
@@ -136,6 +149,7 @@ const mock = {
         
                 fields: [{
                     id: 0,
+                    attribute: "",
                     label: "My friends would describe me as ...",
                     type: "select",
                     options: ["Funny", "Athletic", "Serious", "Easy-Going", "Studious", "Patient", "Introverted", "Friendly", "Calm"],
@@ -143,6 +157,7 @@ const mock = {
                 },
                 {
                     id: 1,
+                    attribute: "",
                     label: "I am a ...a",
                     type: "select",
                     options: ["Morning person", "Night person"],
@@ -150,6 +165,7 @@ const mock = {
                 },
                 {
                     id: 2,
+                    attribute: "",
                     label: "I use my personal space for",
                     type: "select",
                     options: ["Studying", "Relaxing", "Hanging out with friends", "I plan on rarely using my space"],
@@ -157,6 +173,7 @@ const mock = {
                 },
                 {
                     id: 3,
+                    attribute: "",
                     label: "On average, I go out __ per week",
                     type: "select",
                     options: ["0", "1", "2", "3+"],
@@ -164,6 +181,7 @@ const mock = {
                 },
                 {
                     id: 4,
+                    attribute: "",
                     label: "I want to ______ with my roommate(s)",
                     type: "select",
                     options: ["do everything", "be friends", "peacefully and respectfully coexist"],
@@ -171,6 +189,7 @@ const mock = {
                 },
                 {
                     id: 5,
+                    attribute: "",
                     label: "I consider myself",
                     type: "select",
                     options: ["Shy", "Fairly shy", "Neutral", "Fairly outgoing", "Outgoing"],
@@ -178,6 +197,7 @@ const mock = {
                 },
                 {
                     id: 6,
+                    attribute: "",
                     label: "Are you a smoker?",
                     type: "select",
                     options: ["Yes, and I smoke daily", "Yes, but I only smoke occassionally", "No, I do not smoke"],
@@ -185,6 +205,7 @@ const mock = {
                 },
                 {
                     id: 7,
+                    attribute: "",
                     label: "I prefer roommate(s) that",
                     type: "select",
                     options: ["Smoke", "Don't smoke", "I have no preference"],
@@ -192,6 +213,7 @@ const mock = {
                 },
                 {   
                     id: 8,
+                    attribute: "",
                     label: "Additional info?",
                     type: "textarea",
                     options: [],
@@ -206,6 +228,7 @@ const mock = {
             
                     fields: [{
                         id: 0,
+                        attribute: "",
                         label: "I am looking for ______ roommates.",
                         type: "select",
                         options: ["Male", "Female", "Either"],
@@ -213,6 +236,7 @@ const mock = {
                     },
                     {
                         id: 1,
+                        attribute: "",
                         label: "Do you plan on having overnight guests?",
                         type: "select",
                         options: ["Yes", "No"],
@@ -220,6 +244,7 @@ const mock = {
                     },
                     {
                         id: 2,
+                        attribute: "",
                         label: "I use my personal space for",
                         type: "select",
                         options: ["Studying", "Relaxing", "Hanging out with friends", "I plan on rarely using my space"],
@@ -227,6 +252,7 @@ const mock = {
                     },
                     {
                         id: 3,
+                        attribute: "",
                         label: "On average, I go out __ per week",
                         type: "select",
                         options: ["0", "1", "2", "3+"],
@@ -234,6 +260,7 @@ const mock = {
                     },
                     {
                         id: 4,
+                        attribute: "",
                         label: "I want to ______ with my roommate(s)",
                         type: "select",
                         options: ["do everything", "be friends", "peacefully and respectfully coexist"],
@@ -241,6 +268,7 @@ const mock = {
                     },
                     {
                         id: 5,
+                        attribute: "",
                         label: "I consider myself",
                         type: "select",
                         options: ["Shy", "Fairly shy", "Neutral", "Fairly outgoing", "Outgoing"],
@@ -248,6 +276,7 @@ const mock = {
                     },
                     {
                         id: 6,
+                        attribute: "",
                         label: "Are you a smoker?",
                         type: "select",
                         options: ["Yes, and I smoke daily", "Yes, but I only smoke occassionally", "No, I do not smoke"],
@@ -255,6 +284,7 @@ const mock = {
                     },
                     {
                         id: 7,
+                        attribute: "",
                         label: "I prefer roommate(s) that",
                         type: "select",
                         options: ["Smoke", "Don't smoke", "I have no preference"],
@@ -262,6 +292,7 @@ const mock = {
                     },
                     {   
                         id: 8,
+                        attribute: "",
                         label: "Additional info?",
                         type: "textarea",
                         options: [],

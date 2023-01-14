@@ -4,6 +4,7 @@ import InputField from "./InputField";
 
 interface field {
     id: number;
+    attribute: string;
     label: string;
     type: string;
     options: string[];
@@ -36,7 +37,7 @@ const Form = ({welcome, header, fields, onChange, setActiveSection, show, active
              
             <form>
                 <h2>{header}</h2>
-                {fields.map(field=><InputField onChange={onChange} key={field["id"]} id={field.id} placeholder={field.placeholder} options={field.options} label={field["label"]} type={field.type}/>)}
+                {fields.map(field=><InputField onChange={onChange} attribute={field.attribute} key={field["id"]} id={field.id} placeholder={field.placeholder} options={field.options} label={field["label"]} type={field.type}/>)}
                 <div className="navigation">
                 { activeSection > 0 &&
                 <div className="submit-div">

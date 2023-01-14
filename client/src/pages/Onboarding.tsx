@@ -10,11 +10,12 @@ const Onboarding = () => {
     const [activeSection, setActiveSection] = useState(0)
     const [user, setUser] = useState({fullName:""})
     const [showing, setShowing] = useState(false)
-    const onChange = (e:any) => {
+    const onChange = (e:any, attribute:string) => {
         e.preventDefault()
         setUser(prevState=>({
             ...prevState,
-            [e.target.id.split(" ").join("")[0].toLowerCase() + e.target.id.split(" ").join("").slice(1)]: e.target.value?e.target.value:e.target.innerHTML
+            /* [e.target.id.split(" ").join("")[0].toLowerCase() + e.target.id.split(" ").join("").slice(1)] */
+            [attribute]: e.target.value?e.target.value:e.target.innerHTML
         }))
     }
     const selectLiving = (e:any) => {
