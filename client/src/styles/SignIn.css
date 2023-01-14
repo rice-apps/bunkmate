@@ -1,0 +1,183 @@
+:root {
+    --white: #fff;
+    --orange: #FAA986;
+    --lightorange: #FAEFE8;
+    --darkblue: #25335D;
+
+ }
+  
+ .sign-in {
+    background: var(--lightorange);
+ }
+ .banner {
+    background: white;
+ }
+  
+ .banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+ }
+ .banner-text {
+    justify-self: start;
+    font-size: 175%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Flex',sans-serif;
+    
+    padding: 1.5vw;
+ }
+  
+ .banner-text::before {
+    content: "";
+    justify-self: start;
+    height: 45px;
+    width: 45px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    display: inline-block;
+    z-index: 0;
+    position: absolute;
+ }
+  
+ strong {
+    z-index: 2;
+    margin-left: 1.75vw;
+ }
+
+ .banner-login {
+    font-size: 125%;
+    font-family: 'Roboto Flex',sans-serif;
+    cursor: pointer;
+    font-weight: 500;
+    color: var(--darkblue);
+  }
+  .banner-signup {
+    font-size: 125%;
+    font-family: 'Roboto Flex',sans-serif;
+    cursor: pointer;
+    color: white;
+    display: inline-block;
+    background-color: #4168F6;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+  
+  .banner-right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .banner-right div {
+    margin-right: 2vw;
+  }
+
+ .banner-text {
+    justify-self: start;
+    font-size: 175%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Flex',sans-serif;
+    padding: 1.5vw;
+    color: var(--darkblue);
+ }
+ 
+.body-header {
+    font-size: 300%;
+    font-family: 'Roboto Flex',sans-serif;
+    font-weight: 500;
+    color: var(--darkblue);
+}
+.body-little-header{
+    font-size: 175%;
+    font-family: 'Roboto Flex',sans-serif;
+    font-weight: 500;
+    max-width: 45vw;
+    margin: 1.75vw auto;
+    color: var(--darkblue);
+}
+.body{
+    text-align: center;
+    padding: 6vw;
+}
+.body-button{
+   display: inline-block;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.wavy-border {
+   padding: 1vw;
+   border-style: solid;
+   border-width: 3vw;
+   border-image: url(../media/wavy-border.svg) 44 ;
+   border-image-width: 100vw;
+ }
+ .main-img {
+   z-index: 99;
+   padding: 10vw;
+   background-repeat: no-repeat;
+   background-image: url(../media/Cool-Kids-Staying-Home.svg);
+ }
+
+ .auth-img {
+   padding: 4vw;
+   background-repeat: no-repeat;
+   background-image: url(../media/auth.svg);
+   width: 100%;
+   height: 100%;
+ }
+ .person-img {
+   padding: 100vw;
+   background-repeat: no-repeat;
+   background-image: url(../media/personalization.svg);
+   width: 100%;
+   height: 100%;
+ }
+ .incog-img {
+   background-repeat: no-repeat;
+   background-image: url(../media/incog.svg);
+   width: 100%;
+   height: 100%;
+ }
+ .auth-block {
+   display: flex;
+   align-items: left;
+   padding: 10vw;
+   padding-left: 20vw;
+ }
+ .auth-header {
+   margin-right: 1500vw;
+   align-self: center;
+   font-size: 300%;
+    font-family: 'Roboto Flex',sans-serif;
+    font-weight: 500;
+    color: white;
+ }
+ .auth-text{
+   font-size: 175%;
+   font-family: 'Roboto Flex',sans-serif;
+   font-weight: 500;
+   color:#CACACA; 
+   
+}
+
+.lower-body {
+   background: var(--darkblue);
+}
+.lower-body-header {
+   padding-top: 9vw;
+   padding-left:0vw;
+   margin-right: 50vw;
+   margin-left: 4vw;
+   font-size: 300%;
+   font-family: 'Roboto Flex',sans-serif;
+   font-weight: 500;
+   color: var(--white);
+}
