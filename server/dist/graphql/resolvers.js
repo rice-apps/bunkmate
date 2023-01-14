@@ -14,7 +14,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 const { User } = require("../models/User");
 module.exports = {
     Query: {
-        hello: () => 'world'
+        hello: () => 'world',
+        getUsers: (_, {}) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const users = yield User.findUsers();
+                return users;
+            }
+            catch (error) {
+                console.log(error);
+            }
+        })
     },
     Mutation: {
         authGoogle: (_, { email }) => __awaiter(this, void 0, void 0, function* () {
@@ -64,6 +73,18 @@ module.exports = {
                 return error;
             }
         }),
+        updateUser: (_, { email, user }) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                if (email == user.email) {
+                    console.log(user);
+                    const updated_user = User.updateUser({ email: email }, user);
+                    return updated_user;
+                }
+            }
+            catch (error) {
+                console.error(error);
+            }
+        })
     }
 };
 //# sourceMappingURL=resolvers.js.map

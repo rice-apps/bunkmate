@@ -7,7 +7,16 @@ const { User } = require("../models/User");
 
 module.exports = {
     Query: {
-        hello: () => 'world'
+        hello: () => 'world',
+        getUsers: async (_, { }) => {
+            try {
+                const users = await User.findUsers();
+                return users;
+            }
+            catch (error) {
+                console.log(error);
+            }
+        }
     },
     Mutation: {
         authGoogle: async (_, { email } ) => { //change to access token later maybe
@@ -60,5 +69,17 @@ module.exports = {
                 return error;
             }
         },
+        updateUser: async (_, { email, user }) => { // user is a User object
+            try {
+                if (email == user.email) {
+                    console.log(user)
+                    const updated_user = User.updateUser({email: email}, user)
+                    return updated_user
+                }
+            }
+            catch (error) {
+                console.error(error)
+            }
+        } 
     }
 };

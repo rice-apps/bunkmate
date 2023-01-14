@@ -94,6 +94,12 @@ var UserSchema = new Schema({
                 return user;
             });
         },
+        findUsers() {
+            return __awaiter(this, void 0, void 0, function* () {
+                let doc = yield exports.User.find();
+                return doc;
+            });
+        },
         updateUser(filter, update) {
             return __awaiter(this, void 0, void 0, function* () {
                 // filter = {email: "go15@rice.edu"}
