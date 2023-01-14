@@ -26,18 +26,12 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
     return (
         <div className="profile-page">
             <div className="profile-content">
-                <div className="profile-user-card">
-                    <ProfileUserCard name={users[0].name} pref_temp={users[0].pref_temp} bedtime={users[0].bedtime} pref_gender={users[0].genderPref}
-                    grad_year={users[0].grad_year} pronouns={users[0].pronouns} res_college={users[0].res_college} cleaning_freq={users[0].cleaning_freq} 
-                    major={users[0].major} minor={users[0].minor} drinking={users[0].drinking} smoking={users[0].smoking} dynamic={users[0].dynamic} overnight_guests={users[0].overnight_guests}/>
-                </div>
-                <div className="profile-room-card">
-                    <ProfileRoomCard room={users[0].room} num_search={users[0].num_search}/>
-                </div>
-                <div className="profile-prefs-card">
-                    <ProfilePrefsCard bedtime={users[0].bedtime} smoking={users[0].smoking} dynamic={users[0].dynamic} overnight_guests={users[0].overnight_guests} pref_temp={users[0].pref_temp}
-                    cleaning_freq={users[0].cleaning_freq} internal_clock={users[0].internal_clock} drinking={users[0].drinking} />
-                </div>
+                <ProfileUserCard name={users[0].name} pref_temp={users[0].pref_temp} bedtime={users[0].bedtime} pref_gender={users[0].genderPref}
+                grad_year={users[0].grad_year} pronouns={users[0].pronouns} res_college={users[0].res_college} cleaning_freq={users[0].cleaning_freq} 
+                major={users[0].major} minor={users[0].minor} drinking={users[0].drinking} smoking={users[0].smoking} dynamic={users[0].dynamic} overnight_guests={users[0].overnight_guests}/>
+                <ProfileRoomCard room={users[0].room} num_search={users[0].num_search}/>
+                <ProfilePrefsCard bedtime={users[0].bedtime} smoking={users[0].smoking} snoring = {users[0].snore} dynamic={users[0].dynamic} overnight_guests={users[0].overnight_guests} pref_temp={users[0].pref_temp}
+                cleaning_freq={users[0].cleaning_freq} internal_clock={users[0].internal_clock} drinking={users[0].drinking}/>
             </div>
         </div>
         )}

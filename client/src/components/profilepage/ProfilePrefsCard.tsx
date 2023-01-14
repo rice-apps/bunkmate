@@ -12,6 +12,7 @@ interface UserProps {
     bedtime: string;
     pref_temp: string;
     cleaning_freq: string;
+    snoring: string;
     overnight_guests: string;
     dynamic: string;
     internal_clock: string;
@@ -19,46 +20,49 @@ interface UserProps {
     smoking: string;
 }
 
-const ProfilePrefsCard = ( {bedtime, pref_temp, cleaning_freq, overnight_guests, dynamic, internal_clock, drinking, smoking}: UserProps) => {
+const ProfilePrefsCard = ( {bedtime, pref_temp, cleaning_freq, snoring, overnight_guests, dynamic, internal_clock, drinking, smoking}: UserProps) => {
     return (
-        <div className="prefs-card-wrapper">
-            <div className="card-content">
-                <div className="card-body">
-                    <div className="attr-col">
-                        <div className="user-attr" id="pref-gender">
-                            <FontAwesomeIcon className="attr-icon" icon={faVenusMars}/>
-                            <div className="attr-info">
-                                <p className="attr-value">{bedtime}</p>
-                                <p className="attr-desc">roommate preferred</p>
-                            </div>
-                        </div>
-                        <div className="user-attr" id="bedtime">
-                            <FontAwesomeIcon className="attr-icon" icon={faBed}/>
-                            <div className="attr-info">
-                                <p className="attr-value">{bedtime}</p>
-                                <p className="attr-desc">bedtime</p>
-                            </div>
-                        </div>
+            <div className="card-wrapper">
+                <div className="profile-prefs-card-content">
+                    <div className="room-card-heading">
+                        <h2>Preferences</h2>
                     </div>
-                    <div className="attr-col">
-                        <div className="user-attr" id="pref-temp">
-                            <FontAwesomeIcon className="attr-icon" icon={faTemperatureHalf}/>
-                            <div className="attr-info">
-                                <p className="attr-value">{pref_temp}℉</p>
-                                <p className="attr-desc">room temperature</p>
+                    <div className="room-card-body">
+                        <div className="room-col" id="left-room-col">
+                            <div className="user-attr" id="pref-gender">
+                                <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
+                                <div className="attr-info">
+                                    <p className="attr-value">{bedtime}</p>
+                                    <p className="attr-desc">Bedtime</p>
+                                </div>
+                            </div>
+                            <div className="user-attr" id="pref-gender">
+                                <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
+                                <div className="attr-info">
+                                    <p className="attr-value">{cleaning_freq}</p>
+                                    <p className="attr-desc">Cleaning Frequency</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="user-attr" id="cleaning-freq">
-                            <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
-                            <div className="attr-info">
-                                <p className="attr-value">{cleaning_freq}</p>
-                                <p className="attr-desc">cleaning frequency</p>
+                        <div className="room-col" id="right-room-col">
+                            <div className="user-attr" id="bedtime">
+                                <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
+                                <div className="attr-info">
+                                    <p className="attr-value">{[pref_temp]}° F</p>
+                                    <p className="attr-desc">Preferred Room Temp</p>
+                                </div>
+                            </div>
+                            <div className="user-attr" id="pref-gender">
+                                <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
+                                <div className="attr-info">
+                                    <p className="attr-value">{snoring}</p>
+                                    <p className="attr-desc">Loudness</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     )
 }
 export default ProfilePrefsCard;

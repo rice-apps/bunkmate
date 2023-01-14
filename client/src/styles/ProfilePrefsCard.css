@@ -1,16 +1,4 @@
-.prefs-card-wrapper {
-    color: black;
-    border: solid;
-    border-radius: 24px;
-    border-width: 0px;
-    background-color: white;
-    margin-bottom: 15px;
-    transform: scale(1);
-    transition: transform 0.15s;
-    color: #25335D;
-}
-
-.card-content {
+.profile-prefs-card-content {
     padding: 18px 18px 18px 18px;
     display: flex;
     flex-direction: column;

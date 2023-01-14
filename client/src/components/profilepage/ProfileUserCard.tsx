@@ -34,15 +34,13 @@ let pfps = new Map();
 pfps.set("Ben Liu", benPfp);
 pfps.set("Huzaifa Ali", defaultPfp);
 pfps.set("Sofia Lakhani", defaultPfp);
-pfps.set("Jonathan Jang", defaultPfp);
-pfps.set("Isabel Wang", defaultPfp);
 
 
 const ProfileUserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, major, minor, overnight_guests, drinking, smoking, dynamic}: UserProps) => {
     return (
-        <div className="profile-user-card-wrapper">
-            <div className="card-content">
-                <div className="card-heading">
+        <div className="card-wrapper">
+            <div className="profile-user-card-content">
+                <div className="profile-user-card-heading">
                     <img className="user-pfp" src={pfps.get(name)} alt={name}/>
                     <div className="user-title">
                         <h1>{name}</h1>

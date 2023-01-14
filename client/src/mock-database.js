@@ -24,6 +24,7 @@ const users = [
             "internal_clock": "Morning person",
             "drinking": "Never",
             "smoking": "Never",
+            "snore": "never",
             
             // Contact
             "phoneNumber": "1234567890",
@@ -54,6 +55,7 @@ const users = [
             "internal_clock": "Night person",
             "drinking": "Sometimes",
             "smoking": "Never",
+            "snore": "never",
              
             // Contact
             "phoneNumber": "1234567890",
@@ -84,6 +86,7 @@ const users = [
             "internal_clock": "Morning person",
             "drinking": "Never",
             "smoking": "Never",
+            "snore": "never",
             
             // Contact
             "phoneNumber": "1234567890",
