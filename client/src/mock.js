@@ -198,7 +198,77 @@ const mock = {
                     placeholder: "Particular room preferences and habits, special circumstances, etc."
                 },
                     
-                ]}
+                ]},
+                {
+                    id: 3,
+                    welcome: "Almost There!",
+                    header: "Now, tell us more :)",
+            
+                    fields: [{
+                        id: 0,
+                        label: "I am looking for ______ roommates.",
+                        type: "select",
+                        options: ["Male", "Female", "Either"],
+                        placeholder: ""
+                    },
+                    {
+                        id: 1,
+                        label: "Do you plan on having overnight guests?",
+                        type: "select",
+                        options: ["Yes", "No"],
+                        placeholder: ""
+                    },
+                    {
+                        id: 2,
+                        label: "I use my personal space for",
+                        type: "select",
+                        options: ["Studying", "Relaxing", "Hanging out with friends", "I plan on rarely using my space"],
+                        placeholder: ""
+                    },
+                    {
+                        id: 3,
+                        label: "On average, I go out __ per week",
+                        type: "select",
+                        options: ["0", "1", "2", "3+"],
+                        placeholder: ""
+                    },
+                    {
+                        id: 4,
+                        label: "I want to ______ with my roommate(s)",
+                        type: "select",
+                        options: ["do everything", "be friends", "peacefully and respectfully coexist"],
+                        placeholder: ""
+                    },
+                    {
+                        id: 5,
+                        label: "I consider myself",
+                        type: "select",
+                        options: ["Shy", "Fairly shy", "Neutral", "Fairly outgoing", "Outgoing"],
+                        placeholder: ""
+                    },
+                    {
+                        id: 6,
+                        label: "Are you a smoker?",
+                        type: "select",
+                        options: ["Yes, and I smoke daily", "Yes, but I only smoke occassionally", "No, I do not smoke"],
+                        placeholder: ""
+                    },
+                    {
+                        id: 7,
+                        label: "I prefer roommate(s) that",
+                        type: "select",
+                        options: ["Smoke", "Don't smoke", "I have no preference"],
+                        placeholder: ""
+                    },
+                    {   
+                        id: 8,
+                        label: "Additional info?",
+                        type: "textarea",
+                        options: [],
+                        placeholder: "Particular room preferences and habits, special circumstances, etc."
+                    },
+                        
+                    ]}
     ]
     
 }
