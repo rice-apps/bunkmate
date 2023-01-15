@@ -19,6 +19,36 @@ var UserSchema = new Schema({
         required: true,
         unique: true
     },
+    resCollege: String,
+    phoneNumber: String,
+    gradYear: String,
+    major: String,
+    minor: String,
+    pronouns: String,
+    sex: String,
+    accommodation: String,
+    onCampus: Boolean,
+    roomType: String,
+    numRoommates: 'Number',
+    additionalRoomInfo: String,
+    genderPref: String,
+    overnightGuests: Boolean,
+    roomTemp: String,
+    bedTime: String,
+    wakeTime: String,
+    neatness: String,
+    presence: String,
+    additionalPrefInfo: String,
+    personality: [String],
+    isMorningPerson: Boolean,
+    personalSpace: [String],
+    outingFrequency: String,
+    coexistCondition: String,
+    outgoingness: String,
+    smoker: String,
+    smokerPref: String,
+    additionalHabitInfo: String,
+    pfp: String,
     auth: {
         google: {
             id: String,
@@ -37,7 +67,7 @@ var UserSchema = new Schema({
                 id: this._id,
                 exp: expirationDate.getTime() / 1000,
             }, 'secret');
-        },
+        }
     },
     statics: {
         checkUser(email) {
@@ -45,6 +75,21 @@ var UserSchema = new Schema({
                 const User = this;
                 const user = yield User.findOne({ 'email': email });
                 return user ? [user, true] : [user, false];
+            });
+        },
+        findUsers() {
+            return __awaiter(this, void 0, void 0, function* () {
+                let doc = yield exports.User.find();
+                return doc;
+            });
+        },
+        updateUser(filter, update) {
+            return __awaiter(this, void 0, void 0, function* () {
+                // filter = {email: "go15@rice.edu"}
+                // update = {resCollege: "Sid Richardson", smoker: True}
+                // update = {newUser: False}
+                let doc = yield exports.User.findOneAndUpdate(filter, update);
+                return doc;
             });
         }
     }
