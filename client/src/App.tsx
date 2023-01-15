@@ -75,18 +75,18 @@ function App() {
       }
 
     return (
-      // <Router>
-      //   {/* <div className="App"> */}
-      //   <Routes>
-      //     <Route path={`/home`} element={<HomePage />} />
-      //     <Route path={`/`} element={<LoginPage />} />
-      //   </Routes>
-      //   {/* </div> */}
-      // </Router>
-      <div>
-        {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
+      <Router>
+        {/* <div className="App"> */}
+        <Routes>
+          <Route path={`/home`} element={<Onboarding />} />
+          <Route path={`/`} element={<LoginPage />} />
+        </Routes>
+        {/* </div> */}
+      </Router>
+      // <div>
+      //   {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
 
-      </div>
+      // </div>
     );
 }
 
