@@ -20,19 +20,19 @@
 }
 
 .user-card-wrapper a {
-    color: black;
     text-decoration: none;
 }
 
 .user-card {
     border: solid;
     border-radius: 24px;
-    border-width: 4px;
+    border-width: 0px;
     /* border-color: rgba(0,0,0,0.7); */
     background-color: white;
     margin-bottom: 15px;
     transform: scale(1);
     transition: transform 0.15s;
+    color: hsl(225, 43%, 25%);
 }
 
 .user-card:hover {
@@ -40,19 +40,20 @@
 }
 
 .card-content {
-    margin: 12px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30vw;
-    height: 25vh;
+    width: 500px;
+    height: 200px;
+    
 }
 
 .card-heading {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     font-size: 15px;
 }
 
@@ -68,8 +69,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;  
-    height: 11vh;
-    gap: 0.75vh;
+    gap: 7px;
+    position: relative;
+    top: -8px;
+    
 }
 
 .user-title {
@@ -79,10 +82,16 @@
     text-align: center;
     height: 6vh;
     margin-top: -8px;
+    
 }
 
 .user-title h1 {
     margin-right: 0.5vw;
+    
+}
+
+.user-pronouns {
+    color: rgba(37, 51, 93, 0.64);
 }
 
 .tag-content{
@@ -90,13 +99,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    
 }
 
 .user-tags {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: .5vw;
+    gap: 5px;
 }
 
 .user-tag {
@@ -108,6 +118,7 @@
 
 .tag-icon {
     font-size: 17px;
+    
 }
 
 .user-tag p {
@@ -119,18 +130,40 @@
     flex-direction: row;
     justify-content: space-around;
     position: relative;
-    top: 10px;
+    top: -20px;
 }
 
 .attr-col {
-    width: 10vw;
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .attr-icon {
-    font-size: 25px;
+    font-size: 30px;
     margin-right: 10px;
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
+    color:  #25335D;
+}
+
+.attr-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.attr-value {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px;
+}
+
+.attr-desc {
+    font-size: 14px;
+    margin: 0px;
+    color: rgba(37, 51, 93, 0.64);
 }
 
 .user-attr {
@@ -138,21 +171,18 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin: 0px 0px 0px 0px; 
+    margin: 0px;
+    /* background-color: rgba(255,0,0,0.5); */
 }
-
-.card-footer {
-    position: relative;
-    height: 30px;
-}
-
+/*
 .roommate-pfps {
     display: flex;
     flex-direction: row;
-    position: absolute;
-    right: 0px;
     width: 96px;
-    justify-content: space-between;
+    justify-content: flex-end;
+    position: absolute;
+    top: 15px;
+    right: 15px;
 }
 
 .roommate-pfp {
@@ -160,3 +190,4 @@
     width: 30px;
     border-radius: 50%;
 }
+*/

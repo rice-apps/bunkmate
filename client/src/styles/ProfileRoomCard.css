@@ -1,0 +1,61 @@
+.profile-room-card-content {
+    padding: 18px 28px 18px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 680px;
+    height: 110px;
+}
+
+.room-card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+}
+
+.room-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#left-room-col {
+    width: 45%;
+    /* background-color: rgba(255,0,0,0.5);     */
+}
+
+#right-room-col {
+    width: 40%;
+    /* background-color: rgba(0,0,255,0.5); */
+}
+
+.user-attr {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
+    /* background-color: rgba(255,0,0,0.5); */
+}
+
+.attr-icon {
+    font-size: 30px;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    color:  #25335D;
+}
+
+.attr-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.attr-value {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px;
+}

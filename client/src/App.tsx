@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 // import UserData from "./types/UserData"
 import UserDataAuth from "./types/UserDataAuth"
 import HomePage from './pages/HomePage';
+import ProfilePage from './pages/ProfilePage';
 import LoginPage from "./pages/LoginPage";
 import Onboarding from './pages/Onboarding';
 import jwtDecode from 'jwt-decode';
@@ -87,6 +88,20 @@ function App() {
       //   {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
 
       // </div>
+      // <Router>
+      //   {/* <div className="App"> */}
+      //   <Routes>
+      //     <Route path={`/home`} element={<HomePage />} />
+      //     <Route path={`/`} element={<LoginPage />} />
+      //   </Routes>
+      //   {/* </div> */}
+      // </Router>
+      
+      // <div>
+      //   {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
+
+      // // </div>
+      // <ProfilePage userData={userInfo} logout={logout}/>
     );
 }
 

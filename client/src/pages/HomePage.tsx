@@ -1,11 +1,17 @@
 import React, { useState } from 'react';
+
+// Components
 import UserCard from '../components/homepage/UserCard';
+
+// Mock database
 import users from '../mock-database';
+
+// Google Auth
 import UserDataAuth from "../types/UserDataAuth"
 import { googleLogout } from '@react-oauth/google';
+
+// CSS
 import '../styles/HomePage.css';
-
-
 
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     
@@ -21,10 +27,10 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
                 <ellipse cx="50%" cy="0px" rx="75%" ry="100%"></ellipse>
             </svg>
             <div className="page-header">
-                <h1 className="page-title"></h1>
+                <h1 className="page-title">fellow bunkmates!</h1>
             </div>
             <div className="user-card-feed">
-                {users.map(user => {return (<UserCard id={user.id} name={user.name} pref_temp={user.pref_temp} bedtime={user.bedtime} pref_gender={user.pref_gender} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq}/>)})}
+                {users.map(user => {return (<UserCard  name={user.name} pref_temp={user.pref_temp} bedtime={user.bedtime} pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq}/>)})}
             </div>
         </div>
     )}

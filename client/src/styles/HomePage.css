@@ -3,11 +3,17 @@
     height: 200vh;
     font-family: 'Roboto Flex', sans-serif;
     background-color: #FFEBE5;
+    ;
+}
+
+.heading{
+    font-family: 'Roboto Flex', sans-serif;
+    color:aliceblue;
 }
 
 .heading-background {
     width: 100vw;
-    height: 25vh;
+    height: 30vh;
     position: absolute;
     fill: #25335D;
 }
