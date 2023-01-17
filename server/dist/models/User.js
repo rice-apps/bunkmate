@@ -10,7 +10,13 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
+const google_auth_library_1 = require("google-auth-library");
 const jwt = require('jsonwebtoken');
+const client_id = "10547820426-g94ke317qjsssctc8epuear86u5tf7vp.apps.googleusercontent.com";
+const googleClient = new google_auth_library_1.OAuth2Client({
+    clientId: `${client_id}`,
+    clientSecret: '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'
+});
 var mongoose = require("mongoose"), Schema = mongoose.Schema;
 var UserSchema = new Schema({
     name: String,
@@ -70,11 +76,38 @@ var UserSchema = new Schema({
         }
     },
     statics: {
-        checkUser(email) {
+        upsertGoogleUser(email) {
             return __awaiter(this, void 0, void 0, function* () {
                 const User = this;
+                //might need mongoose.model("User") ??
+                // console.log("getting token")
+                // let token = await googleClient.getToken(email)
+                // console.log("token received")
+                // console.log(token)
+                // const ticket = await googleClient.verifyIdToken({
+                //     idToken: email,
+                // });
+                // const payload = ticket.getPayload();
+                // console.log('got payload')
+                // console.log(payload)
                 const user = yield User.findOne({ 'email': email });
-                return user ? [user, true] : [user, false];
+                // no user was found, lets create a new one
+                if (!user) {
+                    console.log('no user found');
+                    console.log(email);
+                    const newUserDict = yield User.create({
+                        name: "defaultName",
+                        email: email,
+                        newUser: true,
+                        // 'auth.google': {
+                        // id: profile.id,
+                        // token: accessToken,
+                        // },
+                    });
+                    // newUser.save() maybe
+                    return newUserDict;
+                }
+                return user;
             });
         },
         findUsers() {

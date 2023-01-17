@@ -40,23 +40,36 @@ module.exports = {
                 if (email) {
                     console.log('find user')
                     console.log(email)
-                    const res = await User.checkUser(email); //upsert: update or insert
+                    const res = await User.upsertGoogleUser(email); //upsert: update or insert
+                    console.log(res)
+                    console.log(res[0])
+                    console.log(res[1])
+                    console.log(res.email)
+                    return {
+                        email: res.email,
+                        token: "",
+                        newUser: res.newUser
+                    }
 
-                    if (res[1]) { //if user already in database, generate a jwt for them
-                        return ({ //can return more!
-                            email: res[0].email,
-                            token: res[0].generateJWT(),
-                            exists: res[1]
-                        });
-                    }
-                    else {
-                        console.log("user needs to be created")
-                        return ({ //can return more!
-                            email: email,
-                            token: "",
-                            exists: res[1]
-                        });
-                    }
+                    // TODO: ADD JWT
+                    // if (res.newUser) { //if user already in database, generate a jwt for them
+                    //     return ({ //can return more!
+                    //         // email: res[0].email,
+                    //         // token: res[0].generateJWT(),
+                    //         // exists: res[1]
+                    //         email: res.email,
+                    //         token:"",
+                    //         newUser: false
+                    //     });
+                    // }
+                    // else {
+                    //     console.log("user needed to be created, onboarding page now")
+                    //     return ({ //can return more!
+                    //         email: email,
+                    //         token: "",
+                    //         exists: res.email
+                    //     });
+                    // }
                 }
 
                 // if (info) {

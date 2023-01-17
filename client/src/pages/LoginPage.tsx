@@ -6,7 +6,7 @@ const LoginPage = (props: any) => {
 
   return (
     <div>
-        <SignIn></SignIn>
+        <SignIn login={props.login}></SignIn>
         
         {/* <GoogleLogin
           onSuccess={props.login}
