@@ -21,10 +21,11 @@ interface FormProps {
     setActiveSection: Function;
     show: boolean;
     activeSection: number;
+    //onFinish: Function;
   }
 
 
-
+// const Form = ({ welcome, header, fields, onChange, setActiveSection, show, activeSection, onFinish}: FormProps) => {
 const Form = ({welcome, header, fields, onChange, setActiveSection, show, activeSection}: FormProps) => {
 
 
@@ -44,6 +45,13 @@ const Form = ({welcome, header, fields, onChange, setActiveSection, show, active
                     <button onClick={(e)=>{e.preventDefault();setActiveSection((prevState:number)=>prevState-1)}} className="submit-btn">Previous</button>
                 </div>
                 }
+                {/* show submit button or next button depending on section */}
+                {/* {activeSection == 4 ? <div className="submit-div">
+                        <button onClick={(e) => { e.preventDefault(); onFinish()}} className="submit-btn">Submit</button>
+                    </div> : <div className="submit-div">
+                        <button onClick={(e) => { e.preventDefault(); setActiveSection((prevState: number) => prevState + 1) }} className="submit-btn">Next</button>
+                    </div>
+                } */}
                 <div className="submit-div">
                     <button onClick={(e)=>{e.preventDefault();setActiveSection((prevState:number)=>prevState+1)}} className="submit-btn">Next</button>
                 </div>

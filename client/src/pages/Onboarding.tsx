@@ -26,6 +26,12 @@ const Onboarding = () => {
         }))
         setShowing(true)
     }
+    //called when submit button is pressed on last section
+    const onFinish = () => {
+        //TODO: perform update mutation to backend
+
+
+    }
 
     return (
         <div className="onboarding">
@@ -33,6 +39,9 @@ const Onboarding = () => {
                 {mock.mockSections.map(mockSection=><Navlink activeSection={activeSection} id={mockSection.id} name = {mockSection.name}/>)}
             </div>
             
+            {/* TODO: add finish page at the end 
+            just confirms that user has beeen created 
+            and button to go to or automatical go to home page  */}
             {(showing || activeSection!==1)? mock.mockForms.map(form=><Form  show={activeSection===form.id} activeSection={activeSection} setActiveSection={setActiveSection} onChange={onChange} key={form.id} id={form.id} welcome={form.welcome} header={form.header} fields={form.fields}/>): 
             <div className="living">
                 <h1>
@@ -49,7 +58,7 @@ const Onboarding = () => {
                         Off Campus
                     </button>
                 </div>
-            </div> }
+            </div> } 
         </div>
     )
 }   

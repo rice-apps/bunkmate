@@ -72,7 +72,7 @@ function App() {
         console.log('mutation success!')
         console.log(userInfo)
         
-        // setUserInfo(userInfo.authGoogle)
+        
         if (userInfo.authGoogle.newUser) {
           console.log("onboarding")
           //render onboarding + update with email and newUser=False
@@ -80,6 +80,7 @@ function App() {
 
         } else {
           //render homepage
+          setUserInfo(userInfo.authGoogle)
           console.log("homepage")
           navigate("/home")
         }

@@ -23,6 +23,7 @@ const SignIn = (props: any) => {
         onSuccess: tokenResponse => props.login(tokenResponse),
         flow: 'auth-code'
         });
+    
     // const LoginButton = (props: any) => {
     //     return (
     //         <button className="banner-login" onClick={props.onClick}>
