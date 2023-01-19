@@ -1,3 +1,5 @@
+import React from "react";
+
 interface SectionProps {
     name: string;
     id: number;

@@ -7,7 +7,6 @@ import defaultPfp from '../../media/empty-pfp-400x400.png';
 import UserData from "../../types/UserData";
 
 interface UserProps {
-    id: number;
     name: string;
     pref_temp: string;
     bedtime: string;
@@ -27,7 +26,7 @@ pfps.set("Jonathan Jang", defaultPfp);
 pfps.set("Isabel Wang", defaultPfp);
 
 
-const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq}: UserProps) => {
+const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq}: UserProps) => {
     return (
         <div className="user-card-wrapper">
             <a href="">
@@ -50,7 +49,7 @@ const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronoun
                                     <div className="user-tag" id="grad-year">
                                         <div className="tag-content">
                                             <FontAwesomeIcon className="tag-icon" icon={faGraduationCap}></FontAwesomeIcon>
-                                            <p>'{grad_year}</p>
+                                            <p>{grad_year}</p>
                                         </div>
                                     </div>
                                 </div>

@@ -1,0 +1,68 @@
+.profile-prefs-card-content {
+    padding: 18px 18px 18px 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 700px;
+    height: 220px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    top: -20px;
+}
+
+.attr-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+#left-attr-col {
+    width: 40%;
+    /* background-color: rgba(255,0,0,0.5);     */
+}
+
+#right-attr-col {
+    width: 45%;
+    /* background-color: rgba(0,0,255,0.5); */
+}
+
+.attr-icon {
+    font-size: 30px;
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    color:  #25335D;
+}
+
+.attr-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.attr-value {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0px;
+}
+
+.attr-desc {
+    font-size: 14px;
+    margin: 0px;
+    color: rgba(37, 51, 93, 0.64);
+}
+
+.user-attr {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
+    /* background-color: rgba(255,0,0,0.5); */
+}

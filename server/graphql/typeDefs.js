@@ -1,55 +1,82 @@
 const { gql } = require('apollo-server');
-
+//Figure out the questionaire/question heirarchy 
+//
 module.exports = gql`
-    type Token {
-        jwt: ID!
+    enum QuestionType {
+        FREE
+        DROPDOWN
+        SLIDER
     }
 
-    type Question {
-        id: ID!
-        questionText: String!
-        questionType: String!
-        options: [String!]
-        category: String!
-        attr: String!
+    enum Campusness {
+        ONCAMPUS
+        OFFCAMPUS
+    }
+
+    type SurveyPage {
+        category: Category!
+        questions: [Question!]!
+    }
+
+    enum Category {
+        GETTINGSTARTED
+        ROOM
+        LIFESTYLE
+        PREFERENCES
     }
 
     type User {
         id: ID!
-        email: String!
-        firstName: String!
-        lastName: String!
-        gender: String!
-        miscInfo: MiscInfo!
-        isOnCampus: Boolean!
-        onCampusAnswers: OnCampusAnswers
-        offCampusAnswers: OffCampusAnswers
-        additionalInfo: String
+        attributes: [Attribute!]!
     }
 
-    type MiscInfo {
-        phoneNumber: String!
-        year: String!
-        major: String
-        college: String
+    type Attribute {
+        name: AttributeName! # firstName
+        value: String! # Anthony
     }
+
+    enum AttributeName {
+        FIRSTNAME
+        LASTNAME
+        .
+        .
+        .
+    }
+
+    type Question {
+        id: ID!
+        attributeName: AttributeName!
+        text: String! # "What is your name?"
+        options: [String!]
+        onCampus: Boolean!
+        offCampus: Boolean!
+        type: QuestionType!
+    }
+
+    # type PersonalInfo {
+    #     email: String!
+    #     firstName: String!
+    #     lastName: String!
+    #     gender: String!
+    #     isOnCampus: Boolean!
+    #     phoneNumber: String!
+    #     year: String!
+    #     major: String
+    #     college: ResCollege!
+    #     additionalInfo: String
+    # }
     
-    type OnCampusAnswers {
-        temperature: String!
-        timeSleep: String!
-        timeWakeup: String!
-    }
 
-    type OffCampusAnswers {
-    
-
+    type Token {
+        jwt: ID!
     }
 
     type Query {
-    getUser(id: ID!): User
-    getUsers: [User]
+        getUser(id: ID!): User
+        getUsers: [User]
     }
+
     type Mutation {
-    signup(email: String!, username: String!, password: String!): String!,
-    login(email: String, username: String, password: String!): Token!,
+        signup(email: String!, username: String!, password: String!): String!,
+        login(email: String, username: String, password: String!): Token!,
     }`

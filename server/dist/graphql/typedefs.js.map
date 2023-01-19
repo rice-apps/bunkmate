@@ -1,1 +1,5 @@
-{"version":3,"file":"typedefs.js","sourceRoot":"","sources":["../../src/graphql/typedefs.tsx"],"names":[],"mappings":"AAAA,MAAM,EAAE,GAAG,EAAE,GAAG,OAAO,CAAC,eAAe,CAAC,CAAC;AAEzC,MAAM,CAAC,OAAO,GAAG,GAAG,CAAA;;;;;;;;;;;;;;;;;CAiBnB,CAAC"}
+<<<<<<< HEAD
+{"version":3,"file":"typedefs.js","sourceRoot":"","sources":["../../src/graphql/typedefs.tsx"],"names":[],"mappings":"AAAA,MAAM,EAAE,GAAG,EAAE,GAAG,OAAO,CAAC,eAAe,CAAC,CAAC;AAEzC,MAAM,CAAC,OAAO,GAAG,GAAG,CAAA;;;;;;;;;;;;;;;;CAgBnB,CAAC"}
+=======
+{"version":3,"file":"typedefs.js","sourceRoot":"","sources":["../../src/graphql/typedefs.tsx"],"names":[],"mappings":"AAAA,MAAM,EAAE,GAAG,EAAE,GAAG,OAAO,CAAC,eAAe,CAAC,CAAC;AAEzC,MAAM,CAAC,OAAO,GAAG,GAAG,CAAA;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;CA4FnB,CAAC"}
+>>>>>>> backend-setup

@@ -1,43 +1,13 @@
-/* @keyframes slide {
-    0% {
-        left: -70vw;
-    }
-
-    100% {
-        left: 0vw;
-    }
-
-} */
-
-.card-wrapper {
-    color: black;
-    text-decoration: none;
-    border: solid;
-    border-radius: 24px;
-    border-width: 0px;
-    /* border-color: rgba(0,0,0,0.7); */
-    background-color: white;
-    margin-bottom: 15px;
-    transform: scale(1);
-    transition: transform 0.15s;
-    color: #25335D;
-}
-
-.user-card:hover {
-    transform: scale(1.04);
-}
-
-.card-content {
-    padding: 16px;
+.profile-user-card-content {
+    padding: 18px 18px 18px 18px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 500px;
-    height: 250px;
-    
+    width: 700px;
+    height: 220px;
 }
 
-.card-heading {
+.profile-user-card-heading {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -48,19 +18,8 @@
 .user-pfp {
     width: 100px;
     height: 100px;
-    margin-right: 1vw;
+    margin-right: 14px;
     border-radius: 50%;
-}
-
-.user-header {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;  
-    gap: 7px;
-    position: relative;
-    top: -8px;
-    
 }
 
 .user-title {
@@ -71,7 +30,7 @@
 }
 
 .user-title h1 {
-    margin-right: 0.5vw;
+    margin-right: 8px;
     
 }
 
@@ -79,50 +38,37 @@
     color: rgba(37, 51, 93, 0.64);
 }
 
-.tag-content{
-    margin: -2px 8px -2px 13px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    
-}
-
-.user-tags {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 5px;
-}
-
-.user-tag {
-    background-color: #F3F4F8;
-    border-radius: 15px;
-    color:  #25335D;
-    font-size: 14px;
-}
-
-.tag-icon {
-    font-size: 17px;
-    
-}
-
-.user-tag p {
-    margin: 8px;
-}
-
 .card-body {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 15px;
     position: relative;
     top: -20px;
 }
 
 .attr-col {
-    width: 11vw;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 16px;
+}
+
+#left-attr-col {
+    width: 40%;
+    /* background-color: rgba(255,0,0,0.5);     */
+}
+
+#right-attr-col {
+    width: 40%;
+    /* background-color: rgba(0,0,255,0.5); */
+}
+
+.user-attr {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
 }
 
 .attr-icon {
@@ -150,29 +96,3 @@
     margin: 0px;
     color: rgba(37, 51, 93, 0.64);
 }
-
-.user-attr {
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0px;
-    /* background-color: rgba(255,0,0,0.5); */
-}
-/*
-.roommate-pfps {
-    display: flex;
-    flex-direction: row;
-    width: 96px;
-    justify-content: flex-end;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.roommate-pfp {
-    height: 30px;
-    width: 30px;
-    border-radius: 50%;
-}
-*/

@@ -1,4 +1,6 @@
-"use strict";
+// const mongoosee = require('mongoose');
+// const { authenticateGoogle2 } = require('../config/passport');
+// import authenticateGoogle from "../config/passport"
 var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -8,15 +10,23 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
-Object.defineProperty(exports, "__esModule", { value: true });
 // import { User } from "../models/User";
 const { User } = require("../models/User");
 module.exports = {
     Query: {
-        hello: () => 'world'
+        hello: () => 'world',
+        getUsers: (_, {}) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                const users = yield User.findUsers();
+                return users;
+            }
+            catch (error) {
+                console.log(error);
+            }
+        })
     },
     Mutation: {
-        authGoogle: (_, { email }) => __awaiter(void 0, void 0, void 0, function* () {
+        authGoogle: (_, { email }) => __awaiter(this, void 0, void 0, function* () {
             // console.log('req')
             // console.log(req)
             // console.log('res')
@@ -33,19 +43,23 @@ module.exports = {
                 // console.log('data')
                 // console.log(stuff)
                 if (email) {
-                    console.log('upset user');
+                    console.log('find user');
                     console.log(email);
-                    const user = yield User.upsertGoogleUser(email); //upsert: update or insert
-                    if (user) {
+                    const res = yield User.checkUser(email); //upsert: update or insert
+                    if (res[1]) { //if user already in database, generate a jwt for them
                         return ({
-                            name: user.name,
-                            email: user.email,
-                            token: user.generateJWT(),
-                            newUser: user.newUser
+                            email: res[0].email,
+                            token: res[0].generateJWT(),
+                            exists: res[1]
                         });
                     }
                     else {
-                        console.log("user couldn't be created");
+                        console.log("user needs to be created");
+                        return ({
+                            email: email,
+                            token: "",
+                            exists: res[1]
+                        });
                     }
                 }
                 // if (info) {
@@ -63,6 +77,18 @@ module.exports = {
                 return error;
             }
         }),
+        updateUser: (_, { email, user }) => __awaiter(this, void 0, void 0, function* () {
+            try {
+                if (email == user.email) {
+                    console.log(user);
+                    const updated_user = User.updateUser({ email: email }, user);
+                    return updated_user;
+                }
+            }
+            catch (error) {
+                console.error(error);
+            }
+        })
     }
 };
 //# sourceMappingURL=resolvers.js.map
