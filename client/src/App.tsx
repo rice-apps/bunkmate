@@ -61,33 +61,11 @@ function App() {
       const validateUser = (userInfo: any) => {
         console.log('mutation success!')
         console.log(userInfo)
-        console.log(userInfo.exists)
-        
-        // setUserInfo(userInfo.authGoogle)
-        if (userInfo.exists) {
-          setLoggedIn(true)
-          //render homepage
-
-        } else {
-          //render onboarding + update with email
-            //pass email to onboarding?
-        }
-
+        setLoggedIn(true)
+        setUserInfo(userInfo.authGoogle)
       }
 
     return (
-      <Router>
-        {/* <div className="App"> */}
-        <Routes>
-          <Route path={`/home`} element={<Onboarding />} />
-          <Route path={`/`} element={<LoginPage />} />
-        </Routes>
-        {/* </div> */}
-      </Router>
-      // <div>
-      //   {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
-
-      // </div>
       // <Router>
       //   {/* <div className="App"> */}
       //   <Routes>
@@ -96,12 +74,13 @@ function App() {
       //   </Routes>
       //   {/* </div> */}
       // </Router>
-      
-      // <div>
-      //   {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
+      /*
+      <div>
+        {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
 
-      // // </div>
-      // <ProfilePage userData={userInfo} logout={logout}/>
+      </div>
+      */
+      <HomePage userData={userInfo} logout={logout}/>
     );
 }
 

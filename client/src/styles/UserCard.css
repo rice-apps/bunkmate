@@ -25,9 +25,9 @@
 
 .user-card {
     border: solid;
-    border-radius: 24px;
+    border-radius:24px;
+    /* 24*/
     border-width: 0px;
-    /* border-color: rgba(0,0,0,0.7); */
     background-color: white;
     margin-bottom: 15px;
     transform: scale(1);

@@ -1,9 +1,9 @@
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHouse, faPeopleGroup} from '@fortawesome/free-solid-svg-icons';
+import { faPhone,faEnvelope} from '@fortawesome/free-solid-svg-icons';
 
 // CSS
-import '../../styles/ProfileRoomCard.css';
+import '../../styles/ProfileContactCard.css';
 
 // Pfps
 import benPfp from '../../media/ben-liu-pfp-400x400.png';
@@ -28,8 +28,8 @@ interface UserProps {
     // drinking: string;
     // smoking: string;
     // dynamic: string;
-    room: string;
-    num_search: string;
+    phone: string;
+    email: string;
 }
 
 let pfps = new Map();
@@ -38,27 +38,27 @@ pfps.set("Ben Liu", benPfp);
 pfps.set("Huzaifa Ali", defaultPfp);
 pfps.set("Sofia Lakhani", defaultPfp);
 
-const ProfileRoomCard = ({room, num_search}: UserProps) => {
+const ProfileContactCard = ({phone, email}: UserProps) => {
     return (
         <div className="card-wrapper">
             <div className="profile-room-card-content">
-                <div className="room-card-heading">
-                    <h2>Housing</h2>
+                <div className="contact-card-heading">
+                    <h2>Contact</h2>
                 </div>
-                <div className="room-card-body">
-                    <div className="room-col" id="left-room-col">
+                <div className="contact-card-body">
+                    <div className="contact-col" id="left-contact-col">
                         <div className="user-attr" id="pref-gender">
-                            <FontAwesomeIcon className="attr-icon" icon={faHouse}/>
+                            <FontAwesomeIcon className="attr-icon" icon={faPhone}/>
                             <div className="attr-info">
-                                <p className="attr-value">Secured: {room}</p>
+                                <p className="attr-value"> {[phone]}</p>
                             </div>
                         </div>
                     </div>
-                    <div className="room-col" id="right-room-col">
+                    <div className="contact-col" id="right-contact-col">
                         <div className="user-attr" id="bedtime">
-                            <FontAwesomeIcon className="attr-icon" icon={faPeopleGroup}/>
+                            <FontAwesomeIcon className="attr-icon" icon={faEnvelope}/>
                             <div className="attr-info">
-                                <p className="attr-value">Looking for {num_search} roommate(s)</p>
+                                <p className="attr-value">{[email]}</p>
                             </div>
                         </div>
                     </div>
@@ -67,4 +67,4 @@ const ProfileRoomCard = ({room, num_search}: UserProps) => {
         </div>
     )
 }
-export default ProfileRoomCard;
+export default ProfileContactCard;

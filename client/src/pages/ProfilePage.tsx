@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import ProfileUserCard from '../components/profilepage/ProfileUserCard';
 import ProfileRoomCard from '../components/profilepage/ProfileRoomCard';
 import ProfilePrefsCard from '../components/profilepage/ProfilePrefsCard';
+import ProfileContactCard from '../components/profilepage/ProfileContactCard';
 
 // Mock database
 import users from '../mock-database';
@@ -32,6 +33,7 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
                 <ProfileRoomCard room={users[0].room} num_search={users[0].num_search}/>
                 <ProfilePrefsCard bedtime={users[0].bedtime} smoking={users[0].smoking} snoring = {users[0].snore} dynamic={users[0].dynamic} overnight_guests={users[0].overnight_guests} pref_temp={users[0].pref_temp}
                 cleaning_freq={users[0].cleaning_freq} internal_clock={users[0].internal_clock} drinking={users[0].drinking}/>
+                <ProfileContactCard phone={users[0].phoneNumber} email={users[0].email}/>
             </div>
         </div>
         )}

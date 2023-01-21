@@ -1,4 +1,4 @@
-.profile-room-card-content {
+.profile-contact-card-content {
     padding: 18px 18px 18px 18px;
     display: flex;
     flex-direction: column;
@@ -7,17 +7,17 @@
     height: 90px;
 }
 
-.room-card-heading {
+.contact-card-heading {
     /* background-color: red;  */
     height: 40px;
 }
 
-.room-card-heading h2 {
+.contact-card-heading h2 {
     /* background-color: blue; */
     margin: 0px;
 }
 
-.room-card-body {
+.contact-card-body {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -26,18 +26,18 @@
     /* background-color: red; */
 }
 
-.room-col {
+.contact-col {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-#left-room-col {
+#left-contact-col {
     width: 45%;
     /* background-color: rgba(255,0,0,0.5);     */
 }
 
-#right-room-col {
+#right-contact-col {
     width: 40%;
     /* background-color: rgba(0,0,255,0.5); */
 }
