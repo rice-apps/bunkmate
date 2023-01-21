@@ -5,19 +5,31 @@ import mock from "../mock"
 import Form from "../components/onboarding/Form"
 import React from "react"
 import { UserContext } from "../components/context/UserContext"
+import { gql, useMutation, useQuery } from "@apollo/client"
+
+
+const UPDATE_USER = gql`
+  mutation updateUser($user: UserInput!) {
+    updateUser(user: $user){
+      email
+    }
+  }
+`
 
 const Onboarding = () => {
 
     const [activeSection, setActiveSection] = useState(0)
     const {user, onboardingChange} = useContext(UserContext)
     const [showing, setShowing] = useState(false)
+    const [updateUser, {data, loading, error}] = useMutation(UPDATE_USER)
+
     const selectLiving = (e:any) => {
-        onboardingChange(e, "living")
+        onboardingChange(e, "onCampus")
         setShowing(true)
     }
 
     const onFinished = () => {
-        
+        updateUser({variables: user, onCompleted: () => console.log(data)})
     }
     return (
         <div className="onboarding">

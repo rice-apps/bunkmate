@@ -45,7 +45,7 @@ const Form = ({welcome, header, fields, setActiveSection, show, activeSection, o
                 </div>
                 }
                 <div className="submit-div">
-                    <button onClick={(e)=>{e.preventDefault(); if (activeSection===4) onFinished(); setActiveSection((prevState:number)=>prevState+1)}} className="submit-btn">Next</button>
+                    <button onClick={(e)=>{e.preventDefault(); if (activeSection===3) onFinished(); setActiveSection((prevState:number)=>prevState+1)}} className="submit-btn">Next</button>
                 </div>
                 </div>
             </form>

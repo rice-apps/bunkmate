@@ -14,6 +14,7 @@ interface InputProps {
 const InputField = ({label, type, attribute, options, placeholder}: InputProps) => {
 
     const [selected, setSelected] = useState("")
+    const [selectedOpts, setSelectedOps] = useState([""])
     const {onboardingChange} = useContext(UserContext)
 
     return (
@@ -26,6 +27,11 @@ const InputField = ({label, type, attribute, options, placeholder}: InputProps) 
             { type==="select" &&
             <div className="options">
             {options.map(option=><button className={selected===option?"selected-btn":""} id={label} onClick={e=>{onboardingChange(e, attribute);setSelected(option)}} >{option}</button>)}
+            </div>
+            }
+            { type==="multiple-select" &&
+            <div className="options">
+            {options.map(option=><button className={selectedOpts.includes(option)?"selected-btn":""} id={label} onClick={e=>{setSelectedOps(prevState=>([...prevState, option]));onboardingChange(e, attribute, [...selectedOpts, option].slice(1));}} >{option}</button>)}
             </div>
             }
             {type==="dropdown" &&
