@@ -41,4 +41,5 @@
     position: relative;
     margin: auto;
     top: 15vh;
+    columns: 2 auto;
 }
