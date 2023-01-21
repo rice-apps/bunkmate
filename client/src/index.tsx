@@ -8,6 +8,7 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
+import UserContextProvider from './components/context/UserContext';
 
 //put in config or somethn
 const client_id = "10547820426-g94ke317qjsssctc8epuear86u5tf7vp.apps.googleusercontent.com"
@@ -25,7 +26,9 @@ root.render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId={client_id} >
       <ApolloProvider client={client}>
-        <App />
+        <UserContextProvider>
+          <App />
+        </UserContextProvider>
       </ApolloProvider>
     </GoogleOAuthProvider>
   </React.StrictMode>
