@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 // Components
 import UserCard from '../components/homepage/UserCard';
@@ -16,7 +16,58 @@ import { Navigate } from "react-router-dom";
 // CSS
 import '../styles/HomePage.css';
 
+import { gql, useMutation } from "@apollo/client";
+
+const GET_USERS = gql`
+  query getUsers() {
+    updateUsers {
+        id
+        name
+        email
+        resCollege
+        phonenumber
+        gradYear
+        major
+        minor
+        pronouns
+        sex
+        accommodation
+        onCampus
+        roomType
+        numRoommates
+        additionalRoomInfo
+        genderPref
+        overnightGuests
+        roomTemp
+        bedTime
+        wakeTime
+        neatness
+        presence
+        additionalPrefInfo
+        personality
+        isMorningPerson
+        personalSpace
+        outingFrequency
+        coexistCondition
+        outgoingness
+        smoker
+        smokerPref
+        additionalHabitInfo
+        pfp
+    }
+  }
+`
+
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
+    const [getUsers, {data, loading, error}] = useMutation(GET_USERS)
+    
+    useEffect(() => {
+        getUsers({variables: {}, onCompleted: recommendationAlgorithm})
+    })
+
+    const recommendationAlgorithm = () => {
+        console.log(data)
+    }
     
     //add this button to your logout button's onclick!
     const handleLogout = () => {

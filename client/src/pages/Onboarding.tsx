@@ -4,9 +4,18 @@ import Navlink from "../components/onboarding/NavLink"
 import mock from "../mock"
 import Form from "../components/onboarding/Form"
 import React from "react"
+import { gql, useMutation } from "@apollo/client"
+
+const UPDATE_USER = gql`
+  mutation updateUser($user: UserInput!) {
+    updateUser(user: $user){
+      email
+    }
+  }
+`
 
 const Onboarding = () => {
-
+    const [updateUser, {data, loading, error}] = useMutation(UPDATE_USER)
     const [activeSection, setActiveSection] = useState(0)
     const [user, setUser] = useState({fullName:""})
     const [showing, setShowing] = useState(false)
@@ -29,7 +38,12 @@ const Onboarding = () => {
     //called when submit button is pressed on last section
     const onFinish = () => {
         //TODO: perform update mutation to backend
-
+        try {
+            console.log(user)
+            updateUser({variables: user, onCompleted: () => console.log("User updated")})
+        } catch (error) {
+            console.log(error)
+        }
 
     }
 
