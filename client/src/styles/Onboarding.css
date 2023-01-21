@@ -1,28 +1,40 @@
 :root {
     --white: #fff;
     --black: #000;
-    --orange: #FAA986;
-
+    --blue: #25335D;
+    --pink: #FFEBE5;
+    --btn-blue: #4168F6;    
 }
 
 * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "Roboto Flex";
+    font-family: 'Roboto Flex', sans-serif;
 }
 
-
-.svg-active {
+body {
+    background-color: var(--pink);
+    color: var(--blue);
+}
+.link-active {
     font-weight: bold;
 }
 
-.svg-inactive circle{
+h1 {
+    font-size: 2.6em;
+}
+
+h2 {
+    font-size: 2.2em;
+}
+
+.svg-inactive{
     fill: var(--white);
 }
 
 .nav {
-    margin-top: 6vh;
+    margin-top: 4vh;
     display: flex;
     position: relative;
     justify-content: space-around;
@@ -35,7 +47,6 @@
     font-size: 1em;
     z-index: 1;
     color: var(--black);
-    cursor: pointer;
 }
 
 .nav::before {
@@ -44,6 +55,114 @@
     height: 5px;
     top: 12px;
     z-index: 0;
-    background-color: #FAA986;
+    background-color: var(--blue);
     position: absolute;
+}
+
+.nav-link p {
+    margin-top: 3vh;
+}
+
+.onboarding-form {
+    margin-top: 6vh;
+    display: none;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.active {
+    display: flex;
+}
+form {
+    padding: 4vh 6vw;
+    margin-top: 4vh;
+    background: var(--white);
+    border-radius: 20px 20px 0px 0px;
+    width: 75%;
+}
+.input-field {
+    margin-top: 2vh;
+}
+input {
+    border: 2px solid #25335D;
+    width: 100%;
+    padding: 5px;
+    border-radius: 6px;
+    margin-top: 1vh;
+}
+
+label {
+    font-size: 1.2em;
+}
+
+.options *{
+    margin-right: 3vw;
+    margin-top: 2vh;
+    border: 2px solid var(--blue);
+    border-radius: 13px;
+    cursor: pointer;
+    width: 131px;
+    height: 32px;
+    background-color: var(--white);
+}
+
+.selected-btn {
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+.submit-div {
+    text-align: center;
+}
+.submit-btn {
+    margin-top: 5vh;
+    background-color: var(--btn-blue);
+    color: var(--white);
+    border-radius: 13px;
+    border: 1px solid var(--white);
+    width: 115px;
+    height: 31px;
+}
+
+select {
+    display: block;
+    margin-top: 2vh;
+    padding: 5px;
+}
+
+textarea {
+    display: block;
+    margin-top: 2vh;
+    padding: 5px;
+    width: 90%;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+}
+
+.living {
+    display: flex;
+    margin-top: 6vh;
+    align-items: center;
+    height:45vh;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.bubbles {
+    display: flex;
+    justify-content: space-around;
+    width: 70vw;
+}
+
+.bubbles button {
+    height: 12vw;
+    cursor: pointer;
+    font-size: 1.2em;
+    background-color: white;
+    width: 12vw;
+    border-radius: 50%;
+
 }

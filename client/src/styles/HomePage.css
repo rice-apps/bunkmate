@@ -1,0 +1,44 @@
+.homepage {
+    width: 100vw;
+    height: 200vh;
+    font-family: 'Roboto Flex', sans-serif;
+    background-color: #FFEBE5;
+    ;
+}
+
+.heading{
+    font-family: 'Roboto Flex', sans-serif;
+    color:aliceblue;
+}
+
+.heading-background {
+    width: 100vw;
+    height: 30vh;
+    position: absolute;
+    fill: #25335D;
+}
+
+.page-header {
+    display: flex;
+    flex-direction: column;
+}
+
+.page-title {
+    position: relative;
+    color: white;
+    font-size: 40px;
+    z-index: 1;
+    margin: auto;
+    top: 8.5vh;
+}
+
+.user-card-feed {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    margin: auto;
+    top: 15vh;
+}

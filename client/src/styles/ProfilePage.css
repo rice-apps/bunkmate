@@ -1,0 +1,30 @@
+.profile-page {
+    width: 100vw;
+    height: 200vh;
+    font-family: 'Roboto Flex', sans-serif;
+    background-color: #25335D;
+}
+
+.profile-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: auto;
+    position: relative;
+    margin: auto;
+    top: 15vh;
+}
+
+.card-wrapper {
+    color: black;
+    border: solid;
+    border-radius: 24px;
+    border-width: 0px;
+    /* border-color: rgba(0,0,0,0.7); */
+    background-color: white;
+    margin-bottom: 15px;
+    transform: scale(1);
+    transition: transform 0.15s;
+    color: #25335D;
+}

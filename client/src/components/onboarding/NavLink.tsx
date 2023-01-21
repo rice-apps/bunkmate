@@ -1,18 +1,19 @@
+import React from "react";
+
 interface SectionProps {
     name: string;
     id: number;
-    activeSection: number;
-    setActiveSection: Function;
+    activeSection: number;  
   }
 
-const NavLink = ({name, id, activeSection, setActiveSection}: SectionProps) => {
+const NavLink = ({name, id, activeSection}: SectionProps) => {
 
     return (
-        <div className={id===activeSection?"svg-active":"svg-inactive"} onClick={()=>{setActiveSection(id)}}>
+        <div className="nav-link">
             <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle  cx="15" cy="15" r="13" fill="#FAA986" stroke="#FAA986" stroke-width="4"/>
+            <circle className={id<=activeSection?"svg-active":"svg-inactive"}  cx="15" cy="15" r="13" fill="#25335D" stroke="#25335D" stroke-width="4"/>
             </svg>
-        <p>{name}</p>
+        <p className={id===activeSection?"link-active":"link-inactive"}>{name}</p>
         </div>
     )
 }
