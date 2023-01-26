@@ -20,7 +20,7 @@ import { gql, useMutation } from "@apollo/client";
 
 const GET_USERS = gql`
   query getUsers() {
-    updateUsers {
+    getUsers {
         id
         name
         email
