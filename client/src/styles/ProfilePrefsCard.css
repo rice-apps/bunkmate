@@ -2,9 +2,10 @@
     padding: 18px 18px 18px 18px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 8px;
     width: 700px;
-    height: 220px;
+    height: 236px; 
 }
 
 .card-body {
@@ -16,23 +17,52 @@
     top: -20px;
 }
 
-.attr-col {
+.prefs-card-heading {
+    /* background-color: red;  */
+    height: 40px;
+}
+
+.prefs-card-heading h2 {
+    /* background-color: blue; */
+    margin: 0px;
+    /* padding: 10%; */
+}
+
+.prefs-card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    position: relative;
+    /* background-color: red; */
+}
+
+.prefs-col {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-#left-attr-col {
-    width: 40%;
+.user-attr {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0px;
+    /* background-color: rgba(255,0,0,0.5); */
+}
+
+#left-prefs-col {
+    width: 45%;
     /* background-color: rgba(255,0,0,0.5);     */
 }
 
-#right-attr-col {
-    width: 45%;
+#right-prefs-col {
+    width: 40%;
     /* background-color: rgba(0,0,255,0.5); */
 }
 
-.attr-icon {
+.prefs-icon {
     font-size: 30px;
     margin-right: 10px;
     width: 25px;
@@ -56,13 +86,4 @@
     font-size: 14px;
     margin: 0px;
     color: rgba(37, 51, 93, 0.64);
-}
-
-.user-attr {
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0px;
-    /* background-color: rgba(255,0,0,0.5); */
 }
