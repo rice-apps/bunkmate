@@ -17,16 +17,15 @@ interface FormProps {
     welcome: string;
     header: string;
     fields: field[];
-    onChange: Function;
     setActiveSection: Function;
     show: boolean;
     activeSection: number;
-    //onFinish: Function;
+    onFinished: Function;
   }
 
 
-// const Form = ({ welcome, header, fields, onChange, setActiveSection, show, activeSection, onFinish}: FormProps) => {
-const Form = ({welcome, header, fields, onChange, setActiveSection, show, activeSection}: FormProps) => {
+
+const Form = ({welcome, header, fields, setActiveSection, show, activeSection, onFinished}: FormProps) => {
 
 
     return (
@@ -38,7 +37,7 @@ const Form = ({welcome, header, fields, onChange, setActiveSection, show, active
              
             <form>
                 <h2>{header}</h2>
-                {fields.map(field=><InputField onChange={onChange} attribute={field.attribute} key={field["id"]} id={field.id} placeholder={field.placeholder} options={field.options} label={field["label"]} type={field.type}/>)}
+                {fields.map(field=><InputField attribute={field.attribute} key={field["id"]} id={field.id} placeholder={field.placeholder} options={field.options} label={field["label"]} type={field.type}/>)}
                 <div className="navigation">
                 { activeSection > 0 &&
                 <div className="submit-div">
@@ -53,7 +52,7 @@ const Form = ({welcome, header, fields, onChange, setActiveSection, show, active
                     </div>
                 } */}
                 <div className="submit-div">
-                    <button onClick={(e)=>{e.preventDefault();setActiveSection((prevState:number)=>prevState+1)}} className="submit-btn">Next</button>
+                    <button onClick={(e)=>{e.preventDefault(); if (activeSection===3) onFinished(); setActiveSection((prevState:number)=>prevState+1)}} className="submit-btn">Next</button>
                 </div>
                 </div>
             </form>
