@@ -16,6 +16,8 @@ const UPDATE_USER = gql`
   }
 `
 
+
+
 const Onboarding = () => {
 
     const [activeSection, setActiveSection] = useState(0)
@@ -26,6 +28,12 @@ const Onboarding = () => {
     const selectLiving = (e:any) => {
         onboardingChange(e, "onCampus")
         setShowing(true)
+    }
+    //called when submit button is pressed on last section
+    const onFinish = () => {
+        //TODO: perform update mutation to backend
+
+
     }
 
     const onFinished = () => {
@@ -38,6 +46,7 @@ const Onboarding = () => {
             </div>
             
             {(showing || activeSection!==1)? mock.mockForms.map(form=><Form onFinished={onFinished} show={activeSection===form.id} activeSection={activeSection} setActiveSection={setActiveSection}  key={form.id} id={form.id} welcome={form.welcome} header={form.header} fields={form.fields}/>): 
+            
             <div className="living">
                 <h1>
                     Nice to meet you, <span className="name">{user.fullName}</span>
@@ -53,7 +62,7 @@ const Onboarding = () => {
                         Off Campus
                     </button>
                 </div>
-            </div> }
+            </div> } 
         </div>
     )
 }   

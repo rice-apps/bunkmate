@@ -9,6 +9,7 @@ import {
   ApolloProvider,
 } from "@apollo/client";
 import UserContextProvider from './components/context/UserContext';
+import { BrowserRouter } from 'react-router-dom';
 
 //put in config or somethn
 const client_id = "10547820426-g94ke317qjsssctc8epuear86u5tf7vp.apps.googleusercontent.com"
@@ -27,7 +28,9 @@ root.render(
     <GoogleOAuthProvider clientId={client_id} >
       <ApolloProvider client={client}>
         <UserContextProvider>
-          <App />
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
         </UserContextProvider>
       </ApolloProvider>
     </GoogleOAuthProvider>

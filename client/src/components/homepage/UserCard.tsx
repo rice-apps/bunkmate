@@ -1,4 +1,3 @@
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTemperatureHalf, faBed, faVenusMars, faLocationDot, faGraduationCap, faBroom} from '@fortawesome/free-solid-svg-icons';
 import '../../styles/UserCard.css';
@@ -8,7 +7,6 @@ import defaultPfp from '../../media/empty-pfp-400x400.png';
 import UserData from "../../types/UserData";
 
 interface UserProps {
-    id: number;
     name: string;
     pref_temp: string;
     bedtime: string;
@@ -28,7 +26,7 @@ pfps.set("Jonathan Jang", defaultPfp);
 pfps.set("Isabel Wang", defaultPfp);
 
 
-const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq}: UserProps) => {
+const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq}: UserProps) => {
     return (
         <div className="user-card-wrapper">
             <a href="">
@@ -39,7 +37,7 @@ const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronoun
                             <div className="user-header">
                                 <div className="user-title">
                                     <h1>{name}</h1>
-                                    <p>{pronouns}</p>
+                                    <p className="user-pronouns">{pronouns}</p>
                                 </div>
                                 <div className="user-tags">
                                     <div className="user-tag" id="residential-college">
@@ -61,29 +59,34 @@ const UserCard = ({id, name, pref_temp, bedtime, pref_gender, grad_year, pronoun
                             <div className="attr-col">
                                 <div className="user-attr" id="pref-gender">
                                     <FontAwesomeIcon className="attr-icon" icon={faVenusMars}/>
-                                    <p>{pref_gender} roommate preferred</p>
+                                    <div className="attr-info">
+                                        <p className="attr-value">{pref_gender}</p>
+                                        <p className="attr-desc">roommate preferred</p>
+                                    </div>
                                 </div>
                                 <div className="user-attr" id="bedtime">
                                     <FontAwesomeIcon className="attr-icon" icon={faBed}/>
-                                    <p>{bedtime}</p>
+                                    <div className="attr-info">
+                                        <p className="attr-value">{bedtime}</p>
+                                        <p className="attr-desc">bedtime</p>
+                                    </div>
                                 </div>
                             </div>
                             <div className="attr-col">
                                 <div className="user-attr" id="pref-temp">
                                     <FontAwesomeIcon className="attr-icon" icon={faTemperatureHalf}/>
-                                    <p>{pref_temp}℉</p>
+                                    <div className="attr-info">
+                                        <p className="attr-value">{pref_temp}℉</p>
+                                        <p className="attr-desc">room temperature</p>
+                                    </div>
                                 </div>
                                 <div className="user-attr" id="cleaning-freq">
                                     <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
-                                    <p>{cleaning_freq}</p>
+                                    <div className="attr-info">
+                                        <p className="attr-value">{cleaning_freq}</p>
+                                        <p className="attr-desc">cleaning frequency</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
-                        <div className="card-footer">
-                            <div className="roommate-pfps">
-                                <img className="roommate-pfp" src={defaultPfp} alt=""></img>
-                                <img className="roommate-pfp" src={benPfp} alt=""></img>
-                                <img className="roommate-pfp" src={benPfp} alt=""></img>
                             </div>
                         </div>
                     </div>
