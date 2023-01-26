@@ -86,7 +86,7 @@ form {
 input {
     border: 2px solid #25335D;
     width: 100%;
-    padding: 3px;
+    padding: 5px;
     border-radius: 6px;
     margin-top: 1vh;
 }
@@ -97,6 +97,7 @@ label {
 
 .options *{
     margin-right: 3vw;
+    margin-top: 2vh;
     border: 2px solid var(--blue);
     border-radius: 13px;
     cursor: pointer;
@@ -121,4 +122,47 @@ label {
     border: 1px solid var(--white);
     width: 115px;
     height: 31px;
+}
+
+select {
+    display: block;
+    margin-top: 2vh;
+    padding: 5px;
+}
+
+textarea {
+    display: block;
+    margin-top: 2vh;
+    padding: 5px;
+    width: 90%;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-around;
+}
+
+.living {
+    display: flex;
+    margin-top: 6vh;
+    align-items: center;
+    height:45vh;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.bubbles {
+    display: flex;
+    justify-content: space-around;
+    width: 70vw;
+}
+
+.bubbles button {
+    height: 12vw;
+    cursor: pointer;
+    font-size: 1.2em;
+    background-color: white;
+    width: 12vw;
+    border-radius: 50%;
+
 }

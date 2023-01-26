@@ -40,7 +40,7 @@ module.exports = gql`
   type AuthResponse {
     email: String
     token: String
-    exists: Boolean
+    newUser: Boolean
   }
   input AuthInput {
     accessToken: String!
