@@ -7,7 +7,7 @@ import LoginPage from "./pages/LoginPage";
 import Onboarding from './pages/Onboarding';
 import jwtDecode from 'jwt-decode';
 
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { gql, useMutation } from "@apollo/client";
 
 interface MyToken {
@@ -34,6 +34,8 @@ const UPSERT_AUTH_USER = gql`
 `
 
 function App() {
+      let { userId } = useParams();
+
       const [loggedIn, setLoggedIn] = useState(false)
       const [userInfo, setUserInfo] = useState<UserDataAuth>({
         email: "",
@@ -91,6 +93,7 @@ function App() {
       // <Router>
         <div>
         <Routes>
+          <Route path={`/profile/:id`} element={<ProfilePage userData={userInfo} logout={logout} />}/>
           <Route path={`/home`} element={<HomePage userData={userInfo} logout={logout}/>} />
           <Route path={`/onboarding`} element={<Onboarding />} />
           <Route path={`/`} element={<LoginPage login={login}/>} />

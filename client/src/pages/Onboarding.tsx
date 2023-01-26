@@ -5,6 +5,8 @@ import mock from "../mock"
 import Form from "../components/onboarding/Form"
 import React from "react"
 
+
+
 const Onboarding = () => {
 
     const [activeSection, setActiveSection] = useState(0)
