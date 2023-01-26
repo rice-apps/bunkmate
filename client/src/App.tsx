@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 // import UserData from "./types/UserData"
 import UserDataAuth from "./types/UserDataAuth"
 import HomePage from './pages/HomePage';
@@ -9,6 +9,7 @@ import jwtDecode from 'jwt-decode';
 
 import { BrowserRouter as Router, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { gql, useMutation } from "@apollo/client";
+import { UserContext } from './components/context/UserContext';
 
 interface MyToken {
   name: string;
@@ -34,6 +35,12 @@ const UPSERT_AUTH_USER = gql`
 `
 
 function App() {
+
+  const {user, setUser} = useContext(UserContext)
+
+      useEffect(()=>{
+        console.log(user)
+      },[])
       let { userId } = useParams();
 
       const [loggedIn, setLoggedIn] = useState(false)
