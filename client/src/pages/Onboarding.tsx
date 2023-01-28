@@ -29,13 +29,8 @@ const Onboarding = () => {
         onboardingChange(e, "onCampus")
         setShowing(true)
     }
+
     //called when submit button is pressed on last section
-    const onFinish = () => {
-        //TODO: perform update mutation to backend
-
-
-    }
-
     const onFinished = () => {
         updateUser({variables: user, onCompleted: () => console.log(data)})
     }

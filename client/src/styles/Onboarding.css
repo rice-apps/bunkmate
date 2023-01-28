@@ -101,6 +101,7 @@ label {
     border: 2px solid var(--blue);
     border-radius: 13px;
     cursor: pointer;
+    padding: 4px;
     width: 131px;
     height: 32px;
     background-color: var(--white);
