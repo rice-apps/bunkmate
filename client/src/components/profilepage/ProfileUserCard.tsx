@@ -41,26 +41,26 @@ const ProfileUserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pron
         <div className="profile-card-wrapper">
             <div className="profile-user-card-content">
                 <div className="profile-user-card-heading">
-                    <img className="user-pfp" src={pfps.get(name)} alt={name}/>
-                    <div className="user-title">
+                    <img className="profile-user-pfp" src={pfps.get(name)} alt={name}/>
+                    <div className="profile-user-title">
                         <h1>{name}</h1>
-                        <p className="user-pronouns">{pronouns}</p>
+                        <p className="profile-user-pronouns">{pronouns}</p>
                     </div>
                 </div>
-                <div className="card-body">
+                <div className="profile-card-body">
                     <div className="attr-col" id="left-attr-col">
                         <div className="user-attr" id="pref-gender">
                             <FontAwesomeIcon className="attr-icon" icon={faVenusMars}/>
                             <div className="attr-info">
                                 <p className="attr-value">{pref_gender}</p>
-                                <p className="attr-desc">Looking for</p>
+                                <small className="attr-desc">Looking for</small>
                             </div>
                         </div>
                         <div className="user-attr" id="cleaning-freq">
                         <FontAwesomeIcon className="attr-icon" icon={faLocationDot}/>
                             <div className="attr-info">
                                 <p className="attr-value">{res_college}</p>
-                                <p className="attr-desc">College</p>
+                                <small className="attr-desc">College</small>
                             </div>
                         </div>
                     </div>
@@ -69,14 +69,14 @@ const ProfileUserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pron
                             <FontAwesomeIcon className="attr-icon" icon={faBookOpen}/>
                             <div className="attr-info">
                                 <p className="attr-value">{major}</p>
-                                <p className="attr-desc">Major</p>
+                                <small className="attr-desc">Major</small>
                             </div>
                         </div>
                         <div className="user-attr" id="pref-temp">
                             <FontAwesomeIcon className="attr-icon" icon={faGraduationCap}/>
                             <div className="attr-info">
                                 <p className="attr-value">{grad_year}</p>
-                                <p className="attr-desc">Class of</p>
+                                <small className="attr-desc">Class of</small>
                             </div>
                         </div>
                     </div>

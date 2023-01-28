@@ -25,8 +25,8 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     }
 
     return (
-        // props.userData.email ? 
-        <div className="homepage">
+        //props.userData.email
+         <div className="homepage"> 
             <svg className="heading-background">
                 <ellipse cx="50%" cy="0px" rx="75%" ry="100%"></ellipse>
             </svg>

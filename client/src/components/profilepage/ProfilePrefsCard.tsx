@@ -33,28 +33,28 @@ const ProfilePrefsCard = ( {bedtime, pref_temp, cleaning_freq, snoring, overnigh
                                 <FontAwesomeIcon className="attr-icon" icon={faBed}/>
                                 <div className="attr-info">
                                     <p className="attr-value">{[bedtime]}</p>
-                                    <p className="attr-desc">Bedtime</p>
+                                    <small className="attr-desc">Bedtime</small>
                                 </div>
                             </div>
                             <div className="user-attr" id="pref-gender">
                                 <FontAwesomeIcon className="attr-icon" icon={faSprayCanSparkles}/>
                                 <div className="attr-info">
                                     <p className="attr-value">{[cleaning_freq]}</p>
-                                    <p className="attr-desc">Cleaning Frequency</p>
+                                    <small className="attr-desc">Cleaning Frequency</small>
                                 </div>
                             </div>
                             <div className="user-attr" id="bedtime">
                                 <FontAwesomeIcon className="attr-icon" icon={faTemperatureLow}/>
                                 <div className="attr-info">
                                     <p className="attr-value">{[pref_temp]}˚F</p>
-                                    <p className="attr-desc">Preferred Room Temp</p>
+                                    <small className="attr-desc">Preferred Room Temp</small>
                                 </div>
                             </div>
                             <div className="user-attr" id="bedtime">
                                 <FontAwesomeIcon className="attr-icon" icon={faMoon}/>
                                 <div className="attr-info">
                                     <p className="attr-value">{[overnight_guests]}</p>
-                                    <p className="attr-desc">Overnight Guests</p>
+                                    <small className="attr-desc">Overnight Guests</small>
                                 </div>
                             </div>
                         </div>
@@ -63,28 +63,28 @@ const ProfilePrefsCard = ( {bedtime, pref_temp, cleaning_freq, snoring, overnigh
                                 <FontAwesomeIcon className="attr-icon" icon={faHandshake}/>
                                 <div className="attr-info">
                                     <p className="attr-value">{[dynamic]}</p>
-                                    <p className="attr-desc">Dynamic</p>
+                                    <small className="attr-desc">Dynamic</small>
                                 </div>
                             </div>
                             <div className="user-attr" id="pref-gender">
                                 <FontAwesomeIcon className="attr-icon" icon={faVolumeHigh}/>
                                 <div className="attr-info">
                                     <p className="attr-value">{[snoring]}</p>
-                                    <p className="attr-desc">Loudness</p>
+                                    <small className="attr-desc">Loudness</small>
                                 </div>
                             </div>
                             <div className="user-attr" id="bedtime">
                                 <FontAwesomeIcon className="attr-icon" icon={faSun}/>
                                 <div className="attr-info">
                                     <p className="attr-value">{[internal_clock]}</p>
-                                    <p className="attr-desc">Internal Clock</p>
+                                    <small className="attr-desc">Internal Clock</small>
                                 </div>
                             </div>
                             <div className="user-attr" id="bedtime">
                                 <FontAwesomeIcon className="attr-icon" icon={faSmoking}/>
                                 <div className="attr-info">
                                     <p className="attr-value">{[smoking]}</p>
-                                    <p className="attr-desc">Smoking</p>
+                                    <small className="attr-desc">Smoking</small>
                                 </div>
                             </div>
                         </div>

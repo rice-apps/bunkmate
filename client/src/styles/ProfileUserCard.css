@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: space-between;
     width: 700px;
-    height: 220px;
+    height: 230px;
 }
 
 .profile-user-card-heading {
@@ -12,29 +12,27 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-size: 18px !important;
 }
 
-.user-pfp {
+.profile-user-pfp {
     width: 100px;
     height: 100px;
     margin-right: 14px;
     border-radius: 50%;
 }
 
-.user-title {
+.profile-user-title {
     display: flex;
     flex-direction: row;
     align-items: baseline;
     text-align: center;
 }
 
-.user-title h1 {
+.profile-user-title h1 {
     margin-right: 8px;
-    
 }
 
-.user-pronouns {
+.profile-user-pronouns {
     color: rgba(37, 51, 93, 0.64);
 }
 
@@ -42,9 +40,8 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    gap: 15px;
+    gap: 0px;
     position: relative;
-    top: -20px;
 }
 
 .attr-col {
@@ -72,7 +69,6 @@
 }
 
 .attr-icon {
-    font-size: 30px;
     margin-right: 10px;
     width: 25px;
     height: 25px;
@@ -86,13 +82,10 @@
 }
 
 .attr-value {
-    font-size: 18px;
-    font-weight: 500;
     margin: 0px;
 }
 
 .attr-desc {
-    font-size: 14px;
     margin: 0px;
     color: rgba(37, 51, 93, 0.64);
 }
