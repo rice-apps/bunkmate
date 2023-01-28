@@ -14,6 +14,8 @@ interface InputProps {
 const InputField = ({label, type, attribute, options, placeholder}: InputProps) => {
 
     const [selected, setSelected] = useState("")
+    const [rangeValue1, setRangeValue1] = useState(0)
+    const [rangeValue2, setRangeValue2] = useState(0)
     const [selectedOpts, setSelectedOps] = useState([""])
     const {onboardingChange} = useContext(UserContext)
 
@@ -31,7 +33,7 @@ const InputField = ({label, type, attribute, options, placeholder}: InputProps) 
             }
             { type==="multiple-select" &&
             <div className="options">
-            {options.map(option=><button className={selectedOpts.includes(option)?"selected-btn":""} id={label} onClick={e=>{setSelectedOps(prevState=>([...prevState, option]));onboardingChange(e, attribute, [...selectedOpts, option].slice(1));}} >{option}</button>)}
+            {options.map(option=><button className={selectedOpts.includes(option)?"selected-btn":""} id={label} onClick={e=>{setSelectedOps(prevState=>(prevState.includes(option)?prevState.filter(item=>item!==option):[...prevState, option]));onboardingChange(e, attribute, [...selectedOpts, option].slice(1));}} >{option}</button>)}
             </div>
             }
             {type==="dropdown" &&
@@ -44,6 +46,14 @@ const InputField = ({label, type, attribute, options, placeholder}: InputProps) 
                 <textarea rows={5} onChange={(e)=>onboardingChange(e, attribute)} id={label} placeholder={placeholder}>
 
                 </textarea>
+            }
+            {type==="range" && 
+            <div className="range-slider">
+                <span></span>
+                <input type="range" step="1" min="0" max="10" value={rangeValue1} onChange={(e)=>{setRangeValue1(parseInt(e.target.value))}} id="slider1"/>
+                <input type="range" step="1" min="0" max="10" value={rangeValue2} onChange={(e)=>{setRangeValue2(parseInt(e.target.value))}} id="slider2"/>
+                <span></span>
+            </div>
             }
         </div>
     )

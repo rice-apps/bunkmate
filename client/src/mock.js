@@ -195,6 +195,15 @@ const mock = {
                         options: ["Yes", "No"],
                         placeholder: ""
                     },
+                    {
+                        id: 2,
+                        attribute: "roomTemp",
+                        label: "What do you prefer your room temperature to be at?",
+                        type: "range",
+                        options: [],
+                        placeholder: ""
+                    },
+                    
 
                     {   
                         id: 5,
