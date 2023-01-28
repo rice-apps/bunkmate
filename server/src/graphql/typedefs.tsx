@@ -34,7 +34,8 @@ module.exports = gql`
     smoker: String,
     smokerPref: String,
     additionalHabitInfo: String,
-    pfp: String
+    pfp: String,
+    newUser: Boolean
   }  
 
   type AuthResponse {
@@ -78,7 +79,8 @@ module.exports = gql`
     smoker: String,
     smokerPref: String,
     additionalHabitInfo: String,
-    pfp: String
+    pfp: String,
+    newUser: Boolean
   }
 
   type Query {

@@ -81,11 +81,11 @@ module.exports = {
                 return error;
             }
         }),
-        updateUser: (_, { email, user }) => __awaiter(this, void 0, void 0, function* () {
+        updateUser: (_, { user }) => __awaiter(this, void 0, void 0, function* () {
             try {
-                if (email == user.email) {
+                if (user) {
                     console.log(user);
-                    const updated_user = User.updateUser({ email: email }, user);
+                    const updated_user = User.updateUser({ email: user.email }, user);
                     return updated_user;
                 }
             }

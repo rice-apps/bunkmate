@@ -17,6 +17,15 @@ import { Navigate } from "react-router-dom";
 import '../styles/HomePage.css';
 
 import { gql, useQuery, useLazyQuery } from "@apollo/client";
+import UserData from '../types/UserData';
+
+// const GET_USERS = gql`
+//   query getUsers {
+//     getUsers {
+//         email
+//     }
+//   }
+// `
 
 const GET_USERS = gql`
   query getUsers {
@@ -60,14 +69,15 @@ const GET_USERS = gql`
 `
 
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
-    // const [allUsers, setAllUsers] = useState<UserData[]>([])
+    const [allUsers, setAllUsers] = useState<UserData[]>([])
+    
 
     const [getUsers, { data, loading, error }] = useLazyQuery(GET_USERS, {onCompleted: tempData => {
         console.log(tempData)
         if (tempData) {
             console.log("fetched other users")
             console.log(tempData)
-            // setAllUsers(allUsers)
+            setAllUsers(tempData.getUsers)
         }
     }})
     
@@ -102,7 +112,14 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
             <div className="user-card-feed">
                 {/* TODO: update UserData type to include all fields */}
                 {/* {allUsers.map(user => { return (<UserCard name={user.name} pref_temp={user.roomTemp} bedtime={user.bedTime} pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq} />) })} */}
-                {users.map(user => {return (<UserCard name={user.name} pref_temp={user.pref_temp} bedtime={user.bedtime} pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq}/>)})}
+                { allUsers.map(user => {return (<UserCard name={user.name} 
+                                                    pref_temp={user.roomTemp} 
+                                                    bedtime={user.bedTime} 
+                                                    pref_gender={user.genderPref} 
+                                                    grad_year={user.gradYear} 
+                                                    pronouns={user.pronouns} 
+                                                    res_college={user.resCollege} 
+                                                    cleaning_freq={user.neatness}/>)})}
             </div>
         </div> 
             //: <Navigate to="/" replace />

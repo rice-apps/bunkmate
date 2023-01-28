@@ -100,7 +100,7 @@ function App() {
       // <Router>
         <div>
         <Routes>
-          <Route path={`/profile/:id`} element={<ProfilePage userData={userInfo} logout={logout} />}/>
+          {/* <Route path={`/profile/:id`} element={<ProfilePage userData={userInfo} logout={logout} />}/> */}
           <Route path={`/home`} element={<HomePage userData={userInfo} logout={logout}/>} />
           <Route path={`/onboarding`} element={<Onboarding />} />
           <Route path={`/`} element={<LoginPage login={login}/>} />

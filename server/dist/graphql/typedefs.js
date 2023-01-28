@@ -14,7 +14,7 @@ module.exports = gql `
     accommodation: String,
     onCampus: Boolean,
     roomType: String,
-    numRoommates: Int,
+    numRoommates: String,
     additionalRoomInfo: String,
     genderPref: String,
     overnightGuests: Boolean,
@@ -33,7 +33,8 @@ module.exports = gql `
     smoker: String,
     smokerPref: String,
     additionalHabitInfo: String,
-    pfp: String
+    pfp: String,
+    newUser: Boolean
   }  
 
   type AuthResponse {
@@ -46,7 +47,6 @@ module.exports = gql `
   }
 
   input UserInput {
-    id: ID!
     name: String!
     email: String!
     resCollege: String,
@@ -59,7 +59,7 @@ module.exports = gql `
     accommodation: String,
     onCampus: Boolean,
     roomType: String,
-    numRoommates: Int,
+    numRoommates: String,
     additionalRoomInfo: String,
     genderPref: String,
     overnightGuests: Boolean,
@@ -78,7 +78,8 @@ module.exports = gql `
     smoker: String,
     smokerPref: String,
     additionalHabitInfo: String,
-    pfp: String
+    pfp: String,
+    newUser: Boolean
   }
 
   type Query {
