@@ -15,6 +15,7 @@ import { googleLogout } from '@react-oauth/google';
 
 // CSS
 import '../styles/ProfilePage.css';
+import { Navigate } from 'react-router-dom';
 
 const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
     
@@ -24,8 +25,15 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
         props.logout()
     }
 
+    const GoBackButton = () => {
+        // <button onClick={() => navigate()}>Go Back</button>
+    }
+
+
+
     return (
         <div className="profile-page">
+            {/* <ProfileGoBack /> */}
             <div className="profile-content">
                 <ProfileUserCard name={users[0].name} pref_temp={users[0].pref_temp} bedtime={users[0].bedtime} pref_gender={users[0].genderPref}
                 grad_year={users[0].grad_year} pronouns={users[0].pronouns} res_college={users[0].res_college} cleaning_freq={users[0].cleaning_freq} 
