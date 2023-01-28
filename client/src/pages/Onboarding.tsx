@@ -9,13 +9,12 @@ import { gql, useMutation, useQuery } from "@apollo/client"
 
 
 const UPDATE_USER = gql`
-  mutation updateUser($user: UserInput!) {
-    updateUser(user: $user){
+  mutation updateUser($email: String!, $user: UserInput!) {
+    updateUser(email: $email, user: $user){
       email
     }
   }
 `
-
 
 const Onboarding = () => {
     const [updateUser, {data, loading, error}] = useMutation(UPDATE_USER)
@@ -27,19 +26,13 @@ const Onboarding = () => {
         onboardingChange(e, "onCampus")
         setShowing(true)
     }
-    //called when submit button is pressed on last section
-    const onFinish = () => {
-        //TODO: perform update mutation to backend
-        try {
-            console.log(user)
-            updateUser({variables: user, onCompleted: () => console.log("User updated")})
-        } catch (error) {
-            console.log(error)
-        }
-
-    }
-
     const onFinished = () => {
+
+        // TODO: populate their IDs (required field in mongo)
+            // populate their email (make sure its their rice gmail)
+        onboardingChange(null, "newUser", false)
+
+
         try {
             console.log(user)
             updateUser({ variables: user, onCompleted: () => console.log("User updated") })
