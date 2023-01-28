@@ -40,7 +40,7 @@ pfps.set("Sofia Lakhani", defaultPfp);
 
 const ProfileContactCard = ({phone, email}: UserProps) => {
     return (
-        <div className="card-wrapper">
+        <div className="profile-card-wrapper">
             <div className="profile-room-card-content">
                 <div className="contact-card-heading">
                     <h2>Contact</h2>

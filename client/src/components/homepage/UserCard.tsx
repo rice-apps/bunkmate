@@ -31,8 +31,8 @@ const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, r
         <div className="user-card-wrapper">
             <a href="">
                 <div className="user-card">
-                    <div className="card-content">
-                        <div className="card-heading">
+                    <div className="user-card-content">
+                        <div className="user-card-heading">
                             <img className="user-pfp" src={pfps.get(name)} alt={name}/>
                             <div className="user-header">
                                 <div className="user-title">
@@ -55,16 +55,16 @@ const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, r
                                 </div>
                             </div>
                         </div>
-                        <div className="card-body">
-                            <div className="attr-col">
-                                <div className="user-attr" id="pref-gender">
+                        <div className="user-card-body">
+                            <div className="user-card-attr-col">
+                                <div className="user-card-attr" id="pref-gender">
                                     <FontAwesomeIcon className="attr-icon" icon={faVenusMars}/>
                                     <div className="attr-info">
                                         <p className="attr-value">{pref_gender}</p>
                                         <p className="attr-desc">roommate preferred</p>
                                     </div>
                                 </div>
-                                <div className="user-attr" id="bedtime">
+                                <div className="user-card-attr" id="bedtime">
                                     <FontAwesomeIcon className="attr-icon" icon={faBed}/>
                                     <div className="attr-info">
                                         <p className="attr-value">{bedtime}</p>
@@ -72,15 +72,15 @@ const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, r
                                     </div>
                                 </div>
                             </div>
-                            <div className="attr-col">
-                                <div className="user-attr" id="pref-temp">
+                            <div className="user-card-attr-col">
+                                <div className="user-card-attr" id="pref-temp">
                                     <FontAwesomeIcon className="attr-icon" icon={faTemperatureHalf}/>
                                     <div className="attr-info">
                                         <p className="attr-value">{pref_temp}℉</p>
                                         <p className="attr-desc">room temperature</p>
                                     </div>
                                 </div>
-                                <div className="user-attr" id="cleaning-freq">
+                                <div className="user-card-attr" id="cleaning-freq">
                                     <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
                                     <div className="attr-info">
                                         <p className="attr-value">{cleaning_freq}</p>

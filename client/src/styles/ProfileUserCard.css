@@ -12,7 +12,7 @@
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    font-size: 18px;
+    font-size: 18px !important;
 }
 
 .user-pfp {
@@ -38,7 +38,7 @@
     color: rgba(37, 51, 93, 0.64);
 }
 
-.card-body {
+.profile-card-body {
     display: flex;
     flex-direction: row;
     justify-content: center;

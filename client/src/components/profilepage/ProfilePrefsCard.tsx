@@ -22,7 +22,7 @@ interface UserProps {
 
 const ProfilePrefsCard = ( {bedtime, pref_temp, cleaning_freq, snoring, overnight_guests, dynamic, internal_clock, drinking, smoking}: UserProps) => {
     return (
-            <div className="card-wrapper">
+            <div className="profile-card-wrapper">
                 <div className="profile-prefs-card-content">
                     <div className="prefs-card-heading">
                         <h2>Preferences</h2>

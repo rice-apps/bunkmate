@@ -38,7 +38,7 @@ pfps.set("Sofia Lakhani", defaultPfp);
 
 const ProfileUserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, major, minor, overnight_guests, drinking, smoking, dynamic}: UserProps) => {
     return (
-        <div className="card-wrapper">
+        <div className="profile-card-wrapper">
             <div className="profile-user-card-content">
                 <div className="profile-user-card-heading">
                     <img className="user-pfp" src={pfps.get(name)} alt={name}/>
