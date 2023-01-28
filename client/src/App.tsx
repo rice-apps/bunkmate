@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 // import UserData from "./types/UserData"
 import UserDataAuth from "./types/UserDataAuth"
 import HomePage from './pages/HomePage';
@@ -7,8 +7,9 @@ import LoginPage from "./pages/LoginPage";
 import Onboarding from './pages/Onboarding';
 import jwtDecode from 'jwt-decode';
 
-import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { gql, useMutation } from "@apollo/client";
+import { UserContext } from './components/context/UserContext';
 
 interface MyToken {
   name: string;
@@ -34,6 +35,14 @@ const UPSERT_AUTH_USER = gql`
 `
 
 function App() {
+
+  const {user, setUser} = useContext(UserContext)
+
+      useEffect(()=>{
+        console.log(user)
+      },[])
+      let { userId } = useParams();
+
       const [loggedIn, setLoggedIn] = useState(false)
       const [userInfo, setUserInfo] = useState<UserDataAuth>({
         email: "",
@@ -91,6 +100,7 @@ function App() {
       // <Router>
         <div>
         <Routes>
+          <Route path={`/profile/:id`} element={<ProfilePage userData={userInfo} logout={logout} />}/>
           <Route path={`/home`} element={<HomePage userData={userInfo} logout={logout}/>} />
           <Route path={`/onboarding`} element={<Onboarding />} />
           <Route path={`/`} element={<LoginPage login={login}/>} />
@@ -110,11 +120,12 @@ function App() {
       //   </Routes>
       //   {/* </div> */}
       // </Router>
-      
-      // <div>
-      //   {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
+      /*
+      <div>
+        {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
 
-      // // </div>
+      </div>
+      */
       // <ProfilePage userData={userInfo} logout={logout}/>
     );
 }

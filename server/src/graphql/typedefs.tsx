@@ -47,7 +47,6 @@ module.exports = gql`
   }
 
   input UserInput {
-    id: ID!
     name: String!
     email: String!
     resCollege: String,
@@ -60,7 +59,7 @@ module.exports = gql`
     accommodation: String,
     onCampus: Boolean,
     roomType: String,
-    numRoommates: Int,
+    numRoommates: String,
     additionalRoomInfo: String,
     genderPref: String,
     overnightGuests: Boolean,

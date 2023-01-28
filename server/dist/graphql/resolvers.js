@@ -75,15 +75,6 @@ module.exports = {
                     //     });
                     // }
                 }
-                // if (info) {
-                //     console.log(info);
-                //     switch (info.code) {
-                //         case 'ETIMEDOUT':
-                //             return (new Error('Failed to reach Google: Try Again'));
-                //         default:
-                //             return (new Error('something went wrong'));
-                //     }
-                // }
                 return (Error('server error'));
             }
             catch (error) {

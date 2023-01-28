@@ -8,6 +8,7 @@ import {
   InMemoryCache,
   ApolloProvider,
 } from "@apollo/client";
+import UserContextProvider from './components/context/UserContext';
 import { BrowserRouter } from 'react-router-dom';
 
 //put in config or somethn
@@ -26,9 +27,11 @@ root.render(
   <React.StrictMode>
     <GoogleOAuthProvider clientId={client_id} >
       <ApolloProvider client={client}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <UserContextProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </UserContextProvider>
       </ApolloProvider>
     </GoogleOAuthProvider>
   </React.StrictMode>
