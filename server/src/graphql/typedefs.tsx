@@ -34,7 +34,8 @@ module.exports = gql`
     smoker: String,
     smokerPref: String,
     additionalHabitInfo: String,
-    pfp: String
+    pfp: String,
+    newUser: Boolean
   }  
 
   type AuthResponse {
@@ -78,7 +79,8 @@ module.exports = gql`
     smoker: String,
     smokerPref: String,
     additionalHabitInfo: String,
-    pfp: String
+    pfp: String,
+    newUser: Boolean
   }
 
   type Query {
@@ -88,6 +90,7 @@ module.exports = gql`
   
   type Mutation {
     authGoogle(email: String!): AuthResponse
-    updateUser(email: String!, user: UserInput!): User
+    updateUser(user: UserInput!): User
+    updateUser1(email: String!, user: UserInput!): User
   }
 `

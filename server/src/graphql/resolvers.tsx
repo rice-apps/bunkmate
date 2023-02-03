@@ -79,7 +79,9 @@ module.exports = {
         updateUser: async (_, { user }) => { // user is a User object
             try {
                 if (user) {
+                    console.log("User and their email:")
                     console.log(user)
+                    console.log(user.email)
                     const updated_user = User.updateUser({email: user.email}, user)
                     return updated_user
                 }

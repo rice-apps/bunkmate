@@ -67,7 +67,11 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
         if (tempData) {
             console.log("fetched other users")
             console.log(tempData)
+            // allUsers - tempData
             // setAllUsers(allUsers)
+
+
+
         }
     }})
     
@@ -79,6 +83,10 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
         // if (loading) return null;
         
     }, [])
+
+    const funcA = () => {
+        //do something
+    }
 
     const recommendationAlgorithm = () => {
         // console.log(data)
@@ -99,10 +107,14 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
             <div className="page-header">
                 <h1 className="page-title">fellow bunkmates!</h1>
             </div>
+            {/* <button onClick={getUsers()}> Do Func A</button> */}
             <div className="user-card-feed">
                 {/* TODO: update UserData type to include all fields */}
                 {/* {allUsers.map(user => { return (<UserCard name={user.name} pref_temp={user.roomTemp} bedtime={user.bedTime} pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq} />) })} */}
-                {users.map(user => {return (<UserCard name={user.name} pref_temp={user.pref_temp} bedtime={user.bedtime} pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq}/>)})}
+                {users.map(user => {return (<UserCard name={user.name} 
+                                                      pref_temp={user.pref_temp} 
+                                                      bedtime={user.bedtime} 
+                                                      pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq}/>)})}
             </div>
         </div> 
             : <Navigate to="/" replace />
