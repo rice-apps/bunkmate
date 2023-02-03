@@ -84,7 +84,9 @@ module.exports = {
         updateUser: (_, { user }) => __awaiter(this, void 0, void 0, function* () {
             try {
                 if (user) {
+                    console.log("User and their email:");
                     console.log(user);
+                    console.log(user.email);
                     const updated_user = User.updateUser({ email: user.email }, user);
                     return updated_user;
                 }

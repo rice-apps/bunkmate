@@ -1,7 +1,7 @@
 const express = require("express");
 const mongoose = require("mongoose");
 const { ApolloServer } = require('apollo-server');
-const typeDefs = require('./graphql/typeDefs');
+const typeDefs = require('./graphql/typedefs');
 const resolvers = require('./graphql/resolvers');
 
 const PORT = process.env.PORT || 3000;

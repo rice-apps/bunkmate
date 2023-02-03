@@ -55,13 +55,13 @@ var UserSchema = new Schema({
     smokerPref: String,
     additionalHabitInfo: String,
     pfp: String,
+    newUser: Boolean,
     auth: {
         google: {
             id: String,
             token: String
         }
     },
-    newUser: Boolean,
 }, {
     methods: {
         generateJWT() {
@@ -122,6 +122,8 @@ var UserSchema = new Schema({
                 // update = {resCollege: "Sid Richardson", smoker: True}
                 // update = {newUser: False}
                 let doc = yield exports.User.findOneAndUpdate(filter, update);
+                console.log("doc");
+                console.log(doc);
                 return doc;
             });
         }

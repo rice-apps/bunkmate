@@ -32,7 +32,6 @@ const Onboarding = () => {
             // populate their email (make sure its their rice gmail)
         onboardingChange(null, "newUser", false)
 
-
         try {
             console.log(user)
             updateUser({ variables: user, onCompleted: () => console.log("User updated") })
