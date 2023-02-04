@@ -76,11 +76,11 @@ module.exports = {
                 return error;
             }
         },
-        updateUser: async (_, { email, user }) => { // user is a User object
+        updateUser: async (_, { user }) => { // user is a User object
             try {
-                if (email == user.email) {
+                if (user) {
                     console.log(user)
-                    const updated_user = User.updateUser({email: email}, user)
+                    const updated_user = User.updateUser({email: user.email}, user)
                     return updated_user
                 }
             }
