@@ -28,3 +28,28 @@
     transition: transform 0.15s;
     color: #25335D;
 }
+
+.buttonback {
+    background-color: #FFFFFF;
+    border: none;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    position: relative;
+}
+
+.buttonback:after {
+    content: '←';
+    color: #000000
+}
+
+.buttonback:hover {
+    background-color: #ddd;
+    color: black;
+}
+

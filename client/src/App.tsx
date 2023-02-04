@@ -9,7 +9,7 @@ import jwtDecode from 'jwt-decode';
 
 import { BrowserRouter as Router, Routes, Route, useNavigate, useParams } from 'react-router-dom';
 import { gql, useMutation } from "@apollo/client";
-
+ 
 interface MyToken {
   name: string;
   email: string;

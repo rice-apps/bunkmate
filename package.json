@@ -1,0 +1,19 @@
+{
+  "name": "bunkmate",
+  "version": "1.0.0",
+  "description": "Web app focused on finding roommates and subleases @ rice university",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rice-apps/bunkmate.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rice-apps/bunkmate/issues"
+  },
+  "homepage": "https://github.com/rice-apps/bunkmate#readme"
+}
