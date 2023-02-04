@@ -1,0 +1,41 @@
+:root {
+    --white: #fff;
+    --orange: #FAA986;
+    --flesh: #FFEBE5;
+    --darkblue: #25335D;
+
+ }
+ .banner-home{
+    background:var(--flesh);
+ }
+
+ 
+
+ .banner-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+ }
+ .banner-logo {
+    justify-self: start;
+    font-size: 200%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Flex',sans-serif;
+    
+    padding: 1.5vw;
+ }
+ .banner-logo::before {
+    content: "";
+    justify-self: start;
+    height: 55px;
+    width: 55px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    display: inline-block;
+    z-index: 0;
+    position: absolute;
+ }

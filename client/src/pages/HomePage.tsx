@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 // Components
 import UserCard from '../components/homepage/UserCard';
+import Banner from '../components/homepage/Banner';
 
 // Mock database
 import users from '../mock-database';
@@ -70,7 +71,15 @@ const GET_USERS = gql`
 
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     const [allUsers, setAllUsers] = useState<UserData[]>([])
-    
+
+    const [onCampus, setOnCampus] = useState(true)
+
+    const toggleOnCampus = ()=> {
+        setOnCampus(prevState=>!prevState)
+
+    }
+
+   
 
     const [getUsers, { data, loading, error }] = useLazyQuery(GET_USERS, {onCompleted: tempData => {
         console.log(tempData)
@@ -103,28 +112,47 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
         googleLogout()
         props.logout()
     }
+    function BannerWrapper() {
+        return <Banner />;
+      }
+
+      
+      console.log(allUsers)
 
     return (
         //props.userData.email
          <div className="homepage"> 
-            <svg className="heading-background">
+         <div className = "banner">
+            <BannerWrapper />
+         </div>
+            {/* <svg className="heading-background">
                 <ellipse cx="50%" cy="0px" rx="75%" ry="100%"></ellipse>
-            </svg>
+            </svg> */}
             <div className="page-header">
-                <h1 className="page-title">fellow bunkmates!</h1>
+                <h1 className="page-title">find a roomate. avoid the hassle.</h1>
             </div>
             {/* <button onClick={getUsers()}> Do Func A</button> */}
             <div className="user-card-feed">
                 {/* TODO: update UserData type to include all fields */}
                 {/* {allUsers.map(user => { return (<UserCard name={user.name} pref_temp={user.roomTemp} bedtime={user.bedTime} pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq} />) })} */}
-                { allUsers.map(user => {return (<UserCard name={user.name} 
+{/*                 { allUsers.map(user => {return user.onCampus ? (<UserCard name={user.name} 
                                                     pref_temp={user.roomTemp} 
                                                     bedtime={user.bedTime} 
                                                     pref_gender={user.genderPref} 
                                                     grad_year={user.gradYear} 
                                                     pronouns={user.pronouns} 
                                                     res_college={user.resCollege} 
-                                                    cleaning_freq={user.neatness}/>)})}
+                                                    cleaning_freq={user.neatness}/>) : null})} */}
+                {
+                        allUsers.filter(user=>user.onCampus==onCampus).map(user => { return (<UserCard name={user.name} 
+                        pref_temp={user.roomTemp} 
+                        bedtime={user.bedTime} 
+                        pref_gender={user.genderPref} 
+                        grad_year={user.gradYear} 
+                        pronouns={user.pronouns} 
+                        res_college={user.resCollege} 
+                        cleaning_freq={user.neatness}/>) }) 
+                }
             </div>
         </div> 
             //: <Navigate to="/" replace />
