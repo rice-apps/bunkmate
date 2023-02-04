@@ -23,8 +23,7 @@ interface UserProps {
     cleaning_freq: string;
     major: string;
     minor: string;
-    overnight_guests: string;
-    drinking: string;
+    overnight_guests: boolean;
     smoking: string;
     dynamic: string;
 }

@@ -1,11 +1,7 @@
 export default interface UserData {
     id: number,
     name: string,
-    email: {
-        type: string,
-        required: true,
-        unique: true
-    },
+    email: string,
     resCollege: string,
     phoneNumber: string,
     gradYear: string,

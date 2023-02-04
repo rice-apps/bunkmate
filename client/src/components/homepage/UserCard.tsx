@@ -15,6 +15,7 @@ interface UserProps {
     pronouns: string;
     res_college: string;
     cleaning_freq: string;
+    net_id: string;
 }
 
 let pfps = new Map();
@@ -26,10 +27,11 @@ pfps.set("Jonathan Jang", defaultPfp);
 pfps.set("Isabel Wang", defaultPfp);
 
 
-const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq}: UserProps) => {
+const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, net_id}: UserProps) => {
+    const profile_url = "/profile/" + net_id;
     return (
         <div className="user-card-wrapper">
-            <a href="">
+            <a href={profile_url}>
                 <div className="user-card">
                     <div className="user-card-content">
                         <div className="user-card-heading">

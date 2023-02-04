@@ -12,12 +12,12 @@ interface UserProps {
     bedtime: string;
     pref_temp: string;
     cleaning_freq: string;
-    snoring: string;
-    overnight_guests: string;
+    overnight_guests: boolean;
     dynamic: string;
     internal_clock: string;
-    drinking: string;
     smoking: string;
+    snoring: string;
+    drinking: string;
 }
 
 const ProfilePrefsCard = ( {bedtime, pref_temp, cleaning_freq, snoring, overnight_guests, dynamic, internal_clock, drinking, smoking}: UserProps) => {

@@ -70,14 +70,13 @@ const GET_USERS = gql`
 
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     const [allUsers, setAllUsers] = useState<UserData[]>([])
-    
 
     const [getUsers, { data, loading, error }] = useLazyQuery(GET_USERS, {onCompleted: tempData => {
         console.log(tempData)
         if (tempData) {
             console.log("fetched other users")
             console.log(tempData)
-            setAllUsers(tempData.getUsers)
+            setAllUsers(tempData.getUsers.filter((user:any) => !user.newUser))
         }
     }})
     
@@ -106,7 +105,7 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
 
     return (
         //props.userData.email
-         <div className="homepage"> 
+        <div className="homepage"> 
             <svg className="heading-background">
                 <ellipse cx="50%" cy="0px" rx="75%" ry="100%"></ellipse>
             </svg>
@@ -124,7 +123,8 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
                                                     grad_year={user.gradYear} 
                                                     pronouns={user.pronouns} 
                                                     res_college={user.resCollege} 
-                                                    cleaning_freq={user.neatness}/>)})}
+                                                    cleaning_freq={user.neatness}
+                                                    net_id={user.email.split("@")[0]}/>)})}
             </div>
         </div> 
             //: <Navigate to="/" replace />
