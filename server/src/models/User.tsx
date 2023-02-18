@@ -119,9 +119,9 @@ var UserSchema = new Schema({
                 // filter = {email: "go15@rice.edu"}
                 // update = {resCollege: "Sid Richardson", smoker: True}
                 // update = {newUser: False}
-                let doc = await User.findOneAndUpdate(filter, update);
-                // console.log("doc")
-                // console.log(doc)
+                let doc = await User.findOneAndUpdate(filter, update, {new: true});
+                console.log("doc")
+                console.log(doc)
                 return doc;
             }
         }

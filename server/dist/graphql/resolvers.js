@@ -88,6 +88,8 @@ module.exports = {
                     console.log(user);
                     console.log(user.email);
                     const updated_user = User.updateUser({ email: user.email }, user);
+                    console.log("UPDATED USER");
+                    console.log(updated_user);
                     return updated_user;
                 }
             }
