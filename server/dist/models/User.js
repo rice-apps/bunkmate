@@ -122,8 +122,8 @@ var UserSchema = new Schema({
                 // update = {resCollege: "Sid Richardson", smoker: True}
                 // update = {newUser: False}
                 let doc = yield exports.User.findOneAndUpdate(filter, update);
-                console.log("doc");
-                console.log(doc);
+                // console.log("doc")
+                // console.log(doc)
                 return doc;
             });
         }

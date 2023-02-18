@@ -120,8 +120,8 @@ var UserSchema = new Schema({
                 // update = {resCollege: "Sid Richardson", smoker: True}
                 // update = {newUser: False}
                 let doc = await User.findOneAndUpdate(filter, update);
-                console.log("doc")
-                console.log(doc)
+                // console.log("doc")
+                // console.log(doc)
                 return doc;
             }
         }
