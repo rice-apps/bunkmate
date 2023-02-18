@@ -33,6 +33,9 @@ const mock = {
             label: "Full Name",
             type: "text",
             options: [],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -41,6 +44,9 @@ const mock = {
             label: "Email",
             type: "text",
             options: [],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },              
         {
@@ -49,6 +55,9 @@ const mock = {
             label: "Phone",
             type: "text",
             options: [],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -57,6 +66,9 @@ const mock = {
             label: "Class",
             type: "select",
             options: ["2026", "2025", "2024", "2023", "Graduate"],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -65,6 +77,9 @@ const mock = {
             label:"Residential College",
             type: "dropdown",
             options: ["Baker", "Will Rice", "Hanszen", "Weiss", "Jones", "Brown", "Lovett", "Sid Richardson", "Martel", "McMurtry", "Duncan"],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
 
         },
@@ -74,6 +89,9 @@ const mock = {
             label: "Major(s)",
             type: "text",
             options: [],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -82,6 +100,9 @@ const mock = {
             label: "Minor(s)",
             type: "text",
             options: [],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -90,6 +111,9 @@ const mock = {
             label: "Pronouns",
             type: "select",
             options: ["He/Him", "She/Her", "They/Them", "Other"],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -98,6 +122,9 @@ const mock = {
             label: "Sex",
             type: "select",
             options: ["Male", "Female", "Other",],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
     
@@ -113,6 +140,9 @@ const mock = {
                 label: "What type of room are you looking for?",
                 type: "text",
                 options: [],
+                                        min: 60,
+                        max: 80,
+                        step: 1,
                 placeholder: "Ex: 4-person suite in Old Sid"
             },
             {
@@ -121,6 +151,9 @@ const mock = {
                 label: "I am looking for __ roommate(s)",
                 type: "select",
                 options: ["0", "1", "2", "3", ">3"],
+                                        min: 60,
+                        max: 80,
+                        step: 1,
                 placeholder: "Ex: 4-person suite in Old Sid"
             },
 
@@ -136,6 +169,9 @@ const mock = {
                     label: "My friends would describe me as ...",
                     type: "multiple-select",
                     options: ["Funny", "Athletic", "Serious", "Easy-Going", "Studious", "Patient", "Introverted", "Friendly", "Calm"],
+                                            min: 60,
+                        max: 80,
+                        step: 1,
                     placeholder: ""
                 },
 
@@ -145,6 +181,9 @@ const mock = {
                     label: "On average, I go out __ per week",
                     type: "select",
                     options: ["0", "1", "2", "3+"],
+                                            min: 60,
+                        max: 80,
+                        step: 1,
                     placeholder: ""
                 },
                 {
@@ -153,6 +192,9 @@ const mock = {
                     label: "I clean my room...",
                     type: "select",
                     options: ["Daily", "Weekly", "Occasionally", "Rarely"],
+                                            min: 60,
+                        max: 80,
+                        step: 1,
                     placeholder: ""
                 },
                 {
@@ -161,6 +203,9 @@ const mock = {
                     label: "I smoke ...",
                     type: "select",
                     options: ["Daily", "Occasionally", "Never"],
+                                            min: 60,
+                        max: 80,
+                        step: 1,
                     placeholder: ""
                 },
 
@@ -170,6 +215,9 @@ const mock = {
                     label: "What is your general noise level in the room?",
                     type: "textarea",
                     options: [],
+                                            min: 60,
+                        max: 80,
+                        step: 1,
                     placeholder: "Ex: Snoring, taking phone calls in the room, gaming, etc."
                 },
                     
@@ -185,6 +233,9 @@ const mock = {
                         label: "I am looking for ______ roommates.",
                         type: "select",
                         options: ["Male", "Female", "Either"],
+                                                min: 60,
+                        max: 80,
+                        step: 1,
                         placeholder: ""
                     },
                     {
@@ -193,6 +244,9 @@ const mock = {
                         label: "Do you plan on having overnight guests?",
                         type: "select",
                         options: ["Yes", "No"],
+                                                min: 60,
+                        max: 80,
+                        step: 1,
                         placeholder: ""
                     },
                     {
@@ -200,6 +254,9 @@ const mock = {
                         attribute: "roomTemp",
                         label: "What do you prefer your room temperature to be at?",
                         type: "range",
+                        min: 60,
+                        max: 80,
+                        step: 1,
                         options: [],
                         placeholder: ""
                     },
@@ -211,6 +268,9 @@ const mock = {
                         label: "How often will you be in the room?",
                         type: "textarea",
                         options: [],
+                                                min: 60,
+                        max: 80,
+                        step: 1,
                         placeholder: "Ex: Not often. I will be using the room mostly to sleep."
                     },                
                     ]}

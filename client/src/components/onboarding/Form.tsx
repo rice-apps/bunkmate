@@ -9,6 +9,9 @@ interface field {
     type: string;
     options: string[];
     placeholder: string;
+    max: number;
+    min: number;
+    step: number;
   }
 
 
@@ -37,7 +40,7 @@ const Form = ({welcome, header, fields, setActiveSection, show, activeSection, o
              
             <form>
                 <h2>{header}</h2>
-                {fields.map(field=><InputField attribute={field.attribute} key={field["id"]} id={field.id} placeholder={field.placeholder} options={field.options} label={field["label"]} type={field.type}/>)}
+                {fields.map(field=><InputField max={field.max} min={field.min} step={field.step} attribute={field.attribute} key={field["id"]} id={field.id} placeholder={field.placeholder} options={field.options} label={field["label"]} type={field.type}/>)}
                 <div className="navigation">
                 { activeSection > 0 &&
                 <div className="submit-div">

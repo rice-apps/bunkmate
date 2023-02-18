@@ -263,3 +263,33 @@ textarea {
   .range-slider input[type=range]::-ms-tooltip {
     display: none;
   }
+
+  #slider2::before, #slider2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10.5px;
+    left: -1px;
+    width: 2.5px;
+    height: 23px;
+    background-color: #25335D;
+    margin-bottom: -28px;
+  }
+
+  #slider2::after {
+    left: initial;
+    right: -1px;
+  }
+
+  .range-slider span {
+    
+        position: absolute;
+        left: -7px;
+        top: 45px;
+    
+  }
+
+  .range-slider span:last-child {
+    left: inherit;
+    right: -7px;
+  }

@@ -9,9 +9,12 @@ interface InputProps {
     type: string;
     options: string[];
     placeholder: string;
+    max: number;
+    min: number;
+    step: number;
   }
 
-const InputField = ({label, type, attribute, options, placeholder}: InputProps) => {
+const InputField = ({label, type, attribute, options, placeholder, max, min, step}: InputProps) => {
 
     const [selected, setSelected] = useState("")
     const [rangeValue1, setRangeValue1] = useState(0)
@@ -49,10 +52,12 @@ const InputField = ({label, type, attribute, options, placeholder}: InputProps) 
             }
             {type==="range" && 
             <div className="range-slider">
-                <span></span>
-                <input type="range" step="1" min="0" max="10" value={rangeValue1} onChange={(e)=>{setRangeValue1(parseInt(e.target.value))}} id="slider1"/>
-                <input type="range" step="1" min="0" max="10" value={rangeValue2} onChange={(e)=>{setRangeValue2(parseInt(e.target.value))}} id="slider2"/>
-                <span></span>
+                <span>{min}</span>
+                <span className="slider1-thumb" style={{left:(rangeValue1-min)*100/(max-min)<60?(rangeValue1-min)*100/(max-min)+"%":(rangeValue1-min)*100/(max-min)-6 +"%", display:rangeValue1===max || rangeValue1===min?"none":"block"}}>{rangeValue1}</span>
+                <span className="slider1-thumb" style={{left:(rangeValue2-min)*100/(max-min)<65?(rangeValue2-min)*100/(max-min) +"%":(rangeValue2-min)*100/(max-min)-6 +"%", display:rangeValue2===max || rangeValue2===min?"none":"block"}}>{rangeValue2}</span>
+                <input type="range" step={step} min={min} max={max}value={rangeValue1} onChange={(e)=>{setRangeValue1(parseInt(e.target.value))}} id="slider1"/>
+                <input type="range" step={step} min={min} max={max}value={rangeValue2} onChange={(e)=>{setRangeValue2(parseInt(e.target.value))}} id="slider2"/>
+                <span>{max}</span>
             </div>
             }
         </div>
