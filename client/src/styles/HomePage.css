@@ -1,3 +1,106 @@
+:root {
+    --white: #fff;
+    --orange: #FAA986;
+    --flesh: #FFEBE5;
+    --darkblue: #25335D;
+
+ }
+ .banner-home{
+    background:var(--flesh);
+ }
+
+ 
+ .banner-content {
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+     
+     
+ }
+ .banner-logo {
+    justify-self: start;
+    font-size: 200%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Flex',sans-serif;
+    padding: 1.5vw;
+    /* background-color: red; */
+ }
+ .banner-logo::before {
+    content: "";
+    justify-self: start;
+    height: 55px;
+    width: 55px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    display: inline-block;
+    z-index: 0;
+    position: absolute;
+ }
+
+ .settings {
+    /* display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center; */
+     width: 50px;
+    height: 50px;
+    padding: 10px;
+ }
+
+ .btn-group{
+    flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   /* background-color: blue; */
+ }
+
+ .btn-group button {
+   /*ackground-color: #04AA6D;  Green background */
+   /*border: 1px solid green; Green border*/
+   font-family: 'Roboto Flex',sans-serif;
+   font-size: 135%;
+   background:var(--flesh);
+   color: black; /* White text */
+   padding: 10px 24px; /* Some padding */
+   padding-right: 180px;
+   cursor: pointer; /* Pointer/hand icon */
+   float: left; /* Float the buttons side by side */
+   display: flex;
+   
+ }
+ 
+ /* Clear floats (clearfix hack) */
+ .btn-group:after {
+   content: "";
+   clear: both;
+   display: table;
+ }
+ 
+ .btn-group button {
+   border: none; /* Prevent double borders */
+   
+ }
+ 
+ /* Add a background color on hover */
+ /* .btn-group button:hover {
+   text-decoration: underline;
+ } */
+.btn-selected {
+  text-decoration: underline;
+}
+ /* Add a background color on hover */
+ .btn-group button:on {
+   background-color: var(--orange);
+ }
+
 .homepage {
     width: 100vw;
     height: 200vh;

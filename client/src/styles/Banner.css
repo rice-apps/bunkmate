@@ -10,7 +10,6 @@
  }
 
  
-
  .banner-content {
     display: flex;
     justify-content: space-between;
@@ -38,4 +37,37 @@
     display: inline-block;
     z-index: 0;
     position: absolute;
+ }
+
+ .btn-group button {
+   /*ackground-color: #04AA6D;  Green background */
+   /*border: 1px solid green; Green border*/
+   font-family: 'Roboto Flex',sans-serif;
+   font-size: 135%;
+   background:var(--flesh);
+   color: black; /* White text */
+   padding: 10px 24px; /* Some padding */
+   cursor: pointer; /* Pointer/hand icon */
+   float: left; /* Float the buttons side by side */
+ }
+ 
+ /* Clear floats (clearfix hack) */
+ .btn-group:after {
+   content: "";
+   clear: both;
+   display: table;
+ }
+ 
+ .btn-group button {
+   border: none; /* Prevent double borders */
+ }
+ 
+ /* Add a background color on hover */
+ .btn-group button:hover {
+   text-decoration: underline;
+ }
+
+ /* Add a background color on hover */
+ .btn-group button:on {
+   background-color: var(--orange);
  }

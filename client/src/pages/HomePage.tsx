@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // Components
 import UserCard from '../components/homepage/UserCard';
-import Banner from '../components/homepage/Banner';
+//import Banner from '../components/homepage/Banner';
+import { faGear} from '@fortawesome/free-solid-svg-icons';
 
 // Mock database
 import users from '../mock-database';
@@ -75,9 +77,15 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     const [onCampus, setOnCampus] = useState(true)
 
     const toggleOnCampus = ()=> {
-        setOnCampus(prevState=>!prevState)
+        setOnCampus(true);
+        //this.style.backgroundColor = "red";
+        
 
     }
+    const toggleOffCampus = ()=> {
+        setOnCampus(false);
+    }
+
 
    
 
@@ -112,9 +120,9 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
         googleLogout()
         props.logout()
     }
-    function BannerWrapper() {
-        return <Banner />;
-      }
+    // function BannerWrapper() {
+    //     return <Banner />;
+    //   }
 
       
       console.log(allUsers)
@@ -122,9 +130,25 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     return (
         //props.userData.email
          <div className="homepage"> 
-         <div className = "banner">
-            <BannerWrapper />
-         </div>
+            <div className = "banner">
+                <div className="banner-home">
+                <div className="banner-content">
+                    <div className="banner-logo">
+                        <strong>bunkmate</strong> 
+                    </div>
+                    
+                    <div className="container">
+                            <div className="btn-group">
+                                <button className={onCampus?"btn-selected":""} onClick= {toggleOnCampus}> On-Campus</button>
+                                <button className={!onCampus?"btn-selected":""} onClick= {toggleOffCampus}> Off-Campus</button>
+                            </div>
+                    </div>
+                    <FontAwesomeIcon className="settings" icon={faGear}></FontAwesomeIcon>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
             {/* <svg className="heading-background">
                 <ellipse cx="50%" cy="0px" rx="75%" ry="100%"></ellipse>
             </svg> */}
