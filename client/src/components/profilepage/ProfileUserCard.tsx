@@ -24,6 +24,7 @@ interface UserProps {
     major: string;
     minor: string;
     overnight_guests: boolean;
+    drinking: string;
     smoking: string;
     dynamic: string;
 }

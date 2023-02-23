@@ -5,6 +5,7 @@ import '../../styles/UserCard.scss';
 import benPfp from '../../media/ben-liu-pfp-400x400.png';
 import defaultPfp from '../../media/empty-pfp-400x400.png';
 import UserData from "../../types/UserData";
+import { Link } from 'react-router-dom';
 
 interface UserProps {
     name: string;
@@ -31,7 +32,7 @@ const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, r
     const profile_url = "/profile/" + net_id;
     return (
         <div className="user-card-wrapper">
-            <a href={profile_url}>
+            <Link to={profile_url}>
                 <div className="user-card">
                     <div className="user-card-content">
                         <div className="user-card-heading">
@@ -93,7 +94,7 @@ const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, r
                         </div>
                     </div>
                 </div>
-            </a>
+            </Link>
         </div>
     )
 }

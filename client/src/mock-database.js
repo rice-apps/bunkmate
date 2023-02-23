@@ -19,12 +19,12 @@ const users = [
             "bedtime": "11:30 PM",
             "pref_temp": "70",
             "cleaning_freq": "never",     
-            "overnight_guests": "Yes",   
+            "overnight_guests": true,   
             "dynamic": "Besties", 
             "internal_clock": "Morning person",
             "drinking": "Never",
             "smoking": "Never",
-            "snore": "never",
+            "snore": false,
             
             // Contact
             "phoneNumber": "1234567890",
@@ -50,12 +50,12 @@ const users = [
             "bedtime": "12:30 AM",
             "pref_temp": "69",
             "cleaning_freq": "Weekly",     
-            "overnight_guests": "Yes",   
+            "overnight_guests": true,   
             "dynamic": "Besties", 
             "internal_clock": "Night person",
             "drinking": "Sometimes",
             "smoking": "Never",
-            "snore": "never",
+            "snore": false,
              
             // Contact
             "phoneNumber": "1234567890",
@@ -81,12 +81,12 @@ const users = [
             "bedtime": "11:00 PM",
             "pref_temp": "65",
             "cleaning_freq": "weekly",     
-            "overnight_guests": "No",   
+            "overnight_guests": true,   
             "dynamic": "Acquaintances", 
             "internal_clock": "Morning person",
             "drinking": "Never",
             "smoking": "Never",
-            "snore": "never",
+            "snore": true,
             
             // Contact
             "phoneNumber": "1234567890",

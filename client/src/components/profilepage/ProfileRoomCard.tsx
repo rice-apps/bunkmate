@@ -29,7 +29,7 @@ interface UserProps {
     // smoking: string;
     // dynamic: string;
     room: string;
-    num_search: number;
+    num_search: string;
 }
 
 let pfps = new Map();

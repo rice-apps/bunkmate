@@ -53,7 +53,7 @@ module.exports = {
                     return {
                         email: res.email,
                         token: "",
-                        newUser: res.newUser
+                        new_user: res.new_user
                     };
                     // TODO: ADD JWT
                     // if (res.newUser) { //if user already in database, generate a jwt for them

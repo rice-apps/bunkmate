@@ -16,7 +16,7 @@ interface UserProps {
     dynamic: string;
     internal_clock: string;
     smoking: string;
-    snoring: string;
+    snoring: boolean;
     drinking: string;
 }
 
