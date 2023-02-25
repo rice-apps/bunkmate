@@ -1,5 +1,9 @@
 import { userInfo } from "os";
 import { OAuth2Client } from "google-auth-library";
+// image stuff
+const { createReadStream } = require('fs')
+const { v4: uuidv4 } = require('uuid')
+const { GraphQLUpload } = require('graphql-upload')
 
 const jwt = require('jsonwebtoken');
 
@@ -68,19 +72,6 @@ var UserSchema = new Schema({
         statics: {
             async upsertGoogleUser(email) {
                 const User = this;
-                //might need mongoose.model("User") ??
-                // console.log("getting token")
-                // let token = await googleClient.getToken(email)
-                // console.log("token received")
-                // console.log(token)
-
-                // const ticket = await googleClient.verifyIdToken({
-                //     idToken: email,
-                // });
-
-                // const payload = ticket.getPayload();
-                // console.log('got payload')
-                // console.log(payload)
 
                 const user = await User.findOne({ 'email': email });
 
@@ -92,10 +83,6 @@ var UserSchema = new Schema({
                         name: "defaultName", //profile.name
                         email: email, //profile.emails[0].value,
                         newUser: true,
-                        // 'auth.google': {
-                        // id: profile.id,
-                        // token: accessToken,
-                        // },
                     });
                     // newUser.save() maybe
 
@@ -108,10 +95,28 @@ var UserSchema = new Schema({
                 return doc;
             },
             async updateUser(filter, update) {
-                // filter = {email: "go15@rice.edu"}
-                // update = {resCollege: "Sid Richardson", smoker: True}
-                // update = {newUser: False}
-                let doc = await User.findOneAndUpdate(filter, update);
+                //first process image
+                console.log("input")
+                console.log(update)
+                var updatedUser = {}
+                if (update.pfp) {
+                    // const { filename, mimetype, createReadStream } = await update.pfp
+                    // const ext = mimetype.split('/')[1]
+                    // const newFilename = `${uuidv4()}.${ext}`
+
+                    // Store the uploaded image data in MongoDB as a Base64-encoded string
+                    const buffer = await update.pfp.buffer()
+                    const base64Image = buffer.toString('base64')
+                    console.log("base 64")
+                    console.log(base64Image)
+                    updatedUser = {...update, "pfp": base64Image}
+                } else {
+                    updatedUser = update
+                }
+
+                let doc = await User.findOneAndUpdate(filter, updatedUser);
+                console.log("output")
+                console.log(doc)
                 return doc;
             }
         }
