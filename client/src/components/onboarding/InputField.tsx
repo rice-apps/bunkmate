@@ -17,10 +17,20 @@ interface InputProps {
 const InputField = ({label, type, attribute, options, placeholder, max, min, step}: InputProps) => {
 
     const [selected, setSelected] = useState("")
-    const [rangeValue1, setRangeValue1] = useState(0)
-    const [rangeValue2, setRangeValue2] = useState(0)
+    const [rangeValue1, setRangeValue1] = useState(min+1)
+    const [rangeValue2, setRangeValue2] = useState(max+1)
     const [selectedOpts, setSelectedOps] = useState([""])
-    const {onboardingChange} = useContext(UserContext)
+    const {onboardingChange, setUser} = useContext(UserContext)
+
+    const updateUserRangeInput = ()=> {
+        if (rangeValue1<rangeValue2) {
+            setUser((prev:object)=>{return {...prev, [attribute]:rangeValue1.toString()+"-"+rangeValue2.toString()}})
+        }
+        else {
+            setUser((prev:object)=>{return {...prev, [attribute]:rangeValue2.toString()+"-"+rangeValue1.toString()}})
+        }
+    }
+
 
     return (
         <div className="input-field">
@@ -53,10 +63,10 @@ const InputField = ({label, type, attribute, options, placeholder, max, min, ste
             {type==="range" && 
             <div className="range-slider">
                 <span>{min}</span>
-                <span className="slider1-thumb" style={{left:(rangeValue1-min)*100/(max-min)<60?(rangeValue1-min)*100/(max-min)+"%":(rangeValue1-min)*100/(max-min)-6 +"%", display:rangeValue1===max || rangeValue1===min?"none":"block"}}>{rangeValue1}</span>
-                <span className="slider1-thumb" style={{left:(rangeValue2-min)*100/(max-min)<65?(rangeValue2-min)*100/(max-min) +"%":(rangeValue2-min)*100/(max-min)-6 +"%", display:rangeValue2===max || rangeValue2===min?"none":"block"}}>{rangeValue2}</span>
-                <input type="range" step={step} min={min} max={max}value={rangeValue1} onChange={(e)=>{setRangeValue1(parseInt(e.target.value))}} id="slider1"/>
-                <input type="range" step={step} min={min} max={max}value={rangeValue2} onChange={(e)=>{setRangeValue2(parseInt(e.target.value))}} id="slider2"/>
+                <span className="slider1-thumb" style={{left:(rangeValue1-min-1)*100/(max-min+0.5)+"%", display:rangeValue1===max+1 || rangeValue1===min+1?"none":"block"}}>{rangeValue1-1}</span>
+                <span className="slider1-thumb" style={{left:(rangeValue2-min-1)*100/(max-min+0.5)+"%", display:rangeValue2===max+1 || rangeValue2===min+1?"none":"block"}}>{rangeValue2-1}</span>
+                <input  type="range" step={step} min={min+1} max={max+1}value={rangeValue1} onChange={(e)=>{setRangeValue1(parseInt(e.target.value));updateUserRangeInput()}} id="slider1"/>
+                <input type="range" step={step} min={min+1} max={max+1}value={rangeValue2} onChange={(e)=>{setRangeValue2(parseInt(e.target.value));updateUserRangeInput()}} id="slider2"/>
                 <span>{max}</span>
             </div>
             }
