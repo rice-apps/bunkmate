@@ -42,7 +42,7 @@ const Form = ({welcome, header, fields, setActiveSection, show, activeSection, o
                 <h2>{header}</h2>
                 {fields.map(field=><InputField max={field.max} min={field.min} step={field.step} attribute={field.attribute} key={field["id"]} id={field.id} placeholder={field.placeholder} options={field.options} label={field["label"]} type={field.type}/>)}
                 <div className="navigation">
-                { activeSection > 0 &&
+                { activeSection > 0 && activeSection < 4 &&
                 <div className="submit-div">
                     <button onClick={(e)=>{e.preventDefault();setActiveSection((prevState:number)=>prevState-1)}} className="submit-btn">Previous</button>
                 </div>
@@ -55,7 +55,7 @@ const Form = ({welcome, header, fields, setActiveSection, show, activeSection, o
                     </div>
                 } */}
                 <div className="submit-div">
-                    <button onClick={(e)=>{e.preventDefault(); if (activeSection===3) onFinished(); setActiveSection((prevState:number)=>prevState+1)}} className="submit-btn">Next</button>
+                    <button onClick={(e)=>{e.preventDefault(); if (activeSection===3) onFinished(); setActiveSection((prevState:number)=>prevState+1)}} className="submit-btn">{activeSection<3?"Next":activeSection===3?"Submit":"Let's go"}</button>
                 </div>
                 </div>
             </form>

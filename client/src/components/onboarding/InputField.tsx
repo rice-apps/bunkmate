@@ -20,7 +20,8 @@ const InputField = ({label, type, attribute, options, placeholder, max, min, ste
     const [rangeValue1, setRangeValue1] = useState(min+1)
     const [rangeValue2, setRangeValue2] = useState(max+1)
     const [selectedOpts, setSelectedOps] = useState([""])
-    const {onboardingChange, setUser} = useContext(UserContext)
+    const {onboardingChange, setUser, user} = useContext(UserContext)
+    const [pfp, setPfp] = useState("")
 
     const updateUserRangeInput = ()=> {
         if (rangeValue1<rangeValue2) {
@@ -68,6 +69,22 @@ const InputField = ({label, type, attribute, options, placeholder, max, min, ste
                 <input  type="range" step={step} min={min+1} max={max+1}value={rangeValue1} onChange={(e)=>{setRangeValue1(parseInt(e.target.value));updateUserRangeInput()}} id="slider1"/>
                 <input type="range" step={step} min={min+1} max={max+1}value={rangeValue2} onChange={(e)=>{setRangeValue2(parseInt(e.target.value));updateUserRangeInput()}} id="slider2"/>
                 <span>{max}</span>
+            </div>
+            }
+            {type==="image" && 
+            <div className="image-div">
+                <p>Upload a profile picture</p>
+                <p>Profile picture should be in the standard format png, jpg & no more than 5MB.</p>
+
+                <div className="bubble-div">
+                    {pfp? <img src={pfp} alt="" className="bubble-img"/> : <div className="bubble">
+                        {user.name && user.name.split(" ").length>1?user.name.split(" ")[0][0]+user.name.split(" ")[1][0]:""}
+                    </div>
+                    }
+                    <input type="file" onChange={(e)=>{if (!e.target.files) return; console.log(URL.createObjectURL(e.target.files[0])); setPfp(URL.createObjectURL(e.target.files[0])) }} name="" id="update-pic-btn" />
+                    <button id="actual-btn" onClick={(e)=>{e.preventDefault();const pic = document.getElementById("update-pic-btn"); if (!pic) return; pic.click()}}>Update Pic</button>
+                </div>
+
             </div>
             }
         </div>

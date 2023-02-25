@@ -273,7 +273,25 @@ const mock = {
                         step: 1,
                         placeholder: "Ex: Not often. I will be using the room mostly to sleep."
                     },                
-                    ]}
+                    ]},
+      {
+        id:4,
+        welcome: "Finished!",
+        header: "But, before we let you go...",
+        fields: [
+            {   
+                id: 0,
+                attribute: "pfp",
+                label: "",
+                type: "image",
+                options: [],
+                min: 60,
+                max: 80,
+                step: 1,
+                placeholder: ""
+            }, 
+        ]
+      }
     ]
     
 }

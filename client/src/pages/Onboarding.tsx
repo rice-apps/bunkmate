@@ -55,7 +55,7 @@ const Onboarding = () => {
                     </button>
                     <button onClick={(e)=>{selectLiving(e)}}>
                         Off Campus
-                    </button>
+                    </button>   
                 </div>
             </div> } 
         </div>
