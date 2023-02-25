@@ -19,7 +19,7 @@ export default interface UserData {
     room_temp_pref: string,
     bed_time_pref: string,
     wake_time_pref: string,
-    room_usage: [string],
+    room_usage: string,
     outing_freq: string,
     relationship_pref: string,
     drinking_pref: string,

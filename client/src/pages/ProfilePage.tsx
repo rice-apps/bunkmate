@@ -5,6 +5,7 @@ import ProfileUserCard from '../components/profilepage/ProfileUserCard';
 import ProfileRoomCard from '../components/profilepage/ProfileRoomCard';
 import ProfilePrefsCard from '../components/profilepage/ProfilePrefsCard';
 import ProfileContactCard from '../components/profilepage/ProfileContactCard';
+import ProfileSection from '../components/profilepage/ProfileSection';
 
 // Mock database
 import users from '../mock-database';
@@ -69,6 +70,8 @@ const GET_USERS = gql`
   }
 `
 
+
+
 const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
     // const [user, setUser] = useState<UserData[]>([])
     const [allUsers, setAllUsers] = useState<UserData[]>([])
@@ -105,7 +108,6 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
         // <button onClick={() => navigate()}>Go Back</button>
     }
 
-
     return (
         <div className="profile-page">
             {/* <ProfileGoBack /> */}
@@ -120,33 +122,25 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
                 <ProfileContactCard phone={users[0].phoneNumber} email={ users[0].email }/> */}
                 {allUsers.filter(user => user.email == user_email).map(user => 
                     <React.Fragment>
-                        <ProfileUserCard name={user.name} 
-                                    pref_temp={user.room_temp_pref}
-                                    bedtime={user.bed_time_pref}
-                                    pref_gender={user.roommate_gender_pref}
-                                    grad_year={user.grad_year}
-                                    pronouns={user.pronouns}
-                                    res_college={user.res_college}
-                                    cleaning_freq={user.cleaning_freq}
-                                    major={user.major}
-                                    minor={user.minor}
-                                    smoking={user.smoking_pref}
-                                    dynamic={user.relationship_pref}
-                                    overnight_guests={user.has_overnight_guest}
-                                    drinking={user.drinking_pref}/>
-                        <ProfileRoomCard room={user.housing_pref}
-                                    num_search={user.roommate_count}/>
-                        <ProfilePrefsCard bedtime={user.bed_time_pref}
-                                    smoking={user.smoking_pref}
-                                    dynamic={user.relationship_pref}
-                                    overnight_guests={user.has_overnight_guest}
-                                    pref_temp={user.room_temp_pref}
-                                    cleaning_freq={user.cleaning_freq}
-                                    internal_clock={user.bed_time_pref}
-                                    snoring={user.is_snorer}
-                                    drinking={user.drinking_pref}/>
-                        <ProfileContactCard phone={user.phone}
-                                        email={ user.email }/>
+                        <div className="profile-page">
+                            <div className="profile-content">
+                                    <div className="profile-header">
+
+                                    </div>
+                                    <div className="profile-body">
+                                        <div className="profile-body-col" id="profile-body-col-left">
+                                            <ProfileSection section_name="Personal" user={user} />
+                                            <ProfileSection section_name="Preferences" user={user} />
+                                        </div>
+                                        <div className="profile-body-col" id="profile-body-col-right">
+                                            <ProfileSection section_name="Housing" user={user} />
+                                        </div>
+                                    </div>
+                                    <div className="profile-footer">
+                                        <ProfileSection section_name="Additional Comments" user={user} />
+                                    </div>
+                                </div>
+                        </div>
                     </React.Fragment>)
                 }
             </div>

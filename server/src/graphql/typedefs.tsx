@@ -22,7 +22,7 @@ module.exports = gql`
     room_temp_pref: String,
     bed_time_pref: String,
     wake_time_pref: String,
-    room_usage: [String],
+    room_usage: String,
     outing_freq: String,
     relationship_pref: String,
     drinking_pref: String,

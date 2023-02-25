@@ -1,8 +1,14 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --blue: #25335D;
+    --flesh: #FFEBE5;
+}
 .profile-page {
     width: 100vw;
     height: 200vh;
     font-family: 'Roboto Flex', sans-serif;
-    background-color: #25335D;
+    background-color: var(--flesh);
 }
 
 .profile-content {
@@ -10,21 +16,25 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: auto;
     position: relative;
+    width: 80vw;
+    top: 5vh;
     margin: auto;
-    top: 15vh;
+    background-color: white;
+    border-radius: 5%;
 }
 
-.profile-card-wrapper {
-    color: black;
-    border: solid;
-    border-radius: 24px;
-    border-width: 0px;
-    /* border-color: rgba(0,0,0,0.7); */
-    background-color: white;
-    margin-bottom: 15px;
-    transform: scale(1);
-    transition: transform 0.15s;
-    color: #25335D;
+.profile-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10vw;
+}
+
+.profile-body-col {
+    width: 30vw;
+}
+
+.profile-footer {
+    display: flex;
 }
