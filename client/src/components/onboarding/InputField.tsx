@@ -6,6 +6,11 @@ import {ReactComponent as Avatar1} from '../../media/avatar1.svg'
 import {ReactComponent as Avatar2} from '../../media/avatar2.svg'
 import {ReactComponent as Avatar3} from '../../media/avatar3.svg'
 import {ReactComponent as Avatar4} from '../../media/avatar4.svg'
+import avatar1 from "../../media/avatar1.svg"
+import avatar2 from "../../media/avatar2.svg"
+import avatar3 from "../../media/avatar3.svg"
+
+import avatar4 from "../../media/avatar4.svg"
 
 
 interface InputProps {
@@ -87,16 +92,24 @@ const InputField = ({label, type, attribute, options, placeholder, max, min, ste
                 <p>Profile picture should be in the standard format png, jpg & no more than 5MB.</p>
 
                 <div className="bubble-div">
-                    {pfp? <img src={pfp} alt="" className="bubble-img"/> : <div className="bubble">
-                        {user.name && user.name.split(" ").length>1?user.name.split(" ")[0][0]+user.name.split(" ")[1][0]:""}
-                    </div>
+                     <div style={{backgroundImage:pfp?"url("+pfp+")":"", backgroundColor:pfp?"":"#FFCB14"}} className="bubble">
+                     {!pfp &&
+                       <p>
+                       {user.name && user.name.split(" ").length>1?user.name.split(" ")[0][0]+user.name.split(" ")[1][0]:""}
+                        </p> 
                     }
-                    { !pfp?
+                    </div>
+                    
+                   
                     <div className="upload-div">
+                        
                         <UploadIcon onClick={(e)=>{e.preventDefault();const pic = document.getElementById("update-pic-btn"); if (!pic) return; pic.click()}}/>
                         <input type="file" onChange={(e)=>{if (!e.target.files) return; console.log(URL.createObjectURL(e.target.files[0])); setPfp(URL.createObjectURL(e.target.files[0])) }} name="" id="update-pic-btn" />
+
                         <button className="actual-btn" onClick={(e)=>{e.preventDefault();const pic = document.getElementById("update-pic-btn"); if (!pic) return; pic.click()}}>Upload from computer</button>
-                    </div>:
+                    
+                    </div>
+                    {pfp &&
                     <div className="upload-div">
                         <button className="actual-btn" onClick={(e)=>{callMutation(e)}}>Confirm picture</button>
 
@@ -108,10 +121,10 @@ const InputField = ({label, type, attribute, options, placeholder, max, min, ste
                         <span></span>
                     </div>
                     <div className="avatars">
-                        <Avatar1  className="bubble-img"/>
-                        <Avatar2 className="bubble-img"/>
-                        <Avatar3 className="bubble-img"/>
-                        <Avatar4 className="bubble-img"/>
+                        <Avatar1  onClick={()=>{setPfp(avatar1)}} className="bubble-img"/>
+                        <Avatar2 onClick={()=>{setPfp(avatar2)}} className="bubble-img"/>
+                        <Avatar3 onClick={()=>{setPfp(avatar3)}} className="bubble-img"/>
+                        <Avatar4 onClick={()=>{setPfp(avatar4)}} className="bubble-img"/>
                     </div>
                 </div>
 

@@ -319,7 +319,8 @@ textarea {
   }
 
   .bubble {
-    background-color: #FFCB14;
+    background-size: cover;
+    background-image: url("");
     display: flex;
     color: #fff;
     justify-content: center;
@@ -359,6 +360,7 @@ textarea {
   .or span {
     height: 1.5px;
     width: 30px;
+    margin: 4vh 0;
     display: block;
     background-color: #25335D;
   }
