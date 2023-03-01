@@ -1,6 +1,12 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import { UserContext } from "../context/UserContext";
+import {ReactComponent as UploadIcon} from '../../media/upload-icon.svg'
+import {ReactComponent as Avatar1} from '../../media/avatar1.svg'
+import {ReactComponent as Avatar2} from '../../media/avatar2.svg'
+import {ReactComponent as Avatar3} from '../../media/avatar3.svg'
+import {ReactComponent as Avatar4} from '../../media/avatar4.svg'
+
 
 interface InputProps {
     id: number;
@@ -32,6 +38,10 @@ const InputField = ({label, type, attribute, options, placeholder, max, min, ste
         }
     }
 
+    const callMutation = (e:any) => {
+        e.preventDefault()
+        /* Call mutation */
+    }
 
     return (
         <div className="input-field">
@@ -81,8 +91,28 @@ const InputField = ({label, type, attribute, options, placeholder, max, min, ste
                         {user.name && user.name.split(" ").length>1?user.name.split(" ")[0][0]+user.name.split(" ")[1][0]:""}
                     </div>
                     }
-                    <input type="file" onChange={(e)=>{if (!e.target.files) return; console.log(URL.createObjectURL(e.target.files[0])); setPfp(URL.createObjectURL(e.target.files[0])) }} name="" id="update-pic-btn" />
-                    <button id="actual-btn" onClick={(e)=>{e.preventDefault();const pic = document.getElementById("update-pic-btn"); if (!pic) return; pic.click()}}>Update Pic</button>
+                    { !pfp?
+                    <div className="upload-div">
+                        <UploadIcon onClick={(e)=>{e.preventDefault();const pic = document.getElementById("update-pic-btn"); if (!pic) return; pic.click()}}/>
+                        <input type="file" onChange={(e)=>{if (!e.target.files) return; console.log(URL.createObjectURL(e.target.files[0])); setPfp(URL.createObjectURL(e.target.files[0])) }} name="" id="update-pic-btn" />
+                        <button className="actual-btn" onClick={(e)=>{e.preventDefault();const pic = document.getElementById("update-pic-btn"); if (!pic) return; pic.click()}}>Upload from computer</button>
+                    </div>:
+                    <div className="upload-div">
+                        <button className="actual-btn" onClick={(e)=>{callMutation(e)}}>Confirm picture</button>
+
+                    </div>
+                    }
+                    <div className="or">
+                        <span></span>
+                        <p>or</p>
+                        <span></span>
+                    </div>
+                    <div className="avatars">
+                        <Avatar1  className="bubble-img"/>
+                        <Avatar2 className="bubble-img"/>
+                        <Avatar3 className="bubble-img"/>
+                        <Avatar4 className="bubble-img"/>
+                    </div>
                 </div>
 
             </div>

@@ -11,29 +11,21 @@ module.exports = gql `
     minor: String,
     pronouns: String,
     sex: String,
-    accommodation: String,
     onCampus: Boolean,
     roomType: String,
-    numRoommates: Int,
-    additionalRoomInfo: String,
+    numRoommates: String,
     genderPref: String,
     overnightGuests: Boolean,
+    presence: String,
     roomTemp: String,
     bedTime: String,
     wakeTime: String,
-    neatness: String,
-    presence: String,
-    additionalPrefInfo: String,
-    personality: [String],
-    isMorningPerson: Boolean,
-    personalSpace: [String],
+    personality: [String], //is this right?
     outingFrequency: String,
-    coexistCondition: String,
-    outgoingness: String,
+    neatness: String,
     smoker: String,
-    smokerPref: String,
-    additionalHabitInfo: String,
-    pfp: String
+    noise: String,
+    pfp: String,
   }  
 
   type AuthResponse {
@@ -46,7 +38,6 @@ module.exports = gql `
   }
 
   input UserInput {
-    id: ID!
     name: String!
     email: String!
     resCollege: String,
@@ -56,29 +47,21 @@ module.exports = gql `
     minor: String,
     pronouns: String,
     sex: String,
-    accommodation: String,
     onCampus: Boolean,
     roomType: String,
-    numRoommates: Int,
-    additionalRoomInfo: String,
+    numRoommates: String,
     genderPref: String,
     overnightGuests: Boolean,
+    presence: String,
     roomTemp: String,
     bedTime: String,
     wakeTime: String,
-    neatness: String,
-    presence: String,
-    additionalPrefInfo: String,
-    personality: [String],
-    isMorningPerson: Boolean,
-    personalSpace: [String],
+    personality: [String], //is this right?
     outingFrequency: String,
-    coexistCondition: String,
-    outgoingness: String,
+    neatness: String,
     smoker: String,
-    smokerPref: String,
-    additionalHabitInfo: String,
-    pfp: String
+    noise: String,
+    pfp: String,
   }
 
   type Query {

@@ -330,3 +330,41 @@ textarea {
   input[type="file"] {
     display: none;
   }
+
+  .actual-btn {
+    border: none;
+    background-color: #fff;
+  }
+
+  .upload-div {
+    margin-top: 2vh;
+    border: 2px solid #25335D;
+    padding: 0.2em 2em;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 1vw;
+  }
+
+  .upload-div * {
+    cursor: pointer;
+  }
+
+  .avatars {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .or span {
+    height: 1.5px;
+    width: 30px;
+    display: block;
+    background-color: #25335D;
+  }
+
+  .or {
+    align-items: center;
+    display: flex;
+    width: 10%;
+  }
