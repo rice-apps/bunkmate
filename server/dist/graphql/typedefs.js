@@ -20,7 +20,7 @@ module.exports = gql `
     roomTemp: String,
     bedTime: String,
     wakeTime: String,
-    personality: [String], //is this right?
+    personality: [String],
     outingFrequency: String,
     neatness: String,
     smoker: String,
@@ -56,7 +56,7 @@ module.exports = gql `
     roomTemp: String,
     bedTime: String,
     wakeTime: String,
-    personality: [String], //is this right?
+    personality: [String],
     outingFrequency: String,
     neatness: String,
     smoker: String,
