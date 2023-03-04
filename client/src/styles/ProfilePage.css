@@ -9,26 +9,59 @@
     height: 200vh;
     font-family: 'Roboto Flex', sans-serif;
     background-color: var(--flesh);
+   
 }
 
 .profile-content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     width: 80vw;
     top: 5vh;
     margin: auto;
-    background-color: white;
-    border-radius: 5%;
+    background-color: var(--white);
+    border-radius: 5em;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-user-pfp {
+    width: 100px;
+    height: 100px;
+    margin-right: 14px;
+    border-radius: 50%;
+}
+
+.profile-user-title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    text-align: center;
+}
+
+.profile-user-title h1 {
+    margin-right: 8px;
+}
+
+.profile-user-pronouns {
+    color: rgba(37, 51, 93, 0.64);
 }
 
 .profile-body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-content: flex-start;
     gap: 10vw;
+    width: 100%;
 }
 
 .profile-body-col {

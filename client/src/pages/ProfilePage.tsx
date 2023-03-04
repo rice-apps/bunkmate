@@ -10,6 +10,10 @@ import ProfileSection from '../components/profilepage/ProfileSection';
 // Mock database
 import users from '../mock-database';
 
+// Pfps
+import benPfp from '../media/ben-liu-pfp-400x400.png';
+import defaultPfp from '../media/empty-pfp-400x400.png';
+
 // Google Auth
 import UserDataAuth from "../types/UserDataAuth"
 import { googleLogout } from '@react-oauth/google';
@@ -70,7 +74,11 @@ const GET_USERS = gql`
   }
 `
 
+let pfps = new Map();
 
+pfps.set("Ben Liu", benPfp);
+pfps.set("Huzaifa Ali", defaultPfp);
+pfps.set("Sofia Lakhani", defaultPfp);
 
 const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
     // const [user, setUser] = useState<UserData[]>([])
@@ -122,24 +130,24 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
                 <ProfileContactCard phone={users[0].phoneNumber} email={ users[0].email }/> */}
                 {allUsers.filter(user => user.email == user_email).map(user => 
                     <React.Fragment>
-                        <div className="profile-page">
-                            <div className="profile-content">
-                                    <div className="profile-header">
-
-                                    </div>
-                                    <div className="profile-body">
-                                        <div className="profile-body-col" id="profile-body-col-left">
-                                            <ProfileSection section_name="Personal" user={user} />
-                                            <ProfileSection section_name="Preferences" user={user} />
-                                        </div>
-                                        <div className="profile-body-col" id="profile-body-col-right">
-                                            <ProfileSection section_name="Housing" user={user} />
-                                        </div>
-                                    </div>
-                                    <div className="profile-footer">
-                                        <ProfileSection section_name="Additional Comments" user={user} />
-                                    </div>
-                                </div>
+                        <div className="profile-header">
+                            <img className="profile-user-pfp" src={pfps.get(user.name)} alt={user.name}/>
+                            <div className="profile-user-title">
+                                <h1>{user.name}</h1>
+                                <p className="profile-user-pronouns">{user.pronouns}</p>
+                            </div>
+                        </div>
+                        <div className="profile-body">
+                            <div className="profile-body-col" id="profile-body-col-left">
+                                <ProfileSection section_name="Personal" user={user} />
+                                <ProfileSection section_name="Preferences" user={user} />
+                            </div>
+                            <div className="profile-body-col" id="profile-body-col-right">
+                                <ProfileSection section_name="Housing" user={user} />
+                            </div>
+                        </div>
+                        <div className="profile-footer">
+                            <ProfileSection section_name="Additional Comments" user={user} />
                         </div>
                     </React.Fragment>)
                 }
