@@ -63,9 +63,17 @@ const ProfileSection = (props: {section_name: string, user: UserData, currUser: 
     useEffect( () => {
         if (props.user.email == props.currUser.email){
             console.log("this is me")
+            console.log(props.user.email)
+            console.log(props.currUser.email)
+            console.log("--end--")
         }
         else{
             console.log("this is NOT me")
+            console.log(props.user.email)
+            console.log("--middle-")
+            console.log(props.currUser)
+            console.log(props.currUser.email)
+            console.log("--end--")
         }
 
         }, []
