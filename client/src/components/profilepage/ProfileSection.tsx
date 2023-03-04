@@ -25,15 +25,14 @@ let SectionToAttributes = {
         "res_college", 
         "grad_year", 
         "email", 
+        "phone",
         "major",
         "gender",
-        "is_snorer",
-        "smoking_pref",
-        "is_morning_person",
-        "outing_freq"
+        
     ],
     "Preferences": [
-        "bed_time_pref", 
+        "bed_time_pref",
+        "wake_time_pref",
         "cleaning_freq", 
         "room_temp_pref", 
         "has_overnight_guest",
@@ -41,7 +40,10 @@ let SectionToAttributes = {
         "roommate_smoking_pref",
         "drinking_pref",
         "roommate_gender_pref",
-        "wake_time_pref"
+        "is_snorer",
+        "smoking_pref",
+        "is_morning_person",
+        "outing_freq"
     ],
     "Housing": [
         "housing_pref", 
@@ -59,18 +61,17 @@ let SectionToAttributes = {
 
 const ProfileSection = (props: {section_name: string, user: UserData}) => {
     return (
-        <React.Fragment>
-            <div className="profile-section" id={`${props.section_name}`}>
-                
+        <div className="profile-section" id={`${props.section_name}`}>
+            <div className="profile-section-header">
                 <h1>{props.section_name}</h1>
-                <div style={{display: "flex", flexFlow: "column nowrap"}}>
-                    {(SectionToAttributes as any)[props.section_name].map((field : any) => {
-                        console.log(field)
-                        return <ProfileSectionRow field={field} user={props.user} />
-                    })}
-                </div>
             </div>
-        </React.Fragment>
+            <div className="profile-section-body">
+                {(SectionToAttributes as any)[props.section_name].map((field : any) => {
+                    console.log(field)
+                    return <ProfileSectionRow field={field} user={props.user} />
+                })}
+            </div>
+        </div>
     )
 }
 

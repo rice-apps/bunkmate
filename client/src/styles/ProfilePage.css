@@ -12,17 +12,37 @@
    
 }
 
+.profile-go-back {
+    text-decoration: none;
+    color: rgba(37, 51, 93, 1);
+}
+
+.profile-back-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6em;
+}
+
 .profile-content {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    gap: 1em;
+    margin: auto;
+    position: relative;
+    top: 2em;
+}
+
+.profile-resume-content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    position: relative;
     width: 80vw;
-    top: 5vh;
-    margin: auto;
     background-color: var(--white);
-    border-radius: 5em;
+    border-radius: 2em;
+    padding: 3em 4em 3em 4em;
 }
 
 .profile-header {
@@ -31,13 +51,24 @@
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    gap: 1.5em;
+   
 }
 
 .profile-user-pfp {
-    width: 100px;
-    height: 100px;
+    width: 170px;
+    height: auto;
     margin-right: 14px;
     border-radius: 50%;
+
+}
+
+.profile-user-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
 }
 
 .profile-user-title {
@@ -60,12 +91,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-content: flex-start;
-    gap: 10vw;
     width: 100%;
 }
 
 .profile-body-col {
-    width: 30vw;
+    width: 45%;
 }
 
 .profile-footer {
