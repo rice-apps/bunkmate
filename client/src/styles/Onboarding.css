@@ -122,8 +122,14 @@ label {
     color: var(--white);
     border-radius: 13px;
     border: 1px solid var(--white);
-    width: 115px;
+    width: 155px;
     height: 31px;
+    cursor: pointer;
+    
+}
+
+.submit-btn:hover {
+  border: 3px;
 }
 
 select {
