@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone,faEnvelope, faPencilSquare} from '@fortawesome/free-solid-svg-icons';
+
 
 // Components
 import ProfileUserCard from '../components/profilepage/ProfileUserCard';
@@ -125,19 +128,19 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
                         <div className="profile-page">
                             <div className="profile-content">
                                     <div className="profile-header">
-
                                     </div>
                                     <div className="profile-body">
                                         <div className="profile-body-col" id="profile-body-col-left">
-                                            <ProfileSection section_name="Personal" user={user} />
-                                            <ProfileSection section_name="Preferences" user={user} />
+                                            <ProfileSection section_name="Personal" user={user} currUser = {props.userData} />
+                            
+                                            <ProfileSection section_name="Preferences" user={user} currUser = {props.userData}/>
                                         </div>
                                         <div className="profile-body-col" id="profile-body-col-right">
-                                            <ProfileSection section_name="Housing" user={user} />
+                                            <ProfileSection section_name="Housing" user={user} currUser = {props.userData} />
                                         </div>
                                     </div>
                                     <div className="profile-footer">
-                                        <ProfileSection section_name="Additional Comments" user={user} />
+                                        <ProfileSection section_name="Additional Comments" user={user} currUser = {props.userData}/>
                                     </div>
                                 </div>
                         </div>

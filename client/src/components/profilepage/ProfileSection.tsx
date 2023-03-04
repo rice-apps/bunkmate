@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import UserDataAuth from "../../types/UserDataAuth";
 
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { } from '@fortawesome/free-solid-svg-icons';
+import { faPencilSquare} from '@fortawesome/free-solid-svg-icons';
 
 // CSS
 import '../../styles/ProfileSection.css';
@@ -57,20 +58,47 @@ let SectionToAttributes = {
     // ]
 }
 
-const ProfileSection = (props: {section_name: string, user: UserData}) => {
+
+const ProfileSection = (props: {section_name: string, user: UserData, currUser: UserDataAuth}) => {
+    useEffect( () => {
+        if (props.user.email == props.currUser.email){
+            console.log("this is me")
+        }
+        else{
+            console.log("this is NOT me")
+        }
+
+        }, []
+        )
     return (
         <React.Fragment>
             <div className="profile-section" id={`${props.section_name}`}>
+            <div className= "edit"> 
+                <h1> {props.section_name} </h1>
                 
-                <h1>{props.section_name}</h1>
+                <FontAwesomeIcon className="attr-icon" icon={faPencilSquare}/>
+            </div>
                 <div style={{display: "flex", flexFlow: "column nowrap"}}>
                     {(SectionToAttributes as any)[props.section_name].map((field : any) => {
-                        console.log(field)
+                       
                         return <ProfileSectionRow field={field} user={props.user} />
                     })}
                 </div>
             </div>
         </React.Fragment>
+        // <React.Fragment>
+        //     <div className="profile-section" id={`${props.section_name}`}>
+        //         <div className= "edit"> 
+        //         <h1> {props.section_name}  <FontAwesomeIcon className="attr-icon" icon={faPencilSquare}/> </h1>
+        //         </div>
+        //         <div style={{display: "flex", flexFlow: "column nowrap"}}>
+        //             {(SectionToAttributes as any)[props.section_name].map((field : any) => {
+        //                 console.log(field)
+        //                 return <ProfileSectionRow field={field} user={props.user} />
+        //             })}
+        //         </div>
+        //     </div>
+        // </React.Fragment>
     )
 }
 
