@@ -1,9 +1,9 @@
-import { userInfo } from "os";
+// import { userInfo } from "os";
 import { OAuth2Client } from "google-auth-library";
 // image stuff
-const { createReadStream } = require('fs')
-const { v4: uuidv4 } = require('uuid')
-const { GraphQLUpload } = require('graphql-upload')
+// const { createReadStream } = require('fs')
+// const { v4: uuidv4 } = require('uuid')
+// const { GraphQLUpload } = require('graphql-upload')
 
 const jwt = require('jsonwebtoken');
 

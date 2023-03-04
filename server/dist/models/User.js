@@ -10,11 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
+// import { userInfo } from "os";
 const google_auth_library_1 = require("google-auth-library");
 // image stuff
-const { createReadStream } = require('fs');
-const { v4: uuidv4 } = require('uuid');
-const { GraphQLUpload } = require('graphql-upload');
+// const { createReadStream } = require('fs')
+// const { v4: uuidv4 } = require('uuid')
+// const { GraphQLUpload } = require('graphql-upload')
 const jwt = require('jsonwebtoken');
 const client_id = "10547820426-g94ke317qjsssctc8epuear86u5tf7vp.apps.googleusercontent.com";
 const googleClient = new google_auth_library_1.OAuth2Client({
