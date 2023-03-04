@@ -13,21 +13,6 @@ import defaultPfp from '../../media/empty-pfp-400x400.png';
 import UserData from "../../types/UserData";
 
 interface UserProps {
-    // id: number;
-    // name: string;
-    // pref_temp: string;
-    // bedtime: string;
-    // pref_gender: string;
-    // grad_year: string;
-    // pronouns: string;
-    // res_college: string;
-    // cleaning_freq: string;
-    // major: string;
-    // minor: string;
-    // overnight_guests: string;
-    // drinking: string;
-    // smoking: string;
-    // dynamic: string;
     room: string;
     num_search: string;
 }

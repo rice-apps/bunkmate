@@ -102,7 +102,8 @@ function App() {
           {/* <Route path={`/profile/:id`} element={<ProfilePage userData={userInfo} logout={logout} />}/> */}
           <Route path={`/home`} element={<HomePage userData={userInfo} logout={logout}/>} />
           <Route path={`/onboarding`} element={<Onboarding />} />
-          <Route path={`/profile`} element={<ProfilePage userData={userInfo} logout={logout} />} />
+          <Route path={`/profile/:net_id`}
+                 element={<ProfilePage userData={userInfo} logout={logout} />} />
           <Route path={`/`} element={<LoginPage login={login}/>} />
         </Routes>
         </div>
