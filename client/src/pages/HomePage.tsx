@@ -19,54 +19,56 @@ import '../styles/HomePage.css';
 import { gql, useQuery, useLazyQuery } from "@apollo/client";
 import UserData from '../types/UserData';
 
-// const GET_USERS = gql`
-//   query getUsers {
-//     getUsers {
-//         email
-//     }
-//   }
-// `
-
 const GET_USERS = gql`
   query getUsers {
     getUsers {
         id
         name
         email
-        phone
-        grad_year
-        res_college
-        major
-        minor
-        pronouns
-        gender
-        accommodations
-        on_campus
-        housing_pref
-        roommate_count
-        additional_room_info
-        personality_traits
-        is_morning_person
-        room_temp_pref
-        bed_time_pref
-        wake_time_pref
-        room_usage
-        outing_freq
-        relationship_pref
-        drinking_pref
-        smoking_pref
-        roommate_smoking_pref
-        roommate_gender_pref
-        has_overnight_guest
-        cleaning_freq
-        additional_prefs
-        is_snorer
-        additional_habit_info
-        pfp
-        new_user
     }
   }
 `
+
+// const GET_USERS = gql`
+//   query getUsers {
+//     getUsers {
+//         id
+//         name
+//         email
+//         phone
+//         grad_year
+//         res_college
+//         major
+//         minor
+//         pronouns
+//         gender
+//         accommodations
+//         on_campus
+//         housing_pref
+//         roommate_count
+//         additional_room_info
+//         personality_traits
+//         is_morning_person
+//         room_temp_pref
+//         bed_time_pref
+//         wake_time_pref
+//         room_usage
+//         outing_freq
+//         relationship_pref
+//         drinking_pref
+//         smoking_pref
+//         roommate_smoking_pref
+//         roommate_gender_pref
+//         has_overnight_guest
+//         cleaning_freq
+//         additional_prefs
+//         is_snorer
+//         additional_habit_info
+//         pfp
+//         new_user
+//     }
+//   }
+// `
 
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     const [allUsers, setAllUsers] = useState<UserData[]>([])
@@ -83,6 +85,7 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     
     useEffect(() => {
         // getUsers({variables: {}, onCompleted: recommendationAlgorithm})
+        console.log("fetching")
         getUsers()
         // const { data, loading, error } = useQuery(GET_USERS)
         // if (loading) return null;
