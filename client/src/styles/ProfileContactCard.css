@@ -52,7 +52,6 @@
 }
 
 .attr-icon {
-    font-size: 30px;
     margin-right: 10px;
     width: 25px;
     height: 25px;
@@ -66,7 +65,5 @@
 }
 
 .attr-value {
-    font-size: 18px;
-    font-weight: 500;
     margin: 0px;
 }

@@ -17,43 +17,49 @@ var mongoose = require("mongoose"),
     Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-
     name: String,
     email: {
         type: String,
         required: true,
         unique: true
     },
-    resCollege: String,
-    phoneNumber: String,
-    gradYear: String,
+    phone: String,
+    grad_year: String,
+    res_college: String,
     major: String,
     minor: String,
     pronouns: String,
-    sex: String,
-    onCampus: Boolean,
-    roomType: String,
-    numRoommates: String,
-    genderPref: String,
-    overnightGuests: Boolean,
-    presence: String,
-    roomTemp: String,
-    bedTime: String,
-    wakeTime: String,
-    personality: [String], //is this right?
-    outingFrequency: String,
-    neatness: String,
-    smoker: String,
-    noise: String,
+    gender: String,
+    accommodations: String,
+    on_campus: Boolean,
+    housing_pref: String,
+    roommate_count: String,
+    additional_room_info: String,
+    personality_traits: [String],
+    is_morning_person: Boolean,
+    room_temp_pref: String,
+    bed_time_pref: String,
+    wake_time_pref: String,
+    room_usage: String,
+    outing_freq: String,
+    relationship_pref: String,
+    drinking_pref: String,
+    smoking_pref: String,
+    roommate_smoking_pref: String,
+    roommate_gender_pref: String,
+    has_overnight_guest: Boolean,
+    cleaning_freq: String,
+    additional_prefs: String,
+    is_snorer: Boolean,
+    additional_habit_info: String,
     pfp: String,
-
+    new_user: Boolean,
     auth: {
         google: {
             id: String,
             token: String
         }
     },
-    newUser: Boolean,
 },
     {
         methods: {
@@ -82,7 +88,11 @@ var UserSchema = new Schema({
                     const newUserDict = await User.create({
                         name: "defaultName", //profile.name
                         email: email, //profile.emails[0].value,
-                        newUser: true,
+                        new_user: true,
+                        // 'auth.google': {
+                        // id: profile.id,
+                        // token: accessToken,
+                        // },
                     });
                     // newUser.save() maybe
 

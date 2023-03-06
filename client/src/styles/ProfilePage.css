@@ -1,30 +1,73 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --blue: #25335D;
+    --flesh: #FFEBE5;
+}
 .profile-page {
     width: 100vw;
     height: 200vh;
     font-family: 'Roboto Flex', sans-serif;
-    background-color: #25335D;
+    background-color: var(--flesh);
+   
 }
 
 .profile-content {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
-    margin: auto;
+    align-items: flex-start;
     position: relative;
+    width: 80vw;
+    top: 5vh;
     margin: auto;
-    top: 15vh;
+    background-color: var(--white);
+    border-radius: 5em;
 }
 
-.card-wrapper {
-    color: black;
-    border: solid;
-    border-radius: 24px;
-    border-width: 0px;
-    /* border-color: rgba(0,0,0,0.7); */
-    background-color: white;
-    margin-bottom: 15px;
-    transform: scale(1);
-    transition: transform 0.15s;
-    color: #25335D;
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.profile-user-pfp {
+    width: 100px;
+    height: 100px;
+    margin-right: 14px;
+    border-radius: 50%;
+}
+
+.profile-user-title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    text-align: center;
+}
+
+.profile-user-title h1 {
+    margin-right: 8px;
+}
+
+.profile-user-pronouns {
+    color: rgba(37, 51, 93, 0.64);
+}
+
+.profile-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    gap: 10vw;
+    width: 100%;
+}
+
+.profile-body-col {
+    width: 30vw;
+}
+
+.profile-footer {
+    display: flex;
 }

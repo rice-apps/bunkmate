@@ -5,6 +5,7 @@ import '../../styles/UserCard.scss';
 import benPfp from '../../media/ben-liu-pfp-400x400.png';
 import defaultPfp from '../../media/empty-pfp-400x400.png';
 import UserData from "../../types/UserData";
+import { Link } from 'react-router-dom';
 
 interface UserProps {
     name: string;
@@ -15,6 +16,7 @@ interface UserProps {
     pronouns: string;
     res_college: string;
     cleaning_freq: string;
+    net_id: string;
 }
 
 let pfps = new Map();
@@ -26,72 +28,73 @@ pfps.set("Jonathan Jang", defaultPfp);
 pfps.set("Isabel Wang", defaultPfp);
 
 
-const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq}: UserProps) => {
+const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, net_id}: UserProps) => {
+    const profile_url = "/profile/" + net_id;
     return (
         <div className="user-card-wrapper">
-            <a href="">
+            <Link to={profile_url}>
                 <div className="user-card">
-                    <div className="card-content">
-                        <div className="card-heading">
-                            <img className="user-pfp" src={pfps.get(name)} alt={name}/>
-                            <div className="user-header">
-                                <div className="user-title">
+                    <div className="user-card-content">
+                        <div className="user-card-heading">
+                            <img className="user-card-pfp" src={pfps.get(name)} alt={name}/>
+                            <div className="user-card-header">
+                                <div className="user-card-title">
                                     <h1>{name}</h1>
-                                    <p className="user-pronouns">{pronouns}</p>
+                                    <p className="user-pronouns"> {pronouns}</p>
                                 </div>
                                 <div className="user-tags">
                                     <div className="user-tag" id="residential-college">
                                         <div className="tag-content">
                                             <FontAwesomeIcon className="tag-icon" icon={faLocationDot}></FontAwesomeIcon>
-                                            <p>{res_college}</p>
+                                            <small>{res_college}</small>
                                         </div>
                                     </div>
                                     <div className="user-tag" id="grad-year">
                                         <div className="tag-content">
                                             <FontAwesomeIcon className="tag-icon" icon={faGraduationCap}></FontAwesomeIcon>
-                                            <p>{grad_year}</p>
+                                            <small>{grad_year}</small>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="card-body">
-                            <div className="attr-col">
-                                <div className="user-attr" id="pref-gender">
+                        <div className="user-card-body">
+                            <div className="user-card-attr-col">
+                                <div className="user-card-attr" id="pref-gender">
                                     <FontAwesomeIcon className="attr-icon" icon={faVenusMars}/>
                                     <div className="attr-info">
                                         <p className="attr-value">{pref_gender}</p>
-                                        <p className="attr-desc">roommate preferred</p>
+                                        <small className="attr-desc">roommate preferred</small>
                                     </div>
                                 </div>
-                                <div className="user-attr" id="bedtime">
+                                <div className="user-card-attr" id="bedtime">
                                     <FontAwesomeIcon className="attr-icon" icon={faBed}/>
                                     <div className="attr-info">
                                         <p className="attr-value">{bedtime}</p>
-                                        <p className="attr-desc">bedtime</p>
+                                        <small className="attr-desc">bedtime</small>
                                     </div>
                                 </div>
                             </div>
-                            <div className="attr-col">
-                                <div className="user-attr" id="pref-temp">
+                            <div className="user-card-attr-col">
+                                <div className="user-card-attr" id="pref-temp">
                                     <FontAwesomeIcon className="attr-icon" icon={faTemperatureHalf}/>
                                     <div className="attr-info">
                                         <p className="attr-value">{pref_temp}℉</p>
-                                        <p className="attr-desc">room temperature</p>
+                                        <small className="attr-desc">room temperature</small>
                                     </div>
                                 </div>
-                                <div className="user-attr" id="cleaning-freq">
+                                <div className="user-card-attr" id="cleaning-freq">
                                     <FontAwesomeIcon className="attr-icon" icon={faBroom}/>
                                     <div className="attr-info">
                                         <p className="attr-value">{cleaning_freq}</p>
-                                        <p className="attr-desc">cleaning frequency</p>
+                                        <small className="attr-desc">cleaning frequency</small>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </a>
+            </Link>
         </div>
     )
 }

@@ -12,22 +12,42 @@ import defaultPfp from '../../media/empty-pfp-400x400.png';
 // Google Auth
 import UserData from "../../types/UserData";
 
-interface UserProps {
-    name: string;
-    pref_temp: string;
-    bedtime: string;
-    pref_gender: string;
-    grad_year: string;
-    pronouns: string;
-    res_college: string;
-    cleaning_freq: string;
-    major: string;
-    minor: string;
-    overnight_guests: string;
-    drinking: string;
-    smoking: string;
-    dynamic: string;
-}
+// interface UserProps {
+//     id: number,
+//     name: string,
+//     email: string,
+//     phone: string,
+//     grad_year: string,
+//     res_college: string,
+//     major: string,
+//     minor: string,
+//     pronouns: string,
+//     gender: string,
+//     accommodations: string,
+//     on_campus: boolean,
+//     housing_pref: string,
+//     roommate_count: string,
+//     additional_room_info: string,
+//     personality_traits: [string],
+//     is_morning_person: boolean,
+//     room_temp_pref: string,
+//     bed_time_pref: string,
+//     wake_time_pref: string,
+//     room_usage: string,
+//     outing_freq: string,
+//     relationship_pref: string,
+//     drinking_pref: string,
+//     smoking_pref: string,
+//     roommate_smoking_pref: string,
+//     roommate_gender_pref: string,
+//     has_overnight_guest: boolean,
+//     cleaning_freq: string,
+//     additional_prefs: string,
+//     is_snorer: boolean,
+//     additional_habit_info: string,
+//     pfp: string,
+//     new_user: boolean
+//}
 
 let pfps = new Map();
 
@@ -36,31 +56,31 @@ pfps.set("Huzaifa Ali", defaultPfp);
 pfps.set("Sofia Lakhani", defaultPfp);
 
 
-const ProfileUserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, major, minor, overnight_guests, drinking, smoking, dynamic}: UserProps) => {
+const ProfileUserCard = (props: {user: UserData}) => {
     return (
-        <div className="card-wrapper">
+        <div className="profile-card-wrapper">
             <div className="profile-user-card-content">
                 <div className="profile-user-card-heading">
-                    <img className="user-pfp" src={pfps.get(name)} alt={name}/>
-                    <div className="user-title">
-                        <h1>{name}</h1>
-                        <p className="user-pronouns">{pronouns}</p>
+                    <img className="profile-user-pfp" src={pfps.get(props.user.name)} alt={props.user.name}/>
+                    <div className="profile-user-title">
+                        <h1>{props.user.name}</h1>
+                        <p className="profile-user-pronouns">{props.user.pronouns}</p>
                     </div>
                 </div>
-                <div className="card-body">
+                <div className="profile-card-body">
                     <div className="attr-col" id="left-attr-col">
                         <div className="user-attr" id="pref-gender">
                             <FontAwesomeIcon className="attr-icon" icon={faVenusMars}/>
                             <div className="attr-info">
-                                <p className="attr-value">{pref_gender}</p>
-                                <p className="attr-desc">Looking for</p>
+                                <p className="attr-value">{props.user.roommate_gender_pref}</p>
+                                <small className="attr-desc">Looking for</small>
                             </div>
                         </div>
                         <div className="user-attr" id="cleaning-freq">
                         <FontAwesomeIcon className="attr-icon" icon={faLocationDot}/>
                             <div className="attr-info">
-                                <p className="attr-value">{res_college}</p>
-                                <p className="attr-desc">College</p>
+                                <p className="attr-value">{props.user.res_college}</p>
+                                <small className="attr-desc">College</small>
                             </div>
                         </div>
                     </div>
@@ -68,15 +88,15 @@ const ProfileUserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pron
                         <div className="user-attr" id="bedtime">
                             <FontAwesomeIcon className="attr-icon" icon={faBookOpen}/>
                             <div className="attr-info">
-                                <p className="attr-value">{major}</p>
-                                <p className="attr-desc">Major</p>
+                                <p className="attr-value">{props.user.major}</p>
+                                <small className="attr-desc">Major</small>
                             </div>
                         </div>
                         <div className="user-attr" id="pref-temp">
                             <FontAwesomeIcon className="attr-icon" icon={faGraduationCap}/>
                             <div className="attr-info">
-                                <p className="attr-value">{grad_year}</p>
-                                <p className="attr-desc">Class of</p>
+                                <p className="attr-value">{props.user.grad_year}</p>
+                                <small className="attr-desc">Class of</small>
                             </div>
                         </div>
                     </div>

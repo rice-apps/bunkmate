@@ -29,7 +29,7 @@ module.exports = {
                     return {
                         email: res.email,
                         token: "",
-                        newUser: res.newUser
+                        new_user: res.new_user
                     };
                 }
                 return (Error('server error'));
@@ -38,10 +38,15 @@ module.exports = {
                 return error;
             }
         }),
-        updateUser: (_, { email, user }) => __awaiter(this, void 0, void 0, function* () {
+        updateUser: (_, { user }) => __awaiter(this, void 0, void 0, function* () {
             try {
-                if (email == user.email) {
-                    const updated_user = User.updateUser({ email: email }, user);
+                if (user) {
+                    console.log("User and their email:");
+                    console.log(user);
+                    console.log(user.email);
+                    const updated_user = User.updateUser({ email: user.email }, user);
+                    console.log("UPDATED USER");
+                    console.log(updated_user);
                     return updated_user;
                 }
             }

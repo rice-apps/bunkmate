@@ -21,14 +21,6 @@ body {
     font-weight: bold;
 }
 
-h1 {
-    font-size: 2.6em;
-}
-
-h2 {
-    font-size: 2.2em;
-}
-
 .svg-inactive{
     fill: var(--white);
 }
@@ -44,7 +36,6 @@ h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 1em;
     z-index: 1;
     color: var(--black);
 }
@@ -90,10 +81,6 @@ input {
     padding: 5px;
     border-radius: 6px;
     margin-top: 1vh;
-}
-
-label {
-    font-size: 1.2em;
 }
 
 .options *{
@@ -162,7 +149,6 @@ textarea {
 .bubbles button {
     height: 12vw;
     cursor: pointer;
-    font-size: 1.2em;
     background-color: white;
     width: 12vw;
     border-radius: 50%;

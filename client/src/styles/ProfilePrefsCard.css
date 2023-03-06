@@ -63,7 +63,6 @@
 }
 
 .prefs-icon {
-    font-size: 30px;
     margin-right: 10px;
     width: 25px;
     height: 25px;
@@ -77,13 +76,10 @@
 }
 
 .attr-value {
-    font-size: 18px;
-    font-weight: 500;
     margin: 0px;
 }
 
 .attr-desc {
-    font-size: 14px;
     margin: 0px;
     color: rgba(37, 51, 93, 0.64);
 }

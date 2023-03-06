@@ -48,12 +48,12 @@ const Form = ({welcome, header, fields, setActiveSection, show, activeSection, o
                 </div>
                 }
                 {/* show submit button or next button depending on section */}
-                {/* {activeSection == 4 ? <div className="submit-div">
-                        <button onClick={(e) => { e.preventDefault(); onFinish()}} className="submit-btn">Submit</button>
+                {activeSection == 3 ? <div className="submit-div">
+                        <button onClick={(e) => { e.preventDefault(); onFinished()}} className="submit-btn">Submit</button>
                     </div> : <div className="submit-div">
                         <button onClick={(e) => { e.preventDefault(); setActiveSection((prevState: number) => prevState + 1) }} className="submit-btn">Next</button>
                     </div>
-                } */}
+                }
                 <div className="submit-div">
                     <button onClick={(e)=>{e.preventDefault(); if (activeSection===3) onFinished(); setActiveSection((prevState:number)=>prevState+1)}} className="submit-btn">{activeSection<3?"Next":activeSection===3?"Submit":"Let's go"}</button>
                 </div>
