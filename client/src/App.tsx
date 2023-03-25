@@ -29,7 +29,7 @@ const UPSERT_AUTH_USER = gql`
     authGoogle(email: $email){
       email
       token
-      newUser
+      new_user
     }
   }
 `
