@@ -26,15 +26,14 @@ let SectionToAttributes = {
         "res_college", 
         "grad_year", 
         "email", 
+        "phone",
         "major",
         "gender",
-        "is_snorer",
-        "smoking_pref",
-        "is_morning_person",
-        "outing_freq"
+        
     ],
     "Preferences": [
-        "bed_time_pref", 
+        "bed_time_pref",
+        "wake_time_pref",
         "cleaning_freq", 
         "room_temp_pref", 
         "has_overnight_guest",
@@ -42,7 +41,10 @@ let SectionToAttributes = {
         "roommate_smoking_pref",
         "drinking_pref",
         "roommate_gender_pref",
-        "wake_time_pref"
+        "is_snorer",
+        "smoking_pref",
+        "is_morning_person",
+        "outing_freq"
     ],
     "Housing": [
         "housing_pref", 
@@ -63,8 +65,9 @@ let SectionToAttributes = {
     
 
 
-const ProfileSection = (props: {section_name: string, user: UserData, currUser: UserDataAuth}) => {
-    const [loggedIn, setLoggedIn] = useState(true) 
+const ProfileSection = (props: {section_name: string, user: UserData, currUser: UserDataAuth, editable: boolean}) => {
+    const [ownAcc, setOwnAcc] = useState(true) 
+    const [edit, setEdit] = useState(true) 
 
     useEffect( () => {
 
@@ -91,48 +94,53 @@ const ProfileSection = (props: {section_name: string, user: UserData, currUser: 
         )
 
         const toggleLoggedIn = ()=> {
-            setLoggedIn(true);
+            setOwnAcc(true);
             //this.style.backgroundColor = "red";
             
     
         }
         const toggleLoggedOut = ()=> {
-            setLoggedIn(false);
+            setOwnAcc(false);
+        }
+         const toggleEdit = ()=> {
+            setOwnAcc(true);
+            //this.style.backgroundColor = "red";
+            
+    
+        }
+        const toggleNotEdit = ()=> {
+            setOwnAcc(false);
         }
 
     return (
-        <React.Fragment>
-            <div className="profile-section" id={`${props.section_name}`}>
-            <div className= "edit"> 
+        <div className="profile-section" id={`${props.section_name}`}>
+            {/* <div className= "edit"> 
                 <h1> {props.section_name} </h1>
                 <div className={loggedIn?"attr-icon":""}> 
                 <FontAwesomeIcon className="attr-icon" icon={faPencilSquare}/>
                 </div>
                 
-                {/* <FontAwesomeIcon className="attr-icon" icon={faPencilSquare}/> */}
-            </div>
-                <div style={{display: "flex", flexFlow: "column nowrap"}}>
-                    {(SectionToAttributes as any)[props.section_name].map((field : any) => {
-                       
-                        return <ProfileSectionRow field={field} user={props.user} />
-                    })}
+                {/* <FontAwesomeIcon className="attr-icon" icon={faPencilSquare}/> 
+            </div> */}
+            <div className="profile-section-header">
+                <h1>{props.section_name}
+                <div className={ownAcc?"":""}> 
+                        {/* <button className={ownAcc?"attr-icon":""}> to edit</button> */}
+                        <FontAwesomeIcon className={ownAcc?"attr-icon":""} icon={faPencilSquare}  onClick= {toggleEdit}/>
+                        <FontAwesomeIcon className={!ownAcc?"attr-icon":""} icon={faPencilSquare}  onClick= {toggleNotEdit}/>
                 </div>
+                </div>
+                </h1>
             </div>
-        </React.Fragment>
-        // <React.Fragment>
-        //     <div className="profile-section" id={`${props.section_name}`}>
-        //         <div className= "edit"> 
-        //         <h1> {props.section_name}  <FontAwesomeIcon className="attr-icon" icon={faPencilSquare}/> </h1>
-        //         </div>
-        //         <div style={{display: "flex", flexFlow: "column nowrap"}}>
-        //             {(SectionToAttributes as any)[props.section_name].map((field : any) => {
-        //                 console.log(field)
-        //                 return <ProfileSectionRow field={field} user={props.user} />
-        //             })}
-        //         </div>
-        //     </div>
-        // </React.Fragment>
+            <div className="profile-section-body">
+                {(SectionToAttributes as any)[props.section_name].map((field : any) => {
+                    console.log(field)
+                    return <ProfileSectionRow field={field} user={props.user} />
+                })}
+            </div>
+        </div>
     )
 }
 
 export default ProfileSection;
+

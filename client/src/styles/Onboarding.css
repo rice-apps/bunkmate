@@ -60,6 +60,7 @@ body {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+    margin-bottom: 8vh;
 }
 .active {
     display: flex;
@@ -68,7 +69,7 @@ form {
     padding: 4vh 6vw;
     margin-top: 4vh;
     background: var(--white);
-    border-radius: 20px 20px 0px 0px;
+    border-radius: 20px;
     width: 75%;
 }
 .input-field {
@@ -88,6 +89,7 @@ input {
     border: 2px solid var(--blue);
     border-radius: 13px;
     cursor: pointer;
+    padding: 4px;
     width: 131px;
     height: 32px;
     background-color: var(--white);
@@ -107,8 +109,14 @@ input {
     color: var(--white);
     border-radius: 13px;
     border: 1px solid var(--white);
-    width: 115px;
+    width: 155px;
     height: 31px;
+    cursor: pointer;
+    
+}
+
+.submit-btn:hover {
+  border: 3px;
 }
 
 select {
@@ -152,3 +160,205 @@ textarea {
     border-radius: 50%;
 
 }
+
+/* Range input. Got most of it from https://codepen.io/RemkoBoschker/pen/jzLgXq*/
+
+.input-field:has(.range-slider) {
+    margin-bottom: 10vh;
+}
+.range-slider {
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+    height: 14px;
+    float: left;
+    text-align: center;
+  }
+
+  .range-slider input[type=range] {
+    -webkit-appearance: none;
+    pointer-events: none;
+    padding: 0;
+    position: absolute;
+    left: 0;
+    top: 20px;
+    height: 0;
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid #25335D;
+    background: none;
+  }
+  .range-slider input[type=range]::before {
+    content: "";
+    height: 3px;
+    background-color: #25335D;
+  }
+
+  .range-slider input[type=range]:focus, .range-slider input[type=range]:active {
+    outline: none;
+  }
+  .range-slider input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    box-sizing: content-box;
+    width: 20px;
+    height: 20px;
+    border: none;
+    pointer-events: auto;
+    border-radius: 14px;
+    background-color: #fff;
+    border: 2.5px solid #25335D;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+  .range-slider input[type=range]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border: none;
+    pointer-events: auto;
+    border-radius: 14px;
+    background-color: green;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+  .range-slider input[type=range]::-ms-thumb {
+    width: 20px;
+    height: 20px;
+    border: none;
+    pointer-events: auto;
+    border-radius: 14px;
+    background-color: green;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+  }
+  .range-slider input[type=range]::-webkit-slider-runnable-track {
+    /* your track styles */
+  }
+  .range-slider input[type=range]::-moz-range-track {
+    -moz-appearance: none;
+    background: none;
+  }
+  .range-slider input[type=range]::-ms-track {
+    /* should come after -webkit- */
+    border-color: transparent;
+    color: transparent;
+    background: transparent;
+    /* again your track styles */
+  }
+  .range-slider input[type=range]::-ms-fill-upper {
+    background: transparent;
+  }
+  .range-slider input[type=range]::-ms-fill-lower {
+    background: transparent;
+  }
+  .range-slider input[type=range]::-ms-tooltip {
+    display: none;
+  }
+
+  #slider2::before, #slider2::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -10.5px;
+    left: -1px;
+    width: 2.5px;
+    height: 23px;
+    background-color: #25335D;
+    margin-bottom: -28px;
+  }
+
+  #slider2::after {
+    left: initial;
+    right: -1px;
+  }
+
+  .range-slider span {
+    
+        position: absolute;
+        left: -7px;
+        top: 45px;
+    
+  }
+
+  .range-slider span:last-child {
+    left: inherit;
+    right: -7px;
+  }
+
+
+  .image-div p:first-child {
+    font-size: 1.2em;
+    font-weight: 300;
+  }
+
+  .image-div p:last-child {
+    color: #717171;
+  }
+  .bubble-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 5vh;
+  }
+  .bubble, .bubble-img {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+
+  }
+
+  .bubble {
+    background-size: cover;
+    background-image: url("");
+    display: flex;
+    color: #fff;
+    justify-content: center;
+    align-items: center;
+    font-size: 3em;
+  }
+
+  input[type="file"] {
+    display: none;
+  }
+
+  .actual-btn {
+    border: none;
+    background-color: #fff;
+  }
+
+  .upload-div {
+    margin-top: 2vh;
+    border: 2px solid #25335D;
+    padding: 0.2em 2em;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-around;
+    gap: 1vw;
+  }
+
+  .upload-div * {
+    cursor: pointer;
+  }
+
+  .avatars {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .or span {
+    height: 1.5px;
+    width: 30px;
+    margin: 4vh 0;
+    display: block;
+    background-color: #25335D;
+  }
+
+  .or {
+    align-items: center;
+    display: flex;
+    width: 10%;
+  }

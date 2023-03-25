@@ -22,10 +22,9 @@ interface UserProps {
 let pfps = new Map();
 
 pfps.set("Ben Liu", benPfp);
-pfps.set("Huzaifa Ali", defaultPfp);
-pfps.set("Sofia Lakhani", defaultPfp);
-pfps.set("Jonathan Jang", defaultPfp);
-pfps.set("Isabel Wang", defaultPfp);
+pfps.set("Gabriel Ong", defaultPfp);
+pfps.set("defaultName", defaultPfp);
+pfps.set("ANthony Yan", defaultPfp);
 
 
 const UserCard = ({name, pref_temp, bedtime, pref_gender, grad_year, pronouns, res_college, cleaning_freq, net_id}: UserProps) => {

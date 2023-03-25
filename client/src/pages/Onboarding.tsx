@@ -26,6 +26,8 @@ const Onboarding = () => {
         onboardingChange(e, "onCampus")
         setShowing(true)
     }
+
+    //called when submit button is pressed on last section
     const onFinished = () => {
 
         setUser({...user, "newUser": false})
@@ -62,7 +64,7 @@ const Onboarding = () => {
                     </button>
                     <button onClick={(e)=>{selectLiving(e)}}>
                         Off Campus
-                    </button>
+                    </button>   
                 </div>
             </div> } 
         </div>

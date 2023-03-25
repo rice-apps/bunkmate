@@ -29,15 +29,6 @@ const UserContextProvider = (props) => {
                     inner = true
                 }
             }
-            if (attribute==="isMorningPerson"){
-                if (e.target.innerHTML === "Night person")
-                {
-                    inner = false
-                }
-                else {
-                    inner = true
-                }
-            }
             if (value){
                 inner = value
             }
