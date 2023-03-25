@@ -3,7 +3,7 @@ import UserDataAuth from "../../types/UserDataAuth";
 
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPencilSquare} from '@fortawesome/free-solid-svg-icons';
+import { faPencilSquare, faSquareCheck} from '@fortawesome/free-solid-svg-icons';
 
 // CSS
 import '../../styles/ProfileSection.css';
@@ -103,13 +103,13 @@ const ProfileSection = (props: {section_name: string, user: UserData, currUser: 
             setOwnAcc(false);
         }
          const toggleEdit = ()=> {
-            setOwnAcc(true);
+            setEdit(true);
             //this.style.backgroundColor = "red";
             
     
         }
         const toggleNotEdit = ()=> {
-            setOwnAcc(false);
+            setEdit(false);
         }
 
     return (
@@ -122,16 +122,21 @@ const ProfileSection = (props: {section_name: string, user: UserData, currUser: 
                 
                 {/* <FontAwesomeIcon className="attr-icon" icon={faPencilSquare}/> 
             </div> */}
-            <div className="profile-section-header">
-                <h1>{props.section_name}
-                <div className={ownAcc?"":""}> 
-                        {/* <button className={ownAcc?"attr-icon":""}> to edit</button> */}
-                        <FontAwesomeIcon className={ownAcc?"attr-icon":""} icon={faPencilSquare}  onClick= {toggleEdit}/>
-                        <FontAwesomeIcon className={!ownAcc?"attr-icon":""} icon={faPencilSquare}  onClick= {toggleNotEdit}/>
+            {/* <div className="profile-section-header"> */}
+                <div className= "edit">
+                    <h1>{props.section_name} </h1>
+                    <FontAwesomeIcon className={edit?"attr-icon":"attr-icon"} icon={edit?faPencilSquare:faSquareCheck} onClick= {edit?toggleNotEdit:toggleEdit}/>
+                        {/* <FontAwesomeIcon className={!edit?"attr-icon":""} icon={faSquareCheck}  onClick= {toggleNotEdit}/> */}
+                        {/* <FontAwesomeIcon className={!ownAcc?"attr-icon":""} icon={faPencilSquare}  onClick= {toggleNotEdit}/> */}
+                         {/* <button> */}
+                    {/* <div className={ownAcc?"attr-icon":""}>  */}
+                        {/* <button className={ownAcc?"attr-icon":""}> to edit</button> */} 
                 </div>
-                </div>
-                </h1>
-            </div>
+                {/* </button> */}
+                
+               
+                
+            {/* </div> */}
             <div className="profile-section-body">
                 {(SectionToAttributes as any)[props.section_name].map((field : any) => {
                     console.log(field)

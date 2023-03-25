@@ -47,8 +47,8 @@ module.exports = gql `
   }
 
   input UserInput {
-    name: String!,
-    email: String!,
+    name: String!  
+    email: String!
     phone: String,
     grad_year: String,
     res_college: String,
@@ -90,7 +90,6 @@ module.exports = gql `
   type Mutation {
     authGoogle(email: String!): AuthResponse
     updateUser(user: UserInput!): User
-    updateUser1(email: String!, user: UserInput!): User
   }
 `;
 //# sourceMappingURL=typedefs.js.map

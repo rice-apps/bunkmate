@@ -13,9 +13,8 @@
     display: flex;
     /* flex-direction: column; */    
     justify-content: space-between;
-    align-items: center;
-    /* background-color: pink; */
-    display: flex;
+    align-items:flex-start;
+    background-color: pink;
     flex-direction: column;
     margin-top: 2em;
 }
