@@ -124,7 +124,6 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
                 cleaning_freq={users[0].cleaning_freq} internal_clock={users[0].bedtime} snoring={users[0].snore} drinking={users[0].drinking}/>
                 <ProfileContactCard phone={users[0].phoneNumber} email={ users[0].email }/> */}
                 {allUsers.filter(user => user.email == user_email).map(user => 
-                    <React.Fragment>
                         <div className="profile-page">
                             <div className="profile-content">
                                     <div className="profile-header">
@@ -144,10 +143,14 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
                                     </div>
                                 </div>
                         </div>
-                    </React.Fragment>)
+                    )
                 }
             </div>
         </div>
         )}
 
 export default ProfilePage;
+
+//on login
+//make button editable
+//connect to server

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import UserDataAuth from "../../types/UserDataAuth";
 
 // Icons
@@ -59,13 +59,23 @@ let SectionToAttributes = {
 }
 
 
+
+    
+
+
 const ProfileSection = (props: {section_name: string, user: UserData, currUser: UserDataAuth}) => {
+    const [loggedIn, setLoggedIn] = useState(true) 
+
     useEffect( () => {
+
+       
+        
         if (props.user.email == props.currUser.email){
             console.log("this is me")
             console.log(props.user.email)
             console.log(props.currUser.email)
             console.log("--end--")
+            toggleLoggedIn()
         }
         else{
             console.log("this is NOT me")
@@ -74,17 +84,32 @@ const ProfileSection = (props: {section_name: string, user: UserData, currUser: 
             console.log(props.currUser)
             console.log(props.currUser.email)
             console.log("--end--")
+            toggleLoggedOut()
         }
 
         }, []
         )
+
+        const toggleLoggedIn = ()=> {
+            setLoggedIn(true);
+            //this.style.backgroundColor = "red";
+            
+    
+        }
+        const toggleLoggedOut = ()=> {
+            setLoggedIn(false);
+        }
+
     return (
         <React.Fragment>
             <div className="profile-section" id={`${props.section_name}`}>
             <div className= "edit"> 
                 <h1> {props.section_name} </h1>
-                
+                <div className={loggedIn?"attr-icon":""}> 
                 <FontAwesomeIcon className="attr-icon" icon={faPencilSquare}/>
+                </div>
+                
+                {/* <FontAwesomeIcon className="attr-icon" icon={faPencilSquare}/> */}
             </div>
                 <div style={{display: "flex", flexFlow: "column nowrap"}}>
                     {(SectionToAttributes as any)[props.section_name].map((field : any) => {
