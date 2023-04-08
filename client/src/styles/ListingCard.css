@@ -1,4 +1,4 @@
-.user-card-wrapper {
+.listing-card-wrapper {
     animation-name: slide;
     animation-timing-function: ease;
     animation-duration: 1.2s;
@@ -23,11 +23,13 @@
 
 }
 
-.user-card-wrapper a {
+.listing-card-wrapper a {
     text-decoration: none;
 }
 
-.user-card {
+.listing-card {
+    display: flex;
+    flex-direction: column;
     border: solid;
     border-radius: 24px;
     /* 24*/
@@ -39,11 +41,11 @@
     /* column-count: 2; */
 }
 
-.user-card:hover {
+.listing-card:hover {
     transform: scale(1.04);
 }
 
-.user-card-content {
+.listing-card-content {
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -53,7 +55,7 @@
     
 }
 
-.user-card-heading {
+.listing-card-heading {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
@@ -61,34 +63,31 @@
     /* background-color: rgba(37, 51, 93, 0.34); */
 }
 
-.user-card-pfp {
-    width: 80px;
-    height: 80px;
-    margin-right: 1vw;
-    border-radius: 50%;
+.listing-card-picture {
+    width: 100%;
+    height: auto;
 }
 
-.user-card-header {
+.listing-card-header {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: flex-start;  
-    height: 80px;
+    height: 82px;
     position: relative;
-    top: -4px;
     /* background-color: rgba(37, 51, 93, 0.34); */
 }
 
-.user-card-title {
+.listing-card-title {
     display: flex;
-    flex-direction: row;
-    align-items: baseline;
+    flex-direction: column;
+    align-items: flex-start;
     text-align: center;
-    gap: 7px; 
+    gap: 2px; 
     /* background-color: red; */
 }
 
-.user-pronouns {
+.listing-pronouns {
     color: rgba(37, 51, 93, 0.64);
 }
 
@@ -102,7 +101,7 @@
     
 }
 
-.user-tags {
+.listing-tags {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -110,17 +109,17 @@
     /* background-color: violet; */
 }
 
-.user-tag {
+.listing-tag {
     background-color: #F3F4F8;
     border-radius: 15px;
     color:  #25335D;
 }
 
-.user-tag p {
+.listing-tag p {
     margin: 8px;
 }
 
-.user-card-body {
+.listing-card-body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -129,14 +128,14 @@
     /* background-color: rgba(37, 51, 93, 0.34); */
 }
 
-.user-card-attr-col {
+.listing-card-attr-col {
     width: 220px;
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
 
-.user-card-attr {
+.listing-card-attr {
     height: 30px;
     display: flex;
     flex-direction: row;

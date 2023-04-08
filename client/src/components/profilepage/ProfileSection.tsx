@@ -38,10 +38,10 @@ let SectionToAttributes = {
         "has_overnight_guest",
         "relationship_pref",
         "roommate_smoking_pref",
-        "drinking_pref",
+        "drinking_habits",
         "roommate_gender_pref",
         "is_snorer",
-        "smoking_pref",
+        "smoking_habits",
         "is_morning_person",
         "outing_freq"
     ],

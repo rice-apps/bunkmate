@@ -53,8 +53,8 @@ const GET_USERS = gql`
         room_usage
         outing_freq
         relationship_pref
-        drinking_pref
-        smoking_pref
+        drinking_habits
+        smoking_habits
         roommate_smoking_pref
         roommate_gender_pref
         has_overnight_guest
@@ -106,25 +106,15 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     return (
         //props.userData.email
         <div className="homepage"> 
-            <svg className="heading-background">
-                <ellipse cx="50%" cy="0px" rx="75%" ry="100%"></ellipse>
-            </svg>
             <div className="page-header">
-                <h1 className="page-title">fellow bunkmates!</h1>
+                <h1 className="page-title">Fellow bunkmates we found for you</h1>
             </div>
             {/* <button onClick={getUsers()}> Do Func A</button> */}
             <div className="user-card-feed">
                 {/* TODO: update UserData type to include all fields */}
                 {/* {allUsers.map(user => { return (<UserCard name={user.name} pref_temp={user.roomTemp} bedtime={user.bedTime} pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq} />) })} */}
-                { allUsers.map(user => {return (<UserCard name={user.name} 
-                                                    pref_temp={user.room_temp_pref} 
-                                                    bedtime={user.bed_time_pref} 
-                                                    pref_gender={user.roommate_gender_pref} 
-                                                    grad_year={user.grad_year} 
-                                                    pronouns={user.pronouns} 
-                                                    res_college={user.res_college} 
-                                                    cleaning_freq={user.cleaning_freq}
-                                                    net_id={user.email.split("@")[0]}/>)})}
+                { allUsers.map(user => {return (<UserCard net_id={user.email.split("@")[0]}
+                                                          user={user}/>)})}
             </div>
         </div> 
             //: <Navigate to="/" replace />
