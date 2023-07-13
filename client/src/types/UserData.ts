@@ -26,6 +26,7 @@ export default interface UserData {
     smoking_habits: string,
     roommate_smoking_pref: string,
     roommate_gender_pref: string,
+    drinking_pref: string,
     has_overnight_guest: boolean,
     cleaning_freq: string,
     additional_prefs: string,
