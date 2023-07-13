@@ -30,7 +30,7 @@ const UPSERT_AUTH_USER = gql`
     authGoogle(email: $email){
       email
       token
-      newUser
+      new_user
     }
   }
 `
@@ -46,9 +46,7 @@ function App() {
 
       const [loggedIn, setLoggedIn] = useState(false)
       const [userInfo, setUserInfo] = useState<UserDataAuth>({
-        email: "",
-        name: "",
-        newUser: false
+        email: ""
       })
 
       const navigate = useNavigate();
@@ -78,19 +76,20 @@ function App() {
       const logout = () => {
         setLoggedIn(false)
       }
-      const validateUser = (userInfo: any) => {
+      const validateUser = (userReponse: any) => {
         console.log('mutation success!')
-        console.log(userInfo)
+        console.log(userReponse)
+        setUserInfo({ "email": userReponse.authGoogle.email})
         
         
-        if (userInfo.authGoogle.newUser) {
+        if (userReponse.authGoogle.newUser) {
           console.log("onboarding")
           //render onboarding + update with email and newUser=False
           navigate("/onboarding")
 
         } else {
           //render homepage
-          setUserInfo(userInfo.authGoogle)
+          setUserInfo(userReponse.authGoogle)
           console.log("homepage")
           navigate("/home")
         }

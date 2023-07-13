@@ -94,6 +94,5 @@ module.exports = gql`
   type Mutation {
     authGoogle(email: String!): AuthResponse
     updateUser(user: UserInput!): User
-    updateUser1(email: String!, user: UserInput!): User
   }
 `
