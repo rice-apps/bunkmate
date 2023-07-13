@@ -10,10 +10,6 @@ import ProfileSection from '../components/profilepage/ProfileSection';
 // Mock database
 import users from '../mock-database';
 
-// Pfps
-import benPfp from '../media/ben-liu-pfp-400x400.png';
-import defaultPfp from '../media/empty-pfp-400x400.png';
-
 // Google Auth
 import UserDataAuth from "../types/UserDataAuth"
 import { googleLogout } from '@react-oauth/google';
@@ -32,6 +28,31 @@ import { useRouteLoaderData, useParams } from "react-router-dom";
 //     }
 //   }
 // `
+
+// PROFILE PICTURES
+import benPfp from '../media/ben pfp.png';
+import sofiaPfp from '../media/sofia pfp.jpeg';
+import anthonyPfp from '../media/anthony pfp.png';
+import adrianPfp from '../media/adrian pfp.jpeg';
+import danielPfp from '../media/daniel pfp.png';
+import jasminePfp from '../media/jasmine pfp.jpeg';
+import natPfp from '../media/nat pfp.jpeg';
+import gabrielPfp from '../media/gabriel pfp.jpeg';
+import jonathanPfp from '../media/jonathan pfp.jpeg';
+import calebPfp from '../media/caleb pfp.jpeg';
+import defaultPfp from '../media/empty pfp.png';
+let pfps = new Map();
+pfps.set("Ben Liu", benPfp);
+pfps.set("Sofia Lakhani", sofiaPfp);
+pfps.set("Anthony Yan", anthonyPfp);
+pfps.set("Adrian Valdez Diaz", adrianPfp);
+pfps.set("Daniel Cho", danielPfp);
+pfps.set("Jasmine Lee", jasminePfp);
+pfps.set("Nat Hill", natPfp);
+pfps.set("Gabriel Ong", gabrielPfp);
+pfps.set("Jonathan Mak", jonathanPfp);
+pfps.set("Caleb McKinney", calebPfp);
+pfps.set("Maggie Ku", defaultPfp);
 
 const GET_USERS = gql`
   query getUsers {
@@ -59,8 +80,8 @@ const GET_USERS = gql`
         room_usage
         outing_freq
         relationship_pref
-        drinking_pref
-        smoking_pref
+        drinking_habits
+        smoking_habits
         roommate_smoking_pref
         roommate_gender_pref
         has_overnight_guest
@@ -70,16 +91,10 @@ const GET_USERS = gql`
         additional_habit_info
         pfp
         new_user
+        profile_bio
     }
   }
 `
-
-let pfps = new Map();
-
-pfps.set("Ben Liu", benPfp);
-pfps.set("Gabriel Ong", defaultPfp);
-pfps.set("defaultName", defaultPfp);
-pfps.set("ANthony Yan", defaultPfp);
 
 const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
     // const [user, setUser] = useState<UserData[]>([])
@@ -150,7 +165,7 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
                                         <p className="profile-user-pronouns">{user.pronouns}</p>
                                     </div>
                                     <div className="profile-user-desc">
-                                        <p>I love spikeball and playing the clarinet! Kanye is bae but I've recently been getting into Ice Spice! I like to go thrifting. I am pretty chill and don't mind sharing with my roommate. Let me know if you would like to room! Excited to get to know you!</p>
+                                        <p>{user.profile_bio}</p>
                                     </div>
                                 </div>
                             </div>

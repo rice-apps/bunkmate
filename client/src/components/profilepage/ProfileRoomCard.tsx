@@ -1,3 +1,10 @@
+/*
+
+This component was depreciated after the introduction of ProfileSection and ProfileSectionRow
+due to their improved modularity.
+
+*/
+
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse, faPeopleGroup} from '@fortawesome/free-solid-svg-icons';

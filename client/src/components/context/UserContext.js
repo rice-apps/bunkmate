@@ -11,7 +11,7 @@ const UserContextProvider = (props) => {
 
         setUser(prevState=>{
             var inner = e.target.innerHTML
-            if (attribute==="onCampus"){
+            if (attribute==="on_campus"){
                 if (e.target.innerHTML === "Off Campus")
                 {
                     inner = false
@@ -20,8 +20,17 @@ const UserContextProvider = (props) => {
                     inner = true
                 }
             }
-            if (attribute==="overnightGuests"){
+            if (attribute==="has_overnight_guest"){
                 if (e.target.innerHTML === "No")
+                {
+                    inner = false
+                }
+                else {
+                    inner = true
+                }
+            }
+            if (attribute==="is_morning_person"){
+                if (e.target.innerHTML === "Night person")
                 {
                     inner = false
                 }

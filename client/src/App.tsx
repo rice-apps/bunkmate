@@ -3,6 +3,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import UserDataAuth from "./types/UserDataAuth"
 import HomePage from './pages/HomePage';
 import ProfilePage from './pages/ProfilePage';
+import ListingsPage from "./pages/ListingsPage";
 import LoginPage from "./pages/LoginPage";
 import Onboarding from './pages/Onboarding';
 import jwtDecode from 'jwt-decode';
@@ -104,6 +105,7 @@ function App() {
           <Route path={`/onboarding`} element={<Onboarding />} />
           <Route path={`/profile/:net_id`}
                  element={<ProfilePage userData={userInfo} logout={logout} />} />
+          <Route path={`/listings`} element={<ListingsPage userData={userInfo} logout={logout} />} />
           <Route path={`/`} element={<LoginPage login={login}/>} />
         </Routes>
         </div>

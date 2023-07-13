@@ -22,8 +22,8 @@ export default interface UserData {
     room_usage: string,
     outing_freq: string,
     relationship_pref: string,
-    drinking_pref: string,
-    smoking_pref: string,
+    drinking_habits: string,
+    smoking_habits: string,
     roommate_smoking_pref: string,
     roommate_gender_pref: string,
     has_overnight_guest: boolean,
@@ -32,5 +32,7 @@ export default interface UserData {
     is_snorer: boolean,
     additional_habit_info: string,
     pfp: string,
-    new_user: boolean
+    new_user: boolean,
+    profile_bio: string,
+    favorites: [string],
 }

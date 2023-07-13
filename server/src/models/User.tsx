@@ -43,8 +43,8 @@ var UserSchema = new Schema({
     room_usage: String,
     outing_freq: String,
     relationship_pref: String,
-    drinking_pref: String,
-    smoking_pref: String,
+    drinking_habits: String,
+    smoking_habits: String,
     roommate_smoking_pref: String,
     roommate_gender_pref: String,
     has_overnight_guest: Boolean,
@@ -54,6 +54,8 @@ var UserSchema = new Schema({
     additional_habit_info: String,
     pfp: String,
     new_user: Boolean,
+    profile_bio: String,
+    favorites: [String],
     auth: {
         google: {
             id: String,

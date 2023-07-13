@@ -1,44 +1,110 @@
+:root {
+    --white: #fff;
+    --orange: #FAA986;
+    --flesh: #FFEBE5;
+    --darkblue: #25335D;
+
+}
+
 .homepage {
-    width: 100vw;
-    height: 200vh;
-    font-family: 'Roboto Flex', sans-serif;
-    background-color: #FFEBE5;
-    ;
-}
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+ }
 
-.heading{
-    font-family: 'Roboto Flex', sans-serif;
-    color:aliceblue;
-}
-
-.heading-background {
-    width: 100vw;
-    height: 30vh;
+ .banner{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--flesh) !important;
+   }
+ 
+ .banner-logo {
+    justify-self: start;
+    font-size: 200%;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto Flex',sans-serif;
+    padding: 1.5vw;
+ }
+ .banner-logo::before {
+    content: "";
+    justify-self: start;
+    height: 55px;
+    width: 55px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    display: inline-block;
+    z-index: 0;
     position: absolute;
-    fill: #25335D;
+ }
+
+ .settings {
+    /* display: flex;
+     flex-direction: row;
+     justify-content: center;
+     align-items: center; */
+     width: 50px;
+    height: 50px;
+    padding: 10px;
+ }
+
+ .btn-group{
+    flex-direction: row;
+   justify-content: center;
+   align-items: center;
+ }
+
+ .btn-group button {
+   /*ackground-color: #04AA6D;  Green background */
+   /*border: 1px solid green; Green border*/
+   font-family: 'Roboto Flex',sans-serif;
+   font-size: 135%;
+   background: var(--flesh);
+   color: black; /* White text */
+   padding: 10px 24px; /* Some padding */
+   padding-right: 180px;
+   cursor: pointer; /* Pointer/hand icon */
+   float: left; /* Float the buttons side by side */
+   display: flex;
+   
+ }
+ 
+ /* Clear floats (clearfix hack) */
+ .btn-group:after {
+   content: "";
+   clear: both;
+   display: table;
+ }
+ 
+ .btn-group button {
+   border: none; /* Prevent double borders */
+   
+ }
+ 
+ /* Add a background color on hover */
+ /* .btn-group button:hover {
+   text-decoration: underline;
+ } */
+.btn-selected {
+  text-decoration: underline;
 }
 
 .page-header {
     display: flex;
     flex-direction: column;
-}
-
-.page-title {
-    position: relative;
-    color: white;
-    z-index: 1;
-    margin: auto;
-    top: 8.5vh;
+    margin: 2.5vh auto auto auto;
+    height: 10vh;
+    background-color: var(--flesh);
 }
 
 .user-card-feed {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin: auto;
-    position: relative;
-    margin: auto;
-    top: 15vh;
-    columns: 2 auto;
+    display: grid;
+    grid-template-columns: 38% 38%;
+    grid-template-rows: auto;
+    gap: 65px;
+    justify-content: center;
+    padding-bottom: 6vh;
 }

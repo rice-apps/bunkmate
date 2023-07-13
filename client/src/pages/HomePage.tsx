@@ -18,6 +18,8 @@ import '../styles/HomePage.css';
 
 import { gql, useQuery, useLazyQuery } from "@apollo/client";
 import UserData from '../types/UserData';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const GET_USERS = gql`
   query getUsers {
@@ -25,6 +27,37 @@ const GET_USERS = gql`
         id
         name
         email
+        phone
+        grad_year
+        res_college
+        major
+        minor
+        pronouns
+        gender
+        accommodations
+        on_campus
+        housing_pref
+        roommate_count
+        additional_room_info
+        personality_traits
+        is_morning_person
+        room_temp_pref
+        bed_time_pref
+        wake_time_pref
+        room_usage
+        outing_freq
+        relationship_pref
+        drinking_habits
+        smoking_habits
+        roommate_smoking_pref
+        roommate_gender_pref
+        has_overnight_guest
+        cleaning_freq
+        additional_prefs
+        is_snorer
+        additional_habit_info
+        pfp
+        new_user
     }
   }
 `
@@ -72,6 +105,14 @@ const GET_USERS = gql`
 
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     const [allUsers, setAllUsers] = useState<UserData[]>([])
+    const [onCampus, setOnCampus] = useState(true)
+
+    const toggleOnCampus = ()=> {
+        setOnCampus(true);
+    }
+    const toggleOffCampus = ()=> {
+        setOnCampus(false);
+    }
 
     const [getUsers, { data, loading, error }] = useLazyQuery(GET_USERS, {onCompleted: tempData => {
         console.log(tempData)
@@ -84,53 +125,43 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     
     
     useEffect(() => {
-        // getUsers({variables: {}, onCompleted: recommendationAlgorithm})
-        console.log("fetching")
         getUsers()
         // const { data, loading, error } = useQuery(GET_USERS)
         // if (loading) return null;
-        
     }, [])
-
-    const funcA = () => {
-        //do something
-    }
 
     const recommendationAlgorithm = () => {
         // console.log(data)
     }
     
-    //add this button to your logout button's onclick!
+    // Add this button to your logout button's onclick!
     const handleLogout = () => {
         googleLogout()
         props.logout()
     }
 
     return (
-        //props.userData.email
         <div className="homepage"> 
-            <svg className="heading-background">
-                <ellipse cx="50%" cy="0px" rx="75%" ry="100%"></ellipse>
-            </svg>
-            <div className="page-header">
-                <h1 className="page-title">fellow bunkmates!</h1>
+            <div className="banner">
+                <div className="banner-logo">
+                    <strong>bunkmate</strong> 
+                </div>
+                <div className="container">
+                    <div className="btn-group">
+                        <button className={onCampus?"btn-selected":""} onClick= {toggleOnCampus}> On-Campus</button>
+                        <button className={!onCampus?"btn-selected":""} onClick= {toggleOffCampus}> Off-Campus</button>
+                    </div>
+                </div>
+                <FontAwesomeIcon className="settings" icon={faGear}></FontAwesomeIcon>
             </div>
-            {/* <button onClick={getUsers()}> Do Func A</button> */}
+            <div className="page-header">
+                <h1>Fellow bunkmates we found for you</h1>
+            </div>
             <div className="user-card-feed">
-                {/* TODO: update UserData type to include all fields */}
-                {/* {allUsers.map(user => { return (<UserCard name={user.name} pref_temp={user.roomTemp} bedtime={user.bedTime} pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq} />) })} */}
-                { allUsers.map(user => {return (<UserCard name={user.name} 
-                                                    pref_temp={user.room_temp_pref} 
-                                                    bedtime={user.bed_time_pref} 
-                                                    pref_gender={user.roommate_gender_pref} 
-                                                    grad_year={user.grad_year} 
-                                                    pronouns={user.pronouns} 
-                                                    res_college={user.res_college} 
-                                                    cleaning_freq={user.cleaning_freq}
-                                                    net_id={user.email.split("@")[0]}/>)})}
+                { allUsers.filter(user=>user.on_campus == onCampus).map(user => {return (<UserCard net_id={user.email.split("@")[0]}
+                                                          user={user}/>)})}
             </div>
         </div> 
-            //: <Navigate to="/" replace />
     )}
 
 export default HomePage;

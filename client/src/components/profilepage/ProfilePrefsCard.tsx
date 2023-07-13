@@ -1,3 +1,10 @@
+/*
+
+This component was depreciated after the introduction of ProfileSection and ProfileSectionRow
+due to their improved modularity.
+
+*/
+
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTemperatureHalf, faBed, faVenusMars, faLocationDot, faGraduationCap, faMoon, faSun, faBroom, faSmoking,faVolumeHigh, faHandshake, faSprayCanSparkles, faTemperatureLow} from '@fortawesome/free-solid-svg-icons';

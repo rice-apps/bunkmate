@@ -16,8 +16,6 @@ import UserData from "../../types/UserData";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-
-
 const ProfileSectionRow = (props: {field: string, user: UserData}) => {
 
     const [KeyToIcon, setKeyToIcon] = useState({
@@ -40,8 +38,8 @@ const ProfileSectionRow = (props: {field: string, user: UserData}) => {
         "wake_time_pref": null,
         "outing_freq": null,
         "relationship_pref": null,  
-        "drinking_pref": null,
-        "smoking_pref": null,
+        "drinking_habits": null,
+        "smoking_habits": null,
         "roommate_smoking_pref": null,
         "roommate_gender_pref": null,
         "has_overnight_guest": null,
@@ -65,15 +63,15 @@ const ProfileSectionRow = (props: {field: string, user: UserData}) => {
         "on_campus": "On campus",
         "housing_pref": "Desired housing",
         "roommate_count": "Have found",
-        "is_morning_person": "Internal clock",
+        "is_morning_person": "Is a morning person?",
         "room_temp_pref": "Room temp",
         "bed_time_pref": "Bedtime",
         "wake_time_pref": "Wake-time",
         "outing_freq": "Likes to go out",
         "relationship_pref": "Desired roommate dynamic",  
-        "drinking_pref": "Drinking",
-        "smoking_pref": "Smoking",
-        "roommate_smoking_pref": "Prefers roommate(s) that",
+        "drinking_habits": "Drinks?",
+        "smoking_habits": "Smokes?",
+        "roommate_smoking_pref": "Roommate smoking preference?",
         "roommate_gender_pref": "Roommate gender preference",
         "has_overnight_guest": "Has overnight guest",
         "cleaning_freq": "Cleaning frequency",
@@ -94,6 +92,8 @@ const ProfileSectionRow = (props: {field: string, user: UserData}) => {
             <div className="profile-section-row-value">
                 <p>{(props.user as any)[props.field]}</p>
                 {props.field == "room_temp_pref" ? <p>℉</p> : <div></div>}
+                {typeof (props.user as any)[props.field] == "boolean" && (props.user as any)[props.field] ? <p>Yes</p> : <div></div>}
+                {typeof (props.user as any)[props.field] == "boolean" && !(props.user as any)[props.field] ? <p>No</p> : <div></div>}
             </div>
         </div>
     )
