@@ -18,6 +18,8 @@ import '../styles/HomePage.css';
 
 import { gql, useQuery, useLazyQuery } from "@apollo/client";
 import UserData from '../types/UserData';
+import { faGear } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // const GET_USERS = gql`
 //   query getUsers {
@@ -70,6 +72,14 @@ const GET_USERS = gql`
 
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     const [allUsers, setAllUsers] = useState<UserData[]>([])
+    const [onCampus, setOnCampus] = useState(true)
+
+    const toggleOnCampus = ()=> {
+        setOnCampus(true);
+    }
+    const toggleOffCampus = ()=> {
+        setOnCampus(false);
+    }
 
     const [getUsers, { data, loading, error }] = useLazyQuery(GET_USERS, {onCompleted: tempData => {
         console.log(tempData)
@@ -82,42 +92,43 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     
     
     useEffect(() => {
-        // getUsers({variables: {}, onCompleted: recommendationAlgorithm})
         getUsers()
         // const { data, loading, error } = useQuery(GET_USERS)
         // if (loading) return null;
-        
     }, [])
-
-    const funcA = () => {
-        //do something
-    }
 
     const recommendationAlgorithm = () => {
         // console.log(data)
     }
     
-    //add this button to your logout button's onclick!
+    // Add this button to your logout button's onclick!
     const handleLogout = () => {
         googleLogout()
         props.logout()
     }
 
     return (
-        //props.userData.email
         <div className="homepage"> 
-            <div className="page-header">
-                <h1 className="page-title">Fellow bunkmates we found for you</h1>
+            <div className="banner">
+                <div className="banner-logo">
+                    <strong>bunkmate</strong> 
+                </div>
+                <div className="container">
+                    <div className="btn-group">
+                        <button className={onCampus?"btn-selected":""} onClick= {toggleOnCampus}> On-Campus</button>
+                        <button className={!onCampus?"btn-selected":""} onClick= {toggleOffCampus}> Off-Campus</button>
+                    </div>
+                </div>
+                <FontAwesomeIcon className="settings" icon={faGear}></FontAwesomeIcon>
             </div>
-            {/* <button onClick={getUsers()}> Do Func A</button> */}
+            <div className="page-header">
+                <h1>Fellow bunkmates we found for you</h1>
+            </div>
             <div className="user-card-feed">
-                {/* TODO: update UserData type to include all fields */}
-                {/* {allUsers.map(user => { return (<UserCard name={user.name} pref_temp={user.roomTemp} bedtime={user.bedTime} pref_gender={user.genderPref} grad_year={user.grad_year} pronouns={user.pronouns} res_college={user.res_college} cleaning_freq={user.cleaning_freq} />) })} */}
-                { allUsers.map(user => {return (<UserCard net_id={user.email.split("@")[0]}
+                { allUsers.filter(user=>user.on_campus == onCampus).map(user => {return (<UserCard net_id={user.email.split("@")[0]}
                                                           user={user}/>)})}
             </div>
         </div> 
-            //: <Navigate to="/" replace />
     )}
 
 export default HomePage;

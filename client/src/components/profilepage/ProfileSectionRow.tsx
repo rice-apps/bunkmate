@@ -16,8 +16,6 @@ import UserData from "../../types/UserData";
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-
-
 const ProfileSectionRow = (props: {field: string, user: UserData}) => {
 
     const [KeyToIcon, setKeyToIcon] = useState({
