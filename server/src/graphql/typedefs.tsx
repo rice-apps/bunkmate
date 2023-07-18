@@ -1,5 +1,5 @@
 const { gql } = require('apollo-server');
-
+// Add type: listing - follow format
 module.exports = gql`
   type User {
     id: ID!
