@@ -10,7 +10,12 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.User = void 0;
+// import { userInfo } from "os";
 const google_auth_library_1 = require("google-auth-library");
+// image stuff
+// const { createReadStream } = require('fs')
+// const { v4: uuidv4 } = require('uuid')
+// const { GraphQLUpload } = require('graphql-upload')
 const jwt = require('jsonwebtoken');
 const client_id = "10547820426-g94ke317qjsssctc8epuear86u5tf7vp.apps.googleusercontent.com";
 const googleClient = new google_auth_library_1.OAuth2Client({
@@ -25,43 +30,63 @@ var UserSchema = new Schema({
         required: true,
         unique: true
     },
-    resCollege: String,
-    phoneNumber: String,
-    gradYear: String,
+    phone: String,
+    grad_year: String,
+    res_college: String,
     major: String,
     minor: String,
     pronouns: String,
+<<<<<<< HEAD
     sex: String,
-    accommodation: String,
     onCampus: Boolean,
     roomType: String,
-    numRoommates: 'Number',
-    additionalRoomInfo: String,
+    numRoommates: String,
     genderPref: String,
     overnightGuests: Boolean,
+    presence: String,
     roomTemp: String,
     bedTime: String,
     wakeTime: String,
-    neatness: String,
-    presence: String,
-    additionalPrefInfo: String,
     personality: [String],
-    isMorningPerson: Boolean,
-    personalSpace: [String],
     outingFrequency: String,
-    coexistCondition: String,
-    outgoingness: String,
+    neatness: String,
     smoker: String,
-    smokerPref: String,
-    additionalHabitInfo: String,
+    noise: String,
+=======
+    gender: String,
+    accommodations: String,
+    on_campus: Boolean,
+    housing_pref: String,
+    roommate_count: String,
+    additional_room_info: String,
+    personality_traits: [String],
+    is_morning_person: Boolean,
+    room_temp_pref: String,
+    bed_time_pref: String,
+    wake_time_pref: String,
+    room_usage: String,
+    outing_freq: String,
+    relationship_pref: String,
+    drinking_habits: String,
+    smoking_habits: String,
+    roommate_smoking_pref: String,
+    roommate_gender_pref: String,
+    has_overnight_guest: Boolean,
+    cleaning_freq: String,
+    additional_prefs: String,
+    is_snorer: Boolean,
+    additional_habit_info: String,
+>>>>>>> dev
     pfp: String,
+    new_user: Boolean,
+    profile_bio: String,
+    favorites: [String],
     auth: {
         google: {
             id: String,
             token: String
         }
     },
-    newUser: Boolean,
 }, {
     methods: {
         generateJWT() {
@@ -79,17 +104,6 @@ var UserSchema = new Schema({
         upsertGoogleUser(email) {
             return __awaiter(this, void 0, void 0, function* () {
                 const User = this;
-                //might need mongoose.model("User") ??
-                // console.log("getting token")
-                // let token = await googleClient.getToken(email)
-                // console.log("token received")
-                // console.log(token)
-                // const ticket = await googleClient.verifyIdToken({
-                //     idToken: email,
-                // });
-                // const payload = ticket.getPayload();
-                // console.log('got payload')
-                // console.log(payload)
                 const user = yield User.findOne({ 'email': email });
                 // no user was found, lets create a new one
                 if (!user) {
@@ -98,11 +112,15 @@ var UserSchema = new Schema({
                     const newUserDict = yield User.create({
                         name: "defaultName",
                         email: email,
+<<<<<<< HEAD
                         newUser: true,
+=======
+                        new_user: true,
                         // 'auth.google': {
                         // id: profile.id,
                         // token: accessToken,
                         // },
+>>>>>>> dev
                     });
                     // newUser.save() maybe
                     return newUserDict;
@@ -118,10 +136,27 @@ var UserSchema = new Schema({
         },
         updateUser(filter, update) {
             return __awaiter(this, void 0, void 0, function* () {
-                // filter = {email: "go15@rice.edu"}
-                // update = {resCollege: "Sid Richardson", smoker: True}
-                // update = {newUser: False}
-                let doc = yield exports.User.findOneAndUpdate(filter, update);
+                //first process image
+                console.log("input");
+                console.log(update);
+                var updatedUser = {};
+                if (update.pfp) {
+                    // const { filename, mimetype, createReadStream } = await update.pfp
+                    // const ext = mimetype.split('/')[1]
+                    // const newFilename = `${uuidv4()}.${ext}`
+                    // Store the uploaded image data in MongoDB as a Base64-encoded string
+                    const buffer = yield update.pfp.buffer();
+                    const base64Image = buffer.toString('base64');
+                    console.log("base 64");
+                    console.log(base64Image);
+                    updatedUser = Object.assign(Object.assign({}, update), { "pfp": base64Image });
+                }
+                else {
+                    updatedUser = update;
+                }
+                let doc = yield exports.User.findOneAndUpdate(filter, updatedUser);
+                console.log("output");
+                console.log(doc);
                 return doc;
             });
         }

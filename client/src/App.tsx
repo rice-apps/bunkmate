@@ -3,6 +3,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import UserDataAuth from "./types/UserDataAuth"
 import HomePage from './pages/HomePage';
 import ProfilePage from './pages/ProfilePage';
+import ListingsPage from "./pages/ListingsPage";
 import LoginPage from "./pages/LoginPage";
 import Onboarding from './pages/Onboarding';
 import jwtDecode from 'jwt-decode';
@@ -29,7 +30,7 @@ const UPSERT_AUTH_USER = gql`
     authGoogle(email: $email){
       email
       token
-      newUser
+      new_user
     }
   }
 `
@@ -45,9 +46,7 @@ function App() {
 
       const [loggedIn, setLoggedIn] = useState(false)
       const [userInfo, setUserInfo] = useState<UserDataAuth>({
-        email: "",
-        name: "",
-        newUser: false
+        email: ""
       })
 
       const navigate = useNavigate();
@@ -77,19 +76,20 @@ function App() {
       const logout = () => {
         setLoggedIn(false)
       }
-      const validateUser = (userInfo: any) => {
+      const validateUser = (userReponse: any) => {
         console.log('mutation success!')
-        console.log(userInfo)
+        console.log(userReponse)
+        setUserInfo({ "email": userReponse.authGoogle.email})
         
         
-        if (userInfo.authGoogle.newUser) {
+        if (userReponse.authGoogle.newUser) {
           console.log("onboarding")
           //render onboarding + update with email and newUser=False
           navigate("/onboarding")
 
         } else {
           //render homepage
-          setUserInfo(userInfo.authGoogle)
+          setUserInfo(userReponse.authGoogle)
           console.log("homepage")
           navigate("/home")
         }
@@ -100,33 +100,15 @@ function App() {
       // <Router>
         <div>
         <Routes>
-          <Route path={`/profile/:id`} element={<ProfilePage userData={userInfo} logout={logout} />}/>
+          {/* <Route path={`/profile/:id`} element={<ProfilePage userData={userInfo} logout={logout} />}/> */}
           <Route path={`/home`} element={<HomePage userData={userInfo} logout={logout}/>} />
           <Route path={`/onboarding`} element={<Onboarding />} />
+          <Route path={`/profile/:net_id`}
+                 element={<ProfilePage userData={userInfo} logout={logout} />} />
+          <Route path={`/listings`} element={<ListingsPage userData={userInfo} logout={logout} />} />
           <Route path={`/`} element={<LoginPage login={login}/>} />
         </Routes>
         </div>
-        //</Router>
-
-      // <div>
-      // (loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>)
-
-      // </div>
-      // <Router>
-      //   {/* <div className="App"> */}
-      //   <Routes>
-      //     <Route path={`/home`} element={<HomePage />} />
-      //     <Route path={`/`} element={<LoginPage />} />
-      //   </Routes>
-      //   {/* </div> */}
-      // </Router>
-      /*
-      <div>
-        {loggedIn ? <HomePage userData={userInfo} logout={logout}/> : <LoginPage login={login}/>}
-
-      </div>
-      */
-      // <ProfilePage userData={userInfo} logout={logout}/>
     );
 }
 

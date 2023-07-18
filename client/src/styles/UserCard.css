@@ -1,20 +1,24 @@
 .user-card-wrapper {
     animation-name: slide;
     animation-timing-function: ease;
-    animation-duration: 1.5s;
+    animation-duration: 1.2s;
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
     position: relative;
-    left: -70vw;
+    box-shadow: inset;
+    top: 7vw;
+    opacity: 0%;
 }
 
 @keyframes slide {
     0% {
-        left: -70vw;
+        top: 7vw;
+        opacity: 0%;
     }
 
     100% {
-        left: 0vw;
+        top: 0vw;
+        opacity: 100%;
     }
 
 }
@@ -29,7 +33,6 @@
     /* 24*/
     border-width: 0px;
     background-color: white;
-    margin-bottom: 15px;
     transform: scale(1);
     transition: transform 0.15s;
     color: hsl(225, 43%, 25%);
@@ -40,55 +43,49 @@
     transform: scale(1.04);
 }
 
-.card-content {
+.user-card-content {
     padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 600px;
-    height: 200px;
+    height: 230px;
     
 }
 
-.card-heading {
+.user-card-heading {
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    font-size: 15px;
+    /* background-color: rgba(37, 51, 93, 0.34); */
 }
 
-.user-pfp {
-    width: 20px;
-    height: 20px;
+.user-card-pfp {
+    width: 80px;
+    height: 80px;
     margin-right: 1vw;
     border-radius: 50%;
 }
 
-.user-header {
+.user-card-header {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;  
-    gap: 7px;
+    height: 80px;
     position: relative;
-    top: -8px;
-    
+    top: -4px;
+    /* background-color: rgba(37, 51, 93, 0.34); */
 }
 
-.user-title {
+.user-card-title {
     display: flex;
     flex-direction: row;
     align-items: baseline;
     text-align: center;
-    height: 6vh;
-    margin-top: -8px;
-    
-}
-
-.user-title h1 {
-    margin-right: 0.5vw;
-    
+    gap: 7px; 
+    /* background-color: red; */
 }
 
 .user-pronouns {
@@ -96,10 +93,12 @@
 }
 
 .tag-content{
-    margin: -2px 8px -2px 13px;
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 6px;
+    padding: 5px 8px 5px 8px;
+    /* background-color: rgba(37, 51, 93, 0.64); */
     
 }
 
@@ -108,41 +107,45 @@
     flex-direction: row;
     align-items: center;
     gap: 5px;
+    /* background-color: violet; */
 }
 
 .user-tag {
     background-color: #F3F4F8;
     border-radius: 15px;
     color:  #25335D;
-    font-size: 14px;
-}
-
-.tag-icon {
-    font-size: 17px;
-    
 }
 
 .user-tag p {
     margin: 8px;
 }
 
-.card-body {
+.user-card-body {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     position: relative;
     top: -20px;
+    /* background-color: rgba(37, 51, 93, 0.34); */
 }
 
-.attr-col {
+.user-card-attr-col {
     width: 220px;
     display: flex;
     flex-direction: column;
     gap: 14px;
 }
 
+.user-card-attr {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* margin: 0px; */
+    /* background-color: rgba(255,0,0,0.5); */
+}
+
 .attr-icon {
-    font-size: 30px;
     margin-right: 10px;
     width: 25px;
     height: 25px;
@@ -156,25 +159,15 @@
 }
 
 .attr-value {
-    font-size: 18px;
-    font-weight: 500;
     margin: 0px;
 }
 
 .attr-desc {
-    font-size: 14px;
     margin: 0px;
     color: rgba(37, 51, 93, 0.64);
 }
 
-.user-attr {
-    height: 30px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin: 0px;
-    /* background-color: rgba(255,0,0,0.5); */
-}
+
 /*
 .roommate-pfps {
     display: flex;

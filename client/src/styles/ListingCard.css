@@ -1,0 +1,186 @@
+.listing-card-wrapper {
+    animation-name: slide;
+    animation-timing-function: ease;
+    animation-duration: 1.2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    position: relative;
+    box-shadow: inset;
+    top: 7vw;
+    opacity: 0%;
+}
+
+@keyframes slide {
+    0% {
+        top: 7vw;
+        opacity: 0%;
+    }
+
+    100% {
+        top: 0vw;
+        opacity: 100%;
+    }
+
+}
+
+.listing-card-wrapper a {
+    text-decoration: none;
+}
+
+.listing-card {
+    display: flex;
+    flex-direction: column;
+    border: solid;
+    border-radius: 24px;
+    /* 24*/
+    border-width: 0px;
+    background-color: white;
+    transform: scale(1);
+    transition: transform 0.15s;
+    color: hsl(225, 43%, 25%);
+    /* column-count: 2; */
+}
+
+.listing-card:hover {
+    transform: scale(1.04);
+}
+
+.listing-card-content {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 600px;
+    height: 230px;
+    
+}
+
+.listing-card-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    /* background-color: rgba(37, 51, 93, 0.34); */
+}
+
+.listing-card-picture {
+    width: 100%;
+    height: auto;
+}
+
+.listing-card-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;  
+    height: 82px;
+    position: relative;
+    /* background-color: rgba(37, 51, 93, 0.34); */
+}
+
+.listing-card-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: center;
+    gap: 2px; 
+    /* background-color: red; */
+}
+
+.listing-pronouns {
+    color: rgba(37, 51, 93, 0.64);
+}
+
+.tag-content{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 8px 5px 8px;
+    /* background-color: rgba(37, 51, 93, 0.64); */
+    
+}
+
+.listing-tags {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    /* background-color: violet; */
+}
+
+.listing-tag {
+    background-color: #F3F4F8;
+    border-radius: 15px;
+    color:  #25335D;
+}
+
+.listing-tag p {
+    margin: 8px;
+}
+
+.listing-card-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    position: relative;
+    top: -20px;
+    /* background-color: rgba(37, 51, 93, 0.34); */
+}
+
+.listing-card-attr-col {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.listing-card-attr {
+    height: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* margin: 0px; */
+    /* background-color: rgba(255,0,0,0.5); */
+}
+
+.attr-icon {
+    margin-right: 10px;
+    width: 25px;
+    height: 25px;
+    color:  #25335D;
+}
+
+.attr-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.attr-value {
+    margin: 0px;
+}
+
+.attr-desc {
+    margin: 0px;
+    color: rgba(37, 51, 93, 0.64);
+}
+
+
+/*
+.roommate-pfps {
+    display: flex;
+    flex-direction: row;
+    width: 96px;
+    justify-content: flex-end;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.roommate-pfp {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+*/

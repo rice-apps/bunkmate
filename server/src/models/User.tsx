@@ -1,5 +1,9 @@
-import { userInfo } from "os";
+// import { userInfo } from "os";
 import { OAuth2Client } from "google-auth-library";
+// image stuff
+// const { createReadStream } = require('fs')
+// const { v4: uuidv4 } = require('uuid')
+// const { GraphQLUpload } = require('graphql-upload')
 
 const jwt = require('jsonwebtoken');
 
@@ -13,51 +17,51 @@ var mongoose = require("mongoose"),
     Schema = mongoose.Schema;
 
 var UserSchema = new Schema({
-
     name: String,
     email: {
         type: String,
         required: true,
         unique: true
     },
-    resCollege: String,
-    phoneNumber: String,
-    gradYear: String,
+    phone: String,
+    grad_year: String,
+    res_college: String,
     major: String,
     minor: String,
     pronouns: String,
-    sex: String,
-    accommodation: String,
-    onCampus: Boolean,
-    roomType: String,
-    numRoommates: String,
-    additionalRoomInfo: String,
-    genderPref: String,
-    overnightGuests: Boolean,
-    roomTemp: String,
-    bedTime: String,
-    wakeTime: String,
-    neatness: String,
-    presence: String,
-    additionalPrefInfo: String,
-    personality: [String], //is this right?
-    isMorningPerson: Boolean,
-    personalSpace: [String],
-    outingFrequency: String,
-    coexistCondition: String,
-    outgoingness: String,
-    smoker: String,
-    smokerPref: String,
-    additionalHabitInfo: String,
+    gender: String,
+    accommodations: String,
+    on_campus: Boolean,
+    housing_pref: String,
+    roommate_count: String,
+    additional_room_info: String,
+    personality_traits: [String],
+    is_morning_person: Boolean,
+    room_temp_pref: String,
+    bed_time_pref: String,
+    wake_time_pref: String,
+    room_usage: String,
+    outing_freq: String,
+    relationship_pref: String,
+    drinking_habits: String,
+    smoking_habits: String,
+    roommate_smoking_pref: String,
+    roommate_gender_pref: String,
+    has_overnight_guest: Boolean,
+    cleaning_freq: String,
+    additional_prefs: String,
+    is_snorer: Boolean,
+    additional_habit_info: String,
     pfp: String,
-
+    new_user: Boolean,
+    profile_bio: String,
+    favorites: [String],
     auth: {
         google: {
             id: String,
             token: String
         }
     },
-    newUser: Boolean,
 },
     {
         methods: {
@@ -76,19 +80,6 @@ var UserSchema = new Schema({
         statics: {
             async upsertGoogleUser(email) {
                 const User = this;
-                //might need mongoose.model("User") ??
-                // console.log("getting token")
-                // let token = await googleClient.getToken(email)
-                // console.log("token received")
-                // console.log(token)
-
-                // const ticket = await googleClient.verifyIdToken({
-                //     idToken: email,
-                // });
-
-                // const payload = ticket.getPayload();
-                // console.log('got payload')
-                // console.log(payload)
 
                 const user = await User.findOne({ 'email': email });
 
@@ -99,7 +90,7 @@ var UserSchema = new Schema({
                     const newUserDict = await User.create({
                         name: "defaultName", //profile.name
                         email: email, //profile.emails[0].value,
-                        newUser: true,
+                        new_user: true,
                         // 'auth.google': {
                         // id: profile.id,
                         // token: accessToken,
@@ -116,10 +107,28 @@ var UserSchema = new Schema({
                 return doc;
             },
             async updateUser(filter, update) {
-                // filter = {email: "go15@rice.edu"}
-                // update = {resCollege: "Sid Richardson", smoker: True}
-                // update = {newUser: False}
-                let doc = await User.findOneAndUpdate(filter, update);
+                //first process image
+                console.log("input")
+                console.log(update)
+                var updatedUser = {}
+                if (update.pfp) {
+                    // const { filename, mimetype, createReadStream } = await update.pfp
+                    // const ext = mimetype.split('/')[1]
+                    // const newFilename = `${uuidv4()}.${ext}`
+
+                    // Store the uploaded image data in MongoDB as a Base64-encoded string
+                    const buffer = await update.pfp.buffer()
+                    const base64Image = buffer.toString('base64')
+                    console.log("base 64")
+                    console.log(base64Image)
+                    updatedUser = {...update, "pfp": base64Image}
+                } else {
+                    updatedUser = update
+                }
+
+                let doc = await User.findOneAndUpdate(filter, updatedUser);
+                console.log("output")
+                console.log(doc)
                 return doc;
             }
         }

@@ -1,3 +1,10 @@
+/*
+
+This component was depreciated after the introduction of ProfileSection and ProfileSectionRow
+due to their improved modularity.
+
+*/
+
 // Icons
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone,faEnvelope} from '@fortawesome/free-solid-svg-icons';
@@ -40,7 +47,7 @@ pfps.set("Sofia Lakhani", defaultPfp);
 
 const ProfileContactCard = ({phone, email}: UserProps) => {
     return (
-        <div className="card-wrapper">
+        <div className="profile-card-wrapper">
             <div className="profile-room-card-content">
                 <div className="contact-card-heading">
                     <h2>Contact</h2>

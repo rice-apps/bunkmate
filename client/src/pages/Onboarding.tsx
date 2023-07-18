@@ -19,21 +19,24 @@ const UPDATE_USER = gql`
 const Onboarding = () => {
     const [updateUser, {data, loading, error}] = useMutation(UPDATE_USER)
     const [activeSection, setActiveSection] = useState(0)
-    const {user, onboardingChange} = useContext(UserContext)
+    const {user, setUser, onboardingChange} = useContext(UserContext)
     const [showing, setShowing] = useState(false)
 
     const selectLiving = (e:any) => {
         onboardingChange(e, "onCampus")
         setShowing(true)
     }
+
+    //called when submit button is pressed on last section
     const onFinished = () => {
 
+        setUser({...user, "newUser": false})
         // TODO: populate their IDs (required field in mongo)
             // populate their email (make sure its their rice gmail)
-        onboardingChange(null, "newUser", false)
-
+        // onboardingChange(null, "newUser", false)
 
         try {
+            console.log("")
             console.log(user)
             updateUser({ variables: user, onCompleted: () => console.log("User updated") })
         } catch (error) {
@@ -61,7 +64,7 @@ const Onboarding = () => {
                     </button>
                     <button onClick={(e)=>{selectLiving(e)}}>
                         Off Campus
-                    </button>
+                    </button>   
                 </div>
             </div> } 
         </div>

@@ -1,30 +1,103 @@
+:root {
+    --white: #fff;
+    --black: #000;
+    --blue: #25335D;
+    --flesh: #FFEBE5;
+}
 .profile-page {
     width: 100vw;
     height: 200vh;
     font-family: 'Roboto Flex', sans-serif;
-    background-color: #25335D;
+    background-color: var(--flesh);
+   
+}
+
+.profile-go-back {
+    text-decoration: none;
+    color: rgba(37, 51, 93, 1);
+}
+
+.profile-back-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.6em;
 }
 
 .profile-content {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+    width: 80vw;
+    gap: 1em;
     margin: auto;
     position: relative;
-    margin: auto;
-    top: 15vh;
+    top: 2em;
 }
 
-.card-wrapper {
-    color: black;
-    border: solid;
-    border-radius: 24px;
-    border-width: 0px;
-    /* border-color: rgba(0,0,0,0.7); */
-    background-color: white;
-    margin-bottom: 15px;
-    transform: scale(1);
-    transition: transform 0.15s;
-    color: #25335D;
+.profile-resume-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80vw;
+    background-color: var(--white);
+    border-radius: 2em;
+    padding: 3em 4em 3em 4em;
+}
+
+.profile-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    gap: 1.5em;
+   
+}
+
+.profile-user-pfp {
+    width: 170px;
+    height: auto;
+    margin-right: 14px;
+    border-radius: 50%;
+
+}
+
+.profile-user-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1em;
+}
+
+.profile-user-title {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    text-align: center;
+}
+
+.profile-user-title h1 {
+    margin-right: 8px;
+}
+
+.profile-user-pronouns {
+    color: rgba(37, 51, 93, 0.64);
+}
+
+.profile-body {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: flex-start;
+    width: 100%;
+}
+
+.profile-body-col {
+    width: 45%;
+}
+
+.profile-footer {
+    display: flex;
 }

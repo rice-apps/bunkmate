@@ -33,6 +33,9 @@ const mock = {
             label: "Full Name",
             type: "text",
             options: [],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -41,6 +44,9 @@ const mock = {
             label: "Email",
             type: "text",
             options: [],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },              
         {
@@ -49,6 +55,9 @@ const mock = {
             label: "Phone",
             type: "text",
             options: [],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -57,6 +66,9 @@ const mock = {
             label: "Class",
             type: "select",
             options: ["2026", "2025", "2024", "2023", "Graduate"],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -65,6 +77,9 @@ const mock = {
             label:"Residential College",
             type: "dropdown",
             options: ["Baker", "Will Rice", "Hanszen", "Weiss", "Jones", "Brown", "Lovett", "Sid Richardson", "Martel", "McMurtry", "Duncan"],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
 
         },
@@ -74,6 +89,9 @@ const mock = {
             label: "Major(s)",
             type: "text",
             options: [],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -82,6 +100,9 @@ const mock = {
             label: "Minor(s)",
             type: "text",
             options: [],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -90,6 +111,9 @@ const mock = {
             label: "Pronouns",
             type: "select",
             options: ["He/Him", "She/Her", "They/Them", "Other"],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
         {
@@ -98,17 +122,11 @@ const mock = {
             label: "Sex",
             type: "select",
             options: ["Male", "Female", "Other",],
+                                    min: 60,
+                        max: 80,
+                        step: 1,
             placeholder: ""
         },
-        {
-            id: 10,
-            attribute: "accommodation",
-            label: "Accomodations / Accessibility",
-            type: "textarea",
-            options: [],
-            placeholder: ""
-        }
-        
     
         ]},
         {
@@ -122,23 +140,21 @@ const mock = {
                 label: "What type of room are you looking for?",
                 type: "text",
                 options: [],
+                                        min: 60,
+                        max: 80,
+                        step: 1,
                 placeholder: "Ex: 4-person suite in Old Sid"
             },
             {
                 id: 1,
                 attribute: "numRoommates",
-                label: "I already have __ roommate(s)",
+                label: "I am looking for __ roommate(s)",
                 type: "select",
                 options: ["0", "1", "2", "3", ">3"],
+                                        min: 60,
+                        max: 80,
+                        step: 1,
                 placeholder: "Ex: 4-person suite in Old Sid"
-            },
-            {
-                id: 2,
-                attribute: "additionalRoomInfo",
-                label: "Additional info?",
-                type: "textarea",
-                options: [],
-                placeholder: "Particular room preferences and habits, special circumstances, etc."
             },
 
             ]},
@@ -153,71 +169,56 @@ const mock = {
                     label: "My friends would describe me as ...",
                     type: "multiple-select",
                     options: ["Funny", "Athletic", "Serious", "Easy-Going", "Studious", "Patient", "Introverted", "Friendly", "Calm"],
+                                            min: 60,
+                        max: 80,
+                        step: 1,
                     placeholder: ""
                 },
-                {
-                    id: 1,
-                    attribute: "isMorningPerson",
-                    label: "I am a ...a",
-                    type: "select",
-                    options: ["Morning person", "Night person"],
-                    placeholder: ""
-                },
-                {
-                    id: 2,
-                    attribute: "personalSpace",
-                    label: "I use my personal space for",
-                    type: "multiple-select",
-                    options: ["Studying", "Relaxing", "Hanging out with friends", "I plan on rarely using my space"],
-                    placeholder: ""
-                },
+
                 {
                     id: 3,
                     attribute: "outingFrequency",
                     label: "On average, I go out __ per week",
                     type: "select",
                     options: ["0", "1", "2", "3+"],
+                                            min: 60,
+                        max: 80,
+                        step: 1,
                     placeholder: ""
                 },
                 {
                     id: 4,
-                    attribute: "coexistCondition",
-                    label: "I want to ______ with my roommate(s)",
+                    attribute: "neatness",
+                    label: "I clean my room...",
                     type: "select",
-                    options: ["do everything", "be friends", "peacefully and respectfully coexist"],
-                    placeholder: ""
-                },
-                {
-                    id: 5,
-                    attribute: "outgoingness",
-                    label: "I consider myself",
-                    type: "select",
-                    options: ["Shy", "Fairly shy", "Neutral", "Fairly outgoing", "Outgoing"],
+                    options: ["Daily", "Weekly", "Occasionally", "Rarely"],
+                                            min: 60,
+                        max: 80,
+                        step: 1,
                     placeholder: ""
                 },
                 {
                     id: 6,
                     attribute: "smoker",
-                    label: "Are you a smoker?",
+                    label: "I smoke ...",
                     type: "select",
-                    options: ["Yes, and I smoke daily", "Yes, but I only smoke occassionally", "No, I do not smoke"],
+                    options: ["Daily", "Occasionally", "Never"],
+                                            min: 60,
+                        max: 80,
+                        step: 1,
                     placeholder: ""
                 },
-                {
-                    id: 7,
-                    attribute: "smokerPref",
-                    label: "I prefer roommate(s) that",
-                    type: "select",
-                    options: ["Smoke", "Don't smoke", "I have no preference"],
-                    placeholder: ""
-                },
+
                 {   
                     id: 8,
-                    attribute: "additionalHabitInfo",
-                    label: "Additional info?",
+                    attribute: "noise",
+                    label: "What is your general noise level in the room?",
                     type: "textarea",
                     options: [],
-                    placeholder: "Particular room preferences and habits, special circumstances, etc."
+                                            min: 60,
+                        max: 80,
+                        step: 1,
+                    placeholder: "Ex: Snoring, taking phone calls in the room, gaming, etc."
                 },
                     
                 ]},
@@ -232,6 +233,9 @@ const mock = {
                         label: "I am looking for ______ roommates.",
                         type: "select",
                         options: ["Male", "Female", "Either"],
+                                                min: 60,
+                        max: 80,
+                        step: 1,
                         placeholder: ""
                     },
                     {
@@ -240,33 +244,54 @@ const mock = {
                         label: "Do you plan on having overnight guests?",
                         type: "select",
                         options: ["Yes", "No"],
+                                                min: 60,
+                        max: 80,
+                        step: 1,
                         placeholder: ""
                     },
                     {
-                        id: 4,
-                        attribute: "neatness",
-                        label: "I clean my room...",
-                        type: "select",
-                        options: ["Daily", "Weekly", "Occasionally", "Rarely"],
+                        id: 2,
+                        attribute: "roomTemp",
+                        label: "What do you prefer your room temperature to be at?",
+                        type: "range",
+                        min: 60,
+                        max: 80,
+                        step: 1,
+                        options: [],
                         placeholder: ""
                     },
+                    
+
                     {   
                         id: 5,
                         attribute: "presence",
                         label: "How often will you be in the room?",
                         type: "textarea",
                         options: [],
+                                                min: 60,
+                        max: 80,
+                        step: 1,
                         placeholder: "Ex: Not often. I will be using the room mostly to sleep."
-                    },
-                    {   
-                        id: 6,
-                        attribute: "additionalPrefInfo",
-                        label: "How often will you be in the room?",
-                        type: "textarea",
-                        options: [],
-                        placeholder: "Ex: Particular room preferences and habits, special circumstances, etc."
-                    },                      
-                    ]}
+                    },                
+                    ]},
+      {
+        id:4,
+        welcome: "Finished!",
+        header: "But, before we let you go...",
+        fields: [
+            {   
+                id: 0,
+                attribute: "pfp",
+                label: "",
+                type: "image",
+                options: [],
+                min: 60,
+                max: 80,
+                step: 1,
+                placeholder: ""
+            }, 
+        ]
+      }
     ]
     
 }
