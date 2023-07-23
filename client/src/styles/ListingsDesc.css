@@ -1,0 +1,31 @@
+.image-container {
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 400px;
+}
+
+.large-image-container {
+  flex: 1;
+
+}
+
+.large-image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.small-images {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.small-image {
+  object-fit: cover;
+  width: 50%;
+  height: 50%;
+}

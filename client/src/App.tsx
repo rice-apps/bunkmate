@@ -3,6 +3,7 @@ import React, {useState, useEffect, useContext} from 'react';
 import UserDataAuth from "./types/UserDataAuth"
 import HomePage from './pages/HomePage';
 import ProfilePage from './pages/ProfilePage';
+import ListingsDesc from "./pages/ListingsDesc";
 import ListingsPage from "./pages/ListingsPage";
 import LoginPage from "./pages/LoginPage";
 import Onboarding from './pages/Onboarding';
@@ -106,6 +107,7 @@ function App() {
           <Route path={`/profile/:net_id`}
                  element={<ProfilePage userData={userInfo} logout={logout} />} />
           <Route path={`/listings`} element={<ListingsPage userData={userInfo} logout={logout} />} />
+          <Route path={`/listing/0`} element={<ListingsDesc userData={userInfo} logout={logout} />} />
           <Route path={`/`} element={<LoginPage login={login}/>} />
         </Routes>
         </div>
