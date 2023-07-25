@@ -40,11 +40,112 @@ module.exports = gql`
     favorites: [String],
   }
 
+  input NoteInput {
+    text: String, 
+    owner: String
+  }
+  
+  type Note {
+    text: String, 
+    owner: String
+  }
+
+  enum RoomType {
+    BEDROOM
+    BATHROOM
+  }
+
+  input RoomInput {
+    type: RoomType, 
+    name: String,
+    description: String
+  }
+
+  type Room {
+    type: RoomType, 
+    name: String,
+    description: String
+  }
+
+  input PreferenceInput {
+    gender: String,
+    age: String,
+    temp: String,
+    cleaning: String
+  }
+  
+  type Preference {
+    gender: String,
+    age: String,
+    temp: String,
+    cleaning: String
+  }
+
+  type Listing {
+    id: ID!
+    name: String,
+    price: Int,
+    sqft: Int,
+    numBeds: Int,
+    numBaths: Int,
+    available: Int,
+    residents: Int,
+    owner: String,
+    distance: Int,
+    address: String,
+    type: String,
+    tags: [ String ],
+    note: Note,
+    rooms: [ Room ],
+    preferences: Preference,
+    lease: [ String ],
+    roommates: [ String ],
+    features: [ String ],
+    fitness: [ String ],
+    parking: [ String ],
+    interior: [ String ],
+    kitchen: [ String ],
+    services: [ String ],
+    uniqueDetails: [ String ],
+    outdoorSpace: [ String ],
+    livingSpace: [ String ]
+  }
+
+  input ListingInput {
+    name: String,
+    price: Int,
+    sqft: Int,
+    numBeds: Int,
+    numBaths: Int,
+    available: Int,
+    residents: Int,
+    owner: String,
+    distance: Int,
+    address: String,
+    type: String,
+    tags: [ String ],
+    note: NoteInput,
+    rooms: [ RoomInput ],
+    preferences: PreferenceInput,
+    lease: [ String ],
+    roommates: [ String ],
+    features: [ String ],
+    fitness: [ String ],
+    parking: [ String ],
+    interior: [ String ],
+    kitchen: [ String ],
+    services: [ String ],
+    uniqueDetails: [ String ],
+    outdoorSpace: [ String ],
+    livingSpace: [ String ]
+  }
+
   type AuthResponse {
     email: String
     token: String
     new_user: Boolean
   }
+
   input AuthInput {
     accessToken: String!
   }
@@ -94,5 +195,8 @@ module.exports = gql`
   type Mutation {
     authGoogle(email: String!): AuthResponse
     updateUser(user: UserInput!): User
+    createListing(listing: ListingInput!): Listing
   }
+
+
 `

@@ -36,23 +36,6 @@ var UserSchema = new Schema({
     major: String,
     minor: String,
     pronouns: String,
-<<<<<<< HEAD
-    sex: String,
-    onCampus: Boolean,
-    roomType: String,
-    numRoommates: String,
-    genderPref: String,
-    overnightGuests: Boolean,
-    presence: String,
-    roomTemp: String,
-    bedTime: String,
-    wakeTime: String,
-    personality: [String],
-    outingFrequency: String,
-    neatness: String,
-    smoker: String,
-    noise: String,
-=======
     gender: String,
     accommodations: String,
     on_campus: Boolean,
@@ -76,7 +59,6 @@ var UserSchema = new Schema({
     additional_prefs: String,
     is_snorer: Boolean,
     additional_habit_info: String,
->>>>>>> dev
     pfp: String,
     new_user: Boolean,
     profile_bio: String,
@@ -112,15 +94,11 @@ var UserSchema = new Schema({
                     const newUserDict = yield User.create({
                         name: "defaultName",
                         email: email,
-<<<<<<< HEAD
-                        newUser: true,
-=======
                         new_user: true,
                         // 'auth.google': {
                         // id: profile.id,
                         // token: accessToken,
                         // },
->>>>>>> dev
                     });
                     // newUser.save() maybe
                     return newUserDict;

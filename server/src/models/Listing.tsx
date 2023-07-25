@@ -27,7 +27,14 @@ const ListingSchema = new Schema({
     lease: [ String ],
     roommates: [ String ],
     features: [ String ],
-    fitness: [ String ]
+    fitness: [ String ], 
+    parking: [ String ],
+    interior: [ String ],
+    kitchen: [ String ],
+    services: [ String ],
+    uniqueDetails: [ String ],
+    outdoorSpace: [ String ],
+    livingSpace: [ String ]
 })
 
 export const Listing = mongoose_listing.model("Listings", ListingSchema);

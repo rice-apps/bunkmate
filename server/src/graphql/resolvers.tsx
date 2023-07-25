@@ -1,4 +1,5 @@
 const { User } = require("../models/User");
+const { Listing } = require("../models/Listing");
 
 module.exports = {
     Query: {
@@ -44,6 +45,10 @@ module.exports = {
             catch (error) {
                 console.error(error)
             }
-        } 
+        }, 
+        createListing: async (_, { listing }) => {
+            const newListing = new Listing(listing);
+            return await newListing.save();
+        }
     }
 };

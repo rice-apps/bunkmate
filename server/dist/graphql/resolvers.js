@@ -8,6 +8,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 const { User } = require("../models/User");
+const { Listing } = require("../models/Listing");
 module.exports = {
     Query: {
         hello: () => 'world',
@@ -53,6 +54,10 @@ module.exports = {
             catch (error) {
                 console.error(error);
             }
+        }),
+        createListing: (_, { listing }) => __awaiter(this, void 0, void 0, function* () {
+            const newListing = new Listing(listing);
+            return yield newListing.save();
         })
     }
 };
