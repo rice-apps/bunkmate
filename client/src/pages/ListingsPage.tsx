@@ -18,6 +18,8 @@ import '../styles/ListingsPage.css';
 
 import { gql, useQuery, useLazyQuery } from "@apollo/client";
 
+import { Navbar } from './Navbar';
+
 // const GET_USERS = gql`
 //   query getUsers {
 //     getUsers {
@@ -36,6 +38,7 @@ const ListingsPage = (props: {userData: UserDataAuth, logout: any}) => {
     return (
         //props.userData.email
         <div className="ListingsPage"> 
+            <Navbar page="Listings"/>
             <div className="page-header">
                 <h1 className="page-title">Listings!</h1>
             </div>

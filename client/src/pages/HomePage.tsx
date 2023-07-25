@@ -18,8 +18,12 @@ import '../styles/HomePage.css';
 
 import { gql, useQuery, useLazyQuery } from "@apollo/client";
 import UserData from '../types/UserData';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
+// import { faGear } from '@fortawesome/free-solid-svg-icons';
+import { faCircleUser } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+// navbar dropdown
+import {Navbar} from './Navbar';
 
 const GET_USERS = gql`
   query getUsers {
@@ -113,7 +117,7 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     const toggleOffCampus = ()=> {
         setOnCampus(false);
     }
-
+    
     const [getUsers, { data, loading, error }] = useLazyQuery(GET_USERS, {onCompleted: tempData => {
         console.log(tempData)
         if (tempData) {
@@ -143,16 +147,7 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     return (
         <div className="homepage"> 
             <div className="banner">
-                <div className="banner-logo">
-                    <strong>bunkmate</strong> 
-                </div>
-                <div className="container">
-                    <div className="btn-group">
-                        <button className={onCampus?"btn-selected":""} onClick= {toggleOnCampus}> On-Campus</button>
-                        <button className={!onCampus?"btn-selected":""} onClick= {toggleOffCampus}> Off-Campus</button>
-                    </div>
-                </div>
-                <FontAwesomeIcon className="settings" icon={faGear}></FontAwesomeIcon>
+                <Navbar page="Homepage"/>
             </div>
             <div className="page-header">
                 <h1>Fellow bunkmates we found for you</h1>
