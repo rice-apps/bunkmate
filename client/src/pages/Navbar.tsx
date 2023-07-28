@@ -37,7 +37,7 @@ const Navbar: React.FC<NavbarProps> = ({ page }) => {
       </div>
       <div className="container">
         <div className="btn-group">
-          {page === "Homepage" && (
+          {/* {page === "Homepage" && (
             <>
               <button
                 className={onCampus ? "btn-selected" : ""}
@@ -54,8 +54,7 @@ const Navbar: React.FC<NavbarProps> = ({ page }) => {
                 Off-Campus
               </button>
             </>
-          )}
-          {page === "Listings" && (
+          )} */}
             <>
               <button
                 className={listings ? "btn-selected" : ""}
@@ -72,7 +71,7 @@ const Navbar: React.FC<NavbarProps> = ({ page }) => {
                 Profiles
               </button>
             </>
-          )}
+          
         </div>
       </div>
       <NavDropdown />
