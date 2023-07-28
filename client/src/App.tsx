@@ -90,8 +90,8 @@ function App() {
         } else {
           //render homepage
           setUserInfo(userReponse.authGoogle)
-          console.log("homepage")
-          navigate("/home")
+          console.log("profiles")
+          navigate("/profiles")
         }
 
       }
@@ -101,7 +101,7 @@ function App() {
         <div>
         <Routes>
           {/* <Route path={`/profile/:id`} element={<ProfilePage userData={userInfo} logout={logout} />}/> */}
-          <Route path={`/home`} element={<HomePage userData={userInfo} logout={logout}/>} />
+          <Route path={`/profiles`} element={<HomePage userData={userInfo} logout={logout}/>} />
           <Route path={`/onboarding`} element={<Onboarding />} />
           <Route path={`/profile/:net_id`}
                  element={<ProfilePage userData={userInfo} logout={logout} />} />
