@@ -76,6 +76,7 @@ const Navbar: React.FC<NavbarProps> = ({ page }) => {
         </div>
       </div>
       <NavDropdown />
+
     </div>
   );
 };

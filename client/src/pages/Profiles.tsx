@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 // Components
-import UserCard from '../components/homepage/UserCard';
+import UserCard from '../components/profiles/UserCard';
 
 // Mock database
 // import users from '../mock-database';
@@ -109,14 +109,14 @@ const GET_USERS = gql`
 
 const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     const [allUsers, setAllUsers] = useState<UserData[]>([])
-    const [onCampus, setOnCampus] = useState(true)
+    const [onCampus, setOnCampus] = useState(false) // shows off-campus profiles
 
-    const toggleOnCampus = ()=> {
-        setOnCampus(true);
-    }
-    const toggleOffCampus = ()=> {
-        setOnCampus(false);
-    }
+    // const toggleOnCampus = ()=> {
+    //     setOnCampus(true);
+    // }
+    // const toggleOffCampus = ()=> {
+    //     setOnCampus(false);
+    // }
     
     const [getUsers, { data, loading, error }] = useLazyQuery(GET_USERS, {onCompleted: tempData => {
         console.log(tempData)
