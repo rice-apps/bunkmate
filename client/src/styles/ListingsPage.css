@@ -23,9 +23,10 @@
     position: relative;
     top: 16.5vh;
     display: grid;
-    grid-template-columns: 38% 38%;
+    grid-template-columns: 23% 23% 23%; /* was 38% */
     grid-template-rows: auto;
     gap: 65px;
     justify-content: center;
     padding-bottom: 6vh;
+
 }

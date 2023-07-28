@@ -38,7 +38,7 @@
     transform: scale(1);
     transition: transform 0.15s;
     color: hsl(225, 43%, 25%);
-    /* column-count: 2; */
+    column-count: 3; 
 }
 
 .listing-card:hover {
@@ -50,17 +50,19 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 600px;
-    height: 230px;
+    width: 330px;
+    height: 250px;
     
 }
 
 .listing-card-heading {
-    display: flex;
+    display: relative;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
-    /* background-color: rgba(37, 51, 93, 0.34); */
+    height: 50px;
+    font-size: larger;
+    /*background-color: rgba(37, 51, 93, 0.34);*/
 }
 
 .listing-card-picture {
@@ -75,20 +77,30 @@
     align-items: flex-start;  
     height: 82px;
     position: relative;
+    font-size: small;
+ 
     /* background-color: rgba(37, 51, 93, 0.34); */
 }
 
 .listing-card-title {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: center;
+    align-items: center;
+    text-align: left;
     gap: 2px; 
-    /* background-color: red; */
+    font-size: xx-large;
+    height: 100px;
+    width: fit-content;
+    /*background-color: rgb(0, 255, 60); */
 }
 
 .listing-pronouns {
     color: rgba(37, 51, 93, 0.64);
+    font-size: medium;
+    background-color: aqua;
+    width: fit-content;
+
+    
 }
 
 .tag-content{
@@ -105,8 +117,9 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 5px;
-    /* background-color: violet; */
+    margin-bottom: 10 px;
+    gap: 10px;
+    background-color: violet; 
 }
 
 .listing-tag {
@@ -124,12 +137,13 @@
     flex-direction: row;
     justify-content: space-around;
     position: relative;
-    top: -20px;
+    margin-top: 10px;
+    top: -10px;
     /* background-color: rgba(37, 51, 93, 0.34); */
 }
 
 .listing-card-attr-col {
-    width: 220px;
+    width: fit-content;
     display: flex;
     flex-direction: column;
     gap: 14px;
@@ -140,29 +154,36 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    /* margin: 0px; */
-    /* background-color: rgba(255,0,0,0.5); */
+    width: fit-content;
+    margin: 0px; 
+    /*background-color: rgba(255,0,0,0.5); */
 }
 
 .attr-icon {
     margin-right: 10px;
-    width: 25px;
-    height: 25px;
+    width: 15px;
+    height: 15px;
     color:  #25335D;
 }
 
 .attr-info {
-    display: flex;
+    display: relative;
     flex-direction: column;
     justify-content: flex-start;
+    width: fit-content;
 }
 
 .attr-value {
     margin: 0px;
+    font-size: x-small;
+    /* background-color: blueviolet; */
+    
 }
 
 .attr-desc {
     margin: 0px;
+
+   
     color: rgba(37, 51, 93, 0.64);
 }
 
