@@ -151,6 +151,7 @@ module.exports = gql `
   }
 
   input UserInput {
+    id: ID!
     name: String!  
     email: String!
     phone: String,
@@ -196,6 +197,8 @@ module.exports = gql `
     authGoogle(email: String!): AuthResponse
     updateUser(user: UserInput!): User
     createListing(listing: ListingInput!): Listing
+    getListingByUser(user: UserInput!): [String]
+    getListingExceptUser(user: UserInput!): [String]
   }
 
 

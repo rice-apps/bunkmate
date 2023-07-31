@@ -49,6 +49,26 @@ module.exports = {
         createListing: async (_, { listing }) => {
             const newListing = new Listing(listing);
             return await newListing.save();
+        },
+        getListingByUser: async (_, { user }) => {
+            var listingdocs = Listing.find({ _id: user.id });
+            var matched = [];
+            for await (var doc of listingdocs) {
+                console.log(doc._id);
+                matched.push(doc._id.toString());
+            }
+
+            return matched;
+        },
+        getListingExceptUser: async (_, { user }) => {
+            var listingdocs = Listing.find({ _id: {$ne: user.id} });
+            var matched = [];
+            for await (var doc of listingdocs) {
+                console.log(doc._id);
+                matched.push(doc._id.toString());
+            }
+
+            return matched;
         }
     }
 };
