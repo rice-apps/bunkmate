@@ -8,35 +8,66 @@
 
 .page-header {
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: row;
+    color:black;
+    gap: 35%;
+}
+.page-selector{
+    text-decoration: underline;
+    font-family: 'Roboto Flex';
+    display: flex;
+    flex-direction: row;
+    gap:40%;
+    a{
+        color:black
+    }
 }
 
 .page-title {
     position: relative;
     width: 507px;
-    height: 128px;
-    top: 169px;
+    top: 20px;
     left: 322px;
     margin-bottom: 100px; 
     color: #25335D;
-    background-color: pink;
-    z-index: 1;
-    font-family: Roboto Flex;
-    font-size: 55px !important;
+    z-index: 1;  
+    display:grid;
+    grid-template-columns: 500px 500px;
+
+
+
+}
+.page-title-text{
+    font-family: 'Roboto Flex';
+    font-size: 150px !important;
     font-weight: 700 !important ;
     line-height: 64px;
-    letter-spacing: 0.07em;
+    letter-spacing:  0.02esm;
     text-align: left;
 
-    
 }
+.page-subtitle{
+    text-align:right;
+    margin-top: 10px;
 
+}
+.page-title-picture{
+    margin-top:200px;
+}
+.page-filter{
+    position: relative;
+    width: 1190px;
+    left: 160px;
+    align-self: center;
+
+   /* temporarily just a png */
+
+}
 .listing-card-feed {
     position: relative;
-    top: 538px;
+    margin-top: 100px;
     display: grid;
-    grid-template-columns: 350px 350px;
+    grid-template-columns: 350px 350px 350px;
     grid-template-rows: auto;
     gap: 80px;
     justify-content: center;
@@ -44,8 +75,16 @@
 
     
 }
-@media only screen and (min-width: 1224px){
-    .listing-card-feed{
-    grid-template-columns: 350px 350px 350px; /* was 38% */
+@media only screen and (max-width: 1224px){
+    .page-title{
+        left:120px;
     }
+    .page-filter{
+        width: 800px;
+    }
+    .listing-card-feed{
+    grid-template-columns: 350px 350px; /* was 38% */
+    }
+
+
 }

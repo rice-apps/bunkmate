@@ -71,6 +71,12 @@
     border-top-right-radius: 24px;
     height: auto;
 }
+.listing-card-like{
+    background-color: transparent;
+    height: fit-content;
+    z-index: 2;
+}
+
 
 .listing-card-header {
     display: flex;

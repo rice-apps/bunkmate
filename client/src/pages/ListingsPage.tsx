@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 // Components
 import ListingCard from '../components/listingspage/ListingCard';
+import choosingHome from '../media/choosing-home-illustration.png';
+import filterRow from '../media/filter-row.png';
 
 // Mock database
 import listings from '../mock-database';
@@ -37,14 +39,24 @@ const ListingsPage = (props: {userData: UserDataAuth, logout: any}) => {
         //props.userData.email
         <div className="ListingsPage"> 
             <div className="page-header">
-                <button>listings!</button>
-                <div className= "page-title">
-                    <h1>find a home.</h1>
-                    <h1>avoid the hassle.</h1>
-                    <h2> browse already secured homes</h2>
-                    <h2>from other rice students</h2>
+                <strong>bunkmate</strong>
+                <div className="page-selector">
+                    <a href="../listings">Listings</a> {/*Temporary as I do not know RiceApps'implementation*/ }
+                    <a href="../profiles">Profile</a>
                 </div>
             </div>
+                <div className= "page-title">
+                    <div className="page-title-text">
+                        <h1>find a home.</h1>
+                        <h1>avoid the hassle</h1>
+                        <div className="page-subtitle">
+                            <h3> browse already secured homes</h3>
+                            <h3>from other rice students</h3>
+                        </div>
+                    </div>
+                    <img className="listing-page-picture" src={choosingHome}alt="choosing home"/>
+                </div>
+            <img className="page-filter" src={filterRow} alt="filter row" /> {/*only temporay until filter bar is implemented*/ }
             {/* <button onClick={getUsers()}> Do Func A</button> */}
             <div className="listing-card-feed">
                 {/* TODO: update UserData type to include all fields */}
