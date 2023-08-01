@@ -24,7 +24,6 @@
     top: 16.5vh;
     display: grid;
     grid-template-columns: 350px 350px;
-    
     grid-template-rows: auto;
     gap: 65px;
     justify-content: center;

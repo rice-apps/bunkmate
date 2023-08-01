@@ -45,8 +45,9 @@ const ListingCard = ({id, title, address, total_rent, rent_per_person, capacity,
                                     
                                     <h2>${rent_per_person}/mo. — {housing_config}</h2>
                                     <p> {bedrooms} bds | {bathrooms} bath | {square_footage} sqft</p>
-                                    <small> {address}</small>
-                                
+                                    <div className = "listing-address">
+                                        <small> {address}</small>
+                                    </div>
                                 </div>
                             </div>
                         </div>
