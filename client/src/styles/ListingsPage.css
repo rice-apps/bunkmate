@@ -23,10 +23,17 @@
     position: relative;
     top: 16.5vh;
     display: grid;
-    grid-template-columns: 23% 23% 23%; /* was 38% */
+    grid-template-columns: 350px 350px;
+    
     grid-template-rows: auto;
     gap: 65px;
     justify-content: center;
     padding-bottom: 6vh;
 
+    
+}
+@media only screen and (min-width: 1224px){
+    .listing-card-feed{
+    grid-template-columns: 350px 350px 350px; /* was 38% */
+    }
 }

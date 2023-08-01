@@ -97,7 +97,7 @@
 .listing-pronouns {
     color: rgba(37, 51, 93, 0.64);
     font-size: medium;
-    background-color: aqua;
+    /* background-color: aqua; */
     width: fit-content;
 
     
@@ -119,11 +119,11 @@
     align-items: center;
     margin-bottom: 10 px;
     gap: 10px;
-    background-color: violet; 
+    /* background-color: violet;   */
 }
 
 .listing-tag {
-    background-color: #F3F4F8;
+    background-color: #F3F4F8; 
     border-radius: 15px;
     color:  #25335D;
 }
@@ -156,7 +156,7 @@
     align-items: center;
     width: fit-content;
     margin: 0px; 
-    /*background-color: rgba(255,0,0,0.5); */
+    /* background-color: rgba(255,0,0,0.5); */
 }
 
 .attr-icon {
@@ -175,7 +175,7 @@
 
 .attr-value {
     margin: 0px;
-    font-size: x-small;
+    font-size: small !important;
     /* background-color: blueviolet; */
     
 }
