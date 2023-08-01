@@ -37,7 +37,13 @@ const ListingsPage = (props: {userData: UserDataAuth, logout: any}) => {
         //props.userData.email
         <div className="ListingsPage"> 
             <div className="page-header">
-                <h1 className="page-title">Listings!</h1>
+                <button>listings!</button>
+                <div className= "page-title">
+                    <h1>find a home.</h1>
+                    <h1>avoid the hassle.</h1>
+                    <h2> browse already secured homes</h2>
+                    <h2>from other rice students</h2>
+                </div>
             </div>
             {/* <button onClick={getUsers()}> Do Func A</button> */}
             <div className="listing-card-feed">
