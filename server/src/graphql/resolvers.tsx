@@ -23,7 +23,7 @@ module.exports = {
             var listingdocs = await Listing.find({ owner: userId });
 
             // If we decided to take the whole user in the request body, it would be user._id instead of user.id
-            // var listingdocs = Listing.find({_id: user.id})
+            // var listingdocs = Listing.find({ _id: user.id })
             // var matched = [];
             // for await (var doc of listingdocs) {
             //     console.log(doc._id);
@@ -35,7 +35,7 @@ module.exports = {
         getListingExceptUser: async (_, { userId }) => {
             var listingdocs = await Listing.find({ owner: {$ne: userId} });
 
-            // var listingdocs = Listing.find({_id: user.id})
+            // var listingdocs = Listing.find({ _id: { $ne: user.id } })
             // var matched = [];
             // for await (var doc of listingdocs) {
             //     console.log(doc._id);
