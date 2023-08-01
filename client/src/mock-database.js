@@ -12,6 +12,8 @@ const listings = [
         "has_washer_dryer": true,
         "has_pets": false,
         "miles_from_campus": 1.0,
+        "housing_config": "Studio",
+        "square_footage":1331,
     },
     {
         "id": 1,
@@ -26,6 +28,8 @@ const listings = [
         "has_washer_dryer": true,
         "has_pets": true,
         "miles_from_campus": 2.1,
+        "housing_config": "House",
+        "square_footage": 1500,
     },
     {
         "id": 2,
@@ -40,6 +44,9 @@ const listings = [
         "has_washer_dryer": true,
         "has_pets": false,
         "miles_from_campus": 1.0,
+        "housing_config": "Apt.",
+        "square_footage": 1250,
+
     },
 ]
 

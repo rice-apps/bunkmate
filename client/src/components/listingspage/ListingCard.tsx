@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTemperatureHalf, faBed, faVenusMars, faLocationDot, faGraduationCap, faBroom, faBath, faMoneyBill, faKitchenSet, faJugDetergent, faDog} from '@fortawesome/free-solid-svg-icons';
+import { faTemperatureHalf, faBed, faVenusMars, faLocationDot, faGraduationCap, faBroom, faBath, faMoneyBill, faKitchenSet, faJugDetergent, faDog,faPersonWalking,faPeopleGroup } from '@fortawesome/free-solid-svg-icons';
 import '../../styles/ListingCard.css';
 import '../../styles/ListingCard.scss';
 import benPfp from '../../media/ben-liu-pfp-400x400.png';
@@ -21,6 +21,8 @@ interface ListingProps {
     "has_washer_dryer": boolean,
     "has_pets": boolean,
     "miles_from_campus": number,
+    "housing_config": string,
+    "square_footage": number,
 }
 
 let listingPics = new Map();
@@ -29,7 +31,7 @@ listingPics.set(0, lifeTowerPic);
 listingPics.set(1, lifeTowerPic);
 listingPics.set(2, lifeTowerPic);
 
-const ListingCard = ({id, title, address, total_rent, rent_per_person, capacity, bedrooms, bathrooms, has_kitchen, has_washer_dryer, has_pets, miles_from_campus}: ListingProps) => {
+const ListingCard = ({id, title, address, total_rent, rent_per_person, capacity, bedrooms, bathrooms, has_kitchen, has_washer_dryer, has_pets, miles_from_campus, housing_config, square_footage}: ListingProps) => {
     const listing_url = "/listing/" + id;
     return (
         <div className="listing-card-wrapper">
@@ -40,41 +42,23 @@ const ListingCard = ({id, title, address, total_rent, rent_per_person, capacity,
                         <div className="listing-card-heading">
                             <div className="listing-card-header">
                                 <div className="listing-card-title">
-                                    <h2>{title}</h2>
-                                    <p className="listing-pronouns"> {address}</p>
-                                </div>
-                                <div className="listing-tags">
-                                    <div className="listing-tag" id="bedrooms">
-                                        <div className="tag-content">
-                                            <FontAwesomeIcon className="tag-icon" icon={faBed}></FontAwesomeIcon>
-                                            <small>{bedrooms}</small>
-                                        </div>
-                                    </div>
-                                    <div className="listing-tag" id="bathrooms">
-                                        <div className="tag-content">
-                                            <FontAwesomeIcon className="tag-icon" icon={faBath}></FontAwesomeIcon>
-                                            <small>{bathrooms}</small>
-                                        </div>
-                                    </div>
-                                    <div className="listing-tag" id="residential-college">
-                                        <div className="tag-content">
-                                            <FontAwesomeIcon className="tag-icon" icon={faLocationDot}></FontAwesomeIcon>
-                                            <small>{miles_from_campus} mi from Rice</small>
-                                        </div>
-                                    </div>
                                     
+                                    <h2>${rent_per_person}/mo. — {housing_config}</h2>
+                                    <p> {bedrooms} bds | {bathrooms} bath | {square_footage} sqft</p>
+                                    <small> {address}</small>
+                                
                                 </div>
                             </div>
                         </div>
                         <div className="listing-card-body">
+                            
                             <div className="listing-card-attr-col">
-                                <div className="listing-card-attr" id="total-rent">
-                                    <FontAwesomeIcon className="attr-icon" icon={faMoneyBill}/>
-                                    <div className="attr-info">
-                                        <p className="attr-value">${rent_per_person}</p>
-                                        <small className="attr-desc">Rent/person (max capacity)</small>
+                                <div className="listing-card-attr" id="distance">
+                                <FontAwesomeIcon className="attr-icon" icon={faPersonWalking}></FontAwesomeIcon>
+                                        <div className="attr-desc">
+                                            <small>{miles_from_campus} mi from Rice</small>
+                                        </div>
                                     </div>
-                                </div>
                                 <div className="listing-card-attr" id="has-kitchen">
                                     <FontAwesomeIcon className="attr-icon" icon={faKitchenSet}/>
                                     <div className="attr-info">
@@ -84,6 +68,13 @@ const ListingCard = ({id, title, address, total_rent, rent_per_person, capacity,
                                 </div>
                             </div>
                             <div className="listing-card-attr-col">
+                                <div className="listing-card-attr" id="capacity">
+                                    <FontAwesomeIcon className="attr-icon" icon={faPeopleGroup}/>
+                                    <div className="attr-info">
+                                        <small className="attr-desc">{capacity} Roommates</small>
+                                        <small className="attr-desc"></small>
+                                    </div>
+                                </div>
                                 <div className="listing-card-attr" id="has-washer-dryer">
                                     <FontAwesomeIcon className="attr-icon" icon={faJugDetergent}/>
                                     <div className="attr-info">
@@ -91,13 +82,7 @@ const ListingCard = ({id, title, address, total_rent, rent_per_person, capacity,
                                         <small className="attr-desc">Has washer & dryer</small>
                                     </div>
                                 </div>
-                                <div className="listing-card-attr" id="has-pets">
-                                    <FontAwesomeIcon className="attr-icon" icon={faDog}/>
-                                    <div className="attr-info">
-                                        <p className="attr-value">{has_pets}</p>
-                                        <small className="attr-desc">Has pets</small>
-                                    </div>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>

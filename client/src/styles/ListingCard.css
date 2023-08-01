@@ -79,22 +79,22 @@
     position: relative;
     font-size: small;
  
-    /* background-color: rgba(37, 51, 93, 0.34); */
+     /*background-color: rgba(37, 51, 93, 0.34);*/ 
 }
 
 .listing-card-title {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    text-align: left;
+    align-items: left;
+    text-align: flex-start;
     gap: 2px; 
-    font-size: xx-large;
+    font-size: small;
     height: 100px;
     width: fit-content;
     /*background-color: rgb(0, 255, 60); */
 }
 
-.listing-pronouns {
+.listing-address {
     color: rgba(37, 51, 93, 0.64);
     font-size: medium;
     /* background-color: aqua; */
@@ -111,25 +111,6 @@
     padding: 5px 8px 5px 8px;
     /* background-color: rgba(37, 51, 93, 0.64); */
     
-}
-
-.listing-tags {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    margin-bottom: 10 px;
-    gap: 10px;
-    /* background-color: violet;   */
-}
-
-.listing-tag {
-    background-color: #F3F4F8; 
-    border-radius: 15px;
-    color:  #25335D;
-}
-
-.listing-tag p {
-    margin: 8px;
 }
 
 .listing-card-body {

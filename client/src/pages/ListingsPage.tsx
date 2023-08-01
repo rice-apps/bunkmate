@@ -55,6 +55,8 @@ const ListingsPage = (props: {userData: UserDataAuth, logout: any}) => {
                                                                 has_washer_dryer={listing.has_washer_dryer}
                                                                 has_pets={listing.has_pets}
                                                                 miles_from_campus={listing.miles_from_campus}
+                                                                housing_config={listing.housing_config}
+                                                                square_footage={listing.square_footage}
                                                                 />)})}
             </div>
         </div> 
