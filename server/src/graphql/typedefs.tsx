@@ -191,14 +191,14 @@ module.exports = gql`
   type Query {
     hello: String
     getUsers: [User!]
+    getListingByUser(userId: ID!): [Listing]
+    getListingExceptUser(userId: ID!): [Listing]
   }
   
   type Mutation {
     authGoogle(email: String!): AuthResponse
     updateUser(user: UserInput!): User
     createListing(listing: ListingInput!): Listing
-    getListingByUser(user: UserInput!): [String]
-    getListingExceptUser(user: UserInput!): [String]
   }
 
 
