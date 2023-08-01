@@ -9,7 +9,7 @@ const ListingSchema = new Schema({
     numBaths: Number,
     available: Number,
     residents: Number,
-    owner: String,
+    owner: mongoose_listing.ObjectId, // The owner field is mapped to a User _id
     distance: Number,
     address: String,
     type: String,

@@ -90,7 +90,7 @@ module.exports = gql`
     numBaths: Int,
     available: Int,
     residents: Int,
-    owner: String,
+    owner: ID,
     distance: Int,
     address: String,
     type: String,

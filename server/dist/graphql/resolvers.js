@@ -21,8 +21,16 @@ module.exports = {
                 console.log(error);
             }
         }),
+        // Moved the two new methods to the Query section instead of Mutation since they only perform read operations!
+        // Instead of taking the whole user in the request body, just take the userId and then match it to the owner field!
+        // See typedefs.tsx for associated changes
         getListingByUser: (_, { userId }) => __awaiter(this, void 0, void 0, function* () {
+            // Use await for functions that return a Promise, like the find method
+            // The for loop does not need await since none of the operations within the loop return a Promise
+            // Match the userId to the owner field instead of the _id field
             var listingdocs = yield Listing.find({ owner: userId });
+            // If we decided to take the whole user in the request body, it would be user._id instead of user.id
+            // var listingdocs = Listing.find({ _id: user.id })
             // var matched = [];
             // for await (var doc of listingdocs) {
             //     console.log(doc._id);
@@ -32,6 +40,7 @@ module.exports = {
         }),
         getListingExceptUser: (_, { userId }) => __awaiter(this, void 0, void 0, function* () {
             var listingdocs = yield Listing.find({ owner: { $ne: userId } });
+            // var listingdocs = Listing.find({ _id: { $ne: user.id } })
             // var matched = [];
             // for await (var doc of listingdocs) {
             //     console.log(doc._id);
