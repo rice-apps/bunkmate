@@ -9,23 +9,36 @@
 .page-header {
     display: flex;
     flex-direction: column;
+    
 }
 
 .page-title {
     position: relative;
+    width: 507px;
+    height: 128px;
+    top: 169px;
+    left: 322px;
+    margin-bottom: 100px; 
     color: #25335D;
+    background-color: pink;
     z-index: 1;
-    margin: auto;
-    top: 8.5vh;
+    font-family: Roboto Flex;
+    font-size: 55px !important;
+    font-weight: 700 !important ;
+    line-height: 64px;
+    letter-spacing: 0.07em;
+    text-align: left;
+
+    
 }
 
 .listing-card-feed {
     position: relative;
-    top: 16.5vh;
+    top: 538px;
     display: grid;
     grid-template-columns: 350px 350px;
     grid-template-rows: auto;
-    gap: 65px;
+    gap: 80px;
     justify-content: center;
     padding-bottom: 6vh;
 
