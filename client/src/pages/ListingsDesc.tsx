@@ -6,7 +6,7 @@ import '../styles/ListingsDesc.css';
 const ListingsDesc = (props: any) => {
 
     return (
-      <div>
+      <div className ="background">
         <div>
           <ListingDesc />
         </div>

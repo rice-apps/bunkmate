@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTreeCity, faBuilding, faDoorClosed, faBed, faBath} from '@fortawesome/free-solid-svg-icons';
 
 
-import gabriel from '../../media/gabriel pfp.jpeg'
+import ben from '../../media/ben pfp.png'
 
 const ListingDetails = () => {
     return (
@@ -26,18 +26,18 @@ const ListingDetails = () => {
           <div className="bulleted_features">
             <div className="left_column">
               <ul>
-                <li>Bullet Point 1</li>
-                <li>Bullet Point 2</li>
-                <li>Bullet Point 3</li>
-                <li>Bullet Point 4</li>
+                <li>Luxury apartment</li>
+                <li>Vibrant community</li>
+                <li>Downtown Houston</li>
+                <li>Flexible lease</li>
               </ul>
             </div>
 
             <div className="right_column">
               <ul>
-                <li>Bullet Point 5</li>
-                <li>Bullet Point 6</li>
-                <li>Bullet Point 7</li>
+                <li>Floor-to-ceiling windows</li>
+                <li>Patio/balcony space</li>
+                <li>Breathtaking views</li>
               </ul>
             </div>
           </div>
@@ -48,7 +48,7 @@ const ListingDetails = () => {
               <h2>Note from the Roomates</h2>
             </div>
             <div>
-              <p>“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nunc massa, pellentesque at mi non, aliquet mollis arcu. Mauris ut ex ut nunc tristique pretium sit amet id nulla. Vivamus eget lectus eu nisl ultricies venenatis quis sed est. Aenean ut arcu quis ante porttitor eleifend. Pellentesque habitant morbi tristique senectus.”</p>
+              <p className="italics">“Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nunc massa, pellentesque at mi non, aliquet mollis arcu. Mauris ut ex ut nunc tristique pretium sit amet id nulla. Vivamus eget lectus eu nisl ultricies venenatis quis sed est. Aenean ut arcu quis ante porttitor eleifend. Pellentesque habitant morbi tristique senectus.”</p>
               <p className = "person_name"> - Jane D.</p>
             </div>
 
@@ -61,35 +61,47 @@ const ListingDetails = () => {
             <div className="top-row">
               <div className="home-info-box">
                 <FontAwesomeIcon className="attr-icon" icon={faBed}/>
-                <div>Bedroom 1</div>
-                <div>1 Full Bed</div>
+                <div>
+                  <div>Bedroom 1</div>
+                  <div>1 Full Bed</div>
+                </div>
               </div>
               <div className="home-info-box">
                 <FontAwesomeIcon className="attr-icon" icon={faBath}/>
-                <div>Bathroom 1</div>
-                <div>1 Full Bath</div>
+                <div>
+                  <div>Bathroom 1</div>
+                  <div>1 Full Bath</div>
+                </div>
               </div>
               <div className="home-info-box">
                 <FontAwesomeIcon className="attr-icon" icon={faBed}/>
-                <div>Bedroom 2</div>
-                <div>1 Full Bed</div>
+                <div>
+                  <div>Bedroom 2</div>
+                  <div>1 Full Bed</div>
+                </div>
               </div>
             </div>
             <div className="bottom-row">
               <div className="home-info-box">
                 <FontAwesomeIcon className="attr-icon" icon={faBath}/>
-                <div>Bathroom 2</div>
-                <div>1 Full Bath</div>
+                <div>
+                  <div>Bathroom 2</div>
+                  <div>1 Full Bath</div>
+                </div>
               </div>
               <div className="home-info-box">
                 <FontAwesomeIcon className="attr-icon" icon={faBed}/>
-                <div>Bedroom 3</div>
-                <div>1 Full Bed</div>
+                <div>
+                  <div>Bedroom 3</div>
+                  <div>1 Full Bed</div>
+                </div>
               </div>
               <div className="home-info-box">
                 <FontAwesomeIcon className="attr-icon" icon={faBath}/>
-                <div>Bathroom 3</div>
-                <div>1 Full Bath</div>
+                <div>
+                  <div>Bathroom 3</div>
+                  <div>1 Full Bath</div>
+                </div>
               </div>
 
             </div>
@@ -101,32 +113,31 @@ const ListingDetails = () => {
         <div className="right_column">
 
           <div className="form-container">
-            <h2>Interested?</h2>
-            <div className="form-group">
-              <label htmlFor="full-name">Full Name:</label>
-              <input type="text" id="full-name" name="full_name" />
-            </div>
+            <div className="inner-form-container">
+              <h2 className="extra-bold">Interested?</h2>
+              <div className="form-group">
+                <input type="text" id="full-name" name="full_name" placeholder="Full Name*" />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="rice-email">Rice Email:</label>
-              <input type="email" id="rice-email" name="rice_email" />
-            </div>
+              <div className="form-group">
+                <input type="email" id="rice-email" name="rice_email" placeholder="Rice Email*" />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="phone-number">Phone Number:</label>
-              <input type="tel" id="phone-number" name="phone_number" />
-            </div>
+              <div className="form-group">
+                <input type="tel" id="phone-number" name="phone_number" placeholder="Phone Number*" />
+              </div>
 
-            <div className="form-group">
-              <label htmlFor="message">Message:</label>
-              <textarea id="message" name="message" />
-            </div>
+              <div className="form-group">
+                <textarea id="message" name="message" placeholder="Your Message*"></textarea>
+              </div>
 
-            <button className="submit-button" type="submit">Send an Email</button>
+              <button className="submit-button" type="submit">Send an Email</button>
+            </div>
           </div>
 
+
           <div>
-            <img src = {gabriel} alt="logo"/>
+            <img className="pic-under-form"src={ben} alt="logo"/>
           </div>
 
         </div>
