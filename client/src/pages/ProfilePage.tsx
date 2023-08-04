@@ -144,14 +144,14 @@ const ProfilePage = (props: {userData: UserDataAuth, logout: any, }) => {
                 <ProfilePrefsCard bedtime={users[0].bedtime} smoking={users[0].smoking} dynamic={users[0].dynamic} overnight_guests={users[0].overnight_guests} pref_temp={users[0].pref_temp}
                 cleaning_freq={users[0].cleaning_freq} internal_clock={users[0].bedtime} snoring={users[0].snore} drinking={users[0].drinking}/>
                 <ProfileContactCard phone={users[0].phoneNumber} email={ users[0].email }/> */}
-                <Link to="/home" className="profile-go-back">
+                <Link to="/profiles" className="profile-go-back">
                     <div className="profile-back-button">
                         <svg width="51" height="51" viewBox="0 0 51 51" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M25.5 46.75C37.236 46.75 46.75 37.236 46.75 25.5C46.75 13.7639 37.236 4.25 25.5 4.25C13.7639 4.25 4.25 13.7639 4.25 25.5C4.25 37.236 13.7639 46.75 25.5 46.75Z" fill="white"/>
                             <path d="M25.5 17L17 25.5L25.5 34" stroke="#25335D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                             <path d="M34 25.5H17" stroke="#25335D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <p>Back to Home</p>
+                        <p>Back to profiles</p>
                     </div>
                 </Link>
                 <div className="profile-resume-content">

@@ -1,34 +1,28 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleUser } from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from "react";
 
 // css
 import "../styles/Navbar.css";
 
 // navbar dropdown
 import { NavDropdown } from "./NavDropdown";
+import { Link } from "react-router-dom";
 
 interface NavbarProps {
   page: string;
 }
 
-const Navbar: React.FC<NavbarProps> = ({ page }) => {
-  const [onCampus, setOnCampus] = useState(true);
-  const [listings, setListings] = useState(true);
+const useActiveButton = (): [string, (button: string) => void] => {
+  const [activeButton, setActiveButton] = React.useState("A");
 
-  const toggleOnCampus = () => {
-    setOnCampus(true);
-  };
-  const toggleOffCampus = () => {
-    setOnCampus(false);
+  const handleLinkClick = (button: string) => {
+    setActiveButton(button);
   };
 
-  const toggleListings = () => {
-    setListings(true);
-  };
-  const toggleProfiles = () => {
-    setListings(false);
-  };
+  return [activeButton, handleLinkClick];
+};
+
+const Navbar: React.FC<NavbarProps> = () => {
+  const [activeButton, setActiveButton] = useActiveButton();
 
   return (
     <div className="banner">
@@ -37,41 +31,28 @@ const Navbar: React.FC<NavbarProps> = ({ page }) => {
       </div>
       <div className="container">
         <div className="btn-group">
-          {/* {page === "Homepage" && (
+          <div className="link-container">
             <>
-              <button
-                className={onCampus ? "btn-selected" : ""}
-                onClick={toggleOnCampus}
+              <Link
+              to="/listings"
+              className={activeButton === "listings" ? "btn-selected" : ""}
+              onClick={() => setActiveButton("listings")}
               >
-                {" "}
-                On-Campus
-              </button>
-              <button
-                className={!onCampus ? "btn-selected" : ""}
-                onClick={toggleOffCampus}
+              {" "}
+              Listings
+              
+              </Link>
+              <Link
+              to="/profiles"
+              className={activeButton === "profiles" ? "btn-selected" : ""}
+              onClick={() => setActiveButton("profiles")}
               >
-                {" "}
-                Off-Campus
-              </button>
+              {" "}
+              Profiles
+              </Link>
+
             </>
-          )} */}
-            <>
-              <button
-                className={listings ? "btn-selected" : ""}
-                onClick={toggleListings}
-              >
-                {" "}
-                Listings
-              </button>
-              <button
-                className={!listings ? "btn-selected" : ""}
-                onClick={toggleProfiles}
-              >
-                {" "}
-                Profiles
-              </button>
-            </>
-          
+          </div>
         </div>
       </div>
       <NavDropdown />

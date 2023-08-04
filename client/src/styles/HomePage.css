@@ -78,9 +78,11 @@
  /* .btn-group button:hover {
    text-decoration: underline;
  } */
-.btn-selected {
+/* .btn-selected {
   text-decoration: underline;
-}
+  background-color: #25335D;
+  color:#25335D;
+} */
 
 .page-header {
     display: flex;

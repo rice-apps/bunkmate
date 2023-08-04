@@ -21,6 +21,7 @@
     font-family: 'Roboto Flex',sans-serif;
     padding: 1.5vw;
  }
+ 
  .banner-logo::before {
     content: "";
     justify-self: start;
@@ -31,4 +32,23 @@
     display: inline-block;
     z-index: 0;
     position: absolute;
+ }
+
+ .link-container {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+ }
+
+ .link-container a {
+   display: flex;
+   color: #25335D;
+   padding-right: 100%;
+   font-size: 22px;
+   text-decoration: none;
+
+ }
+
+ .link-container a.btn-selected {
+   text-decoration: underline;
  }
