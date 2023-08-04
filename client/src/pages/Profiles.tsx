@@ -147,7 +147,6 @@ const HomePage = (props: {userData: UserDataAuth, logout: any}) => {
     return (
         <div className="homepage"> 
             <div className="banner">
-                <Navbar page="Homepage"/>
             </div>
             <div className="page-header">
                 <h1>Fellow bunkmates we found for you</h1>

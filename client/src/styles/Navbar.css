@@ -49,6 +49,10 @@
 
  }
 
+ .link-container a:hover {
+   text-decoration: underline;
+ }
+
  .link-container a.btn-selected {
    text-decoration: underline;
  }

@@ -17,6 +17,7 @@ import {
 } from "react-router-dom";
 import { gql, useMutation } from "@apollo/client";
 import { UserContext } from "./components/context/UserContext";
+import { Navbar } from "./pages/Navbar";
 
 interface MyToken {
   name: string;
@@ -101,6 +102,7 @@ function App() {
   return (
     // <Router>
     <div>
+      <Navbar page=""/>
       <Routes>
         {/* <Route path={`/profile/:id`} element={<ProfilePage userData={userInfo} logout={logout} />}/> */}
         <Route
